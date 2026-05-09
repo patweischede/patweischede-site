@@ -639,32 +639,105 @@ section { padding: 8rem 0; position: relative; }
 
 /* ═══ CTA ═══ */
 .cta-section {
-  text-align: center;
-  padding: 10rem 2rem;
+  text-align: left;
+  padding: 8rem 0;
   position: relative;
 }
 .cta-section::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(ellipse 50% 60% at 50% 50%, rgba(27,61,33,0.15) 0%, transparent 70%);
+  background: radial-gradient(ellipse 50% 60% at 50% 50%, rgba(27, 61, 33, 0.1) 0%, transparent 70%);
   pointer-events: none;
 }
-.cta-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 1rem;
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 4rem;
+  align-items: start;
 }
-.cta-sub {
-  font-size: 1.1rem;
+.contact-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+.contact-title .green {
+  color: var(--green-light);
+}
+.contact-desc {
+  font-size: 0.95rem;
   font-weight: 300;
   color: var(--gray-400);
-  margin-bottom: 2.5rem;
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
   line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+.contact-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.contact-detail-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--green-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green-light);
+  flex-shrink: 0;
+}
+.contact-detail-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.1rem;
+}
+.contact-detail-value {
+  font-size: 0.82rem;
+  color: var(--gray-400);
+}
+.contact-imm-link {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.cta-secondary-text {
+  font-size: 0.82rem;
+  color: var(--gray-600);
+  margin-bottom: 0.3rem;
+}
+.cta-secondary-link {
+  font-size: 0.82rem;
+  color: var(--gray-400);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.cta-secondary-link:hover {
+  color: var(--green-light);
+}
+.contact-form-card {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+}
+.contact-form-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
 }
 
 /* ═══ FOOTER ═══ */
@@ -754,6 +827,8 @@ footer {
   .hamburger { display: flex; }
   .container { padding: 0 1.5rem; }
   section { padding: 5rem 0; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .contact-form-card { padding: 1.5rem; min-height: 400px; }
   .interlude { padding: 6rem 1.5rem; }
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
   .origin-stats { grid-template-columns: 1fr 1fr 1fr; }
@@ -777,7 +852,7 @@ footer {
     <li><a href="#about">About</a></li>
     <li><a href="#systems">What I Build</a></li>
     <li><a href="#work">Work</a></li>
-    <li><a href="#contact" class="nav-cta">Systems Enquiry</a></li>
+    <li><a href="#contact" class="nav-cta">Start a Conversation</a></li>
   </ul>
   <button class="hamburger" id="menuToggle" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -788,7 +863,7 @@ footer {
   <a href="#about" onclick="closeMenu()">About</a>
   <a href="#systems" onclick="closeMenu()">What I Build</a>
   <a href="#work" onclick="closeMenu()">Work</a>
-  <a href="#contact" class="nav-cta" onclick="closeMenu()">Systems Enquiry</a>
+  <a href="#contact" class="nav-cta" onclick="closeMenu()">Start a Conversation</a>
 </div>
 
 
@@ -1047,17 +1122,57 @@ footer {
 <div class="divider"></div>
 <section class="cta-section" id="contact">
   <div class="container">
-    <p class="section-label reveal">Get Started</p>
-    <h2 class="cta-title reveal reveal-d1">Tell me what's slowing<br>your practice down.</h2>
-    <p class="cta-sub reveal reveal-d2">
-      If you're running a professional services firm and the operational side is eating your time, I'd like to hear what's not working. No pitch, no pressure. Just a conversation about what's possible.
-    </p>
-    <div class="reveal reveal-d3" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-      <!-- TODO: Replace # with your Tally form URL for systems enquiries -->
-      <a href="#" class="btn btn-primary">Systems Enquiry</a>
-    </div>
-    <div class="reveal reveal-d4" style="margin-top: 2rem;">
-      <a href="https://nzimmigrationhelpservice.com" class="imm-link" target="_blank" rel="noopener">Looking for immigration advice? Visit NZIHS</a>
+    <div class="contact-grid">
+      <!-- Left column -->
+      <div class="contact-info reveal">
+        <p class="section-label">Get Started</p>
+        <h2 class="contact-title">What's eating your<br>team's <span class="green">time</span>?</h2>
+        <p class="contact-desc">
+          Tell me about the manual work slowing your practice down. I'll review it and come back within 48 hours with an honest assessment of what can be automated.
+        </p>
+
+        <div class="contact-details">
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Based in</div>
+              <div class="contact-detail-value">Auckland, NZ + Manila, PH</div>
+            </div>
+          </div>
+
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Email</div>
+              <div class="contact-detail-value">pat@patweischede.com</div>
+            </div>
+          </div>
+
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Working with</div>
+              <div class="contact-detail-value">Professional services firms</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-imm-link">
+          <p class="cta-secondary-text">Looking for immigration advice?</p>
+          <a href="https://nzihs.com" target="_blank" rel="noopener" class="cta-secondary-link">Visit NZ Immigration Help Service →</a>
+        </div>
+      </div>
+
+      <!-- Right column: Tally embed -->
+      <div class="contact-form-card reveal reveal-d2">
+        <div data-tally-src="https://tally.so/embed/0Q1xb6?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" style="width:100%; border:none;"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1080,6 +1195,7 @@ footer {
 </footer>
 
 
+<script src="https://tally.so/widgets/embed.js"></script>
 <script>
 // Mobile menu
 const toggle = document.getElementById('menuToggle');
