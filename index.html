@@ -548,6 +548,7 @@ section { padding: 8rem 0; position: relative; }
   box-shadow: 0 0 10px rgba(27, 61, 33, 0.6);
   z-index: 2;
   opacity: 0;
+  transition: box-shadow 0.6s ease;
 }
 .flow-sonar {
   position: absolute;
@@ -1127,8 +1128,8 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   function updatePositions() { positions = getStopPositions(); }
 
-  function easeInOutCubic(t) {
-    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  function easeInOutQuart(t) {
+    return t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
   }
 
   function animateProperty(element, prop, from, to, duration, easeFn) {
@@ -1166,25 +1167,25 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     dot.style.top = (positions[0] - 65) + 'px';
     dot.style.opacity = '0';
     await wait(300);
-    await animateProperty(dot, 'opacity', 0, 1, 600, easeInOutCubic);
+    await animateProperty(dot, 'opacity', 0, 1, 1000, easeInOutQuart);
 
     for (let i = 0; i < positions.length; i++) {
       const targetY = positions[i] - 5;
       const currentY = parseFloat(dot.style.top) || 0;
-      const travelDuration = Math.max(500, Math.min(900, Math.abs(targetY - currentY) * 2.5));
+      const travelDuration = Math.max(1400, Math.min(2200, Math.abs(targetY - currentY) * 6));
 
-      await animateProperty(dot, 'top', currentY, targetY, travelDuration, easeInOutCubic);
+      await animateProperty(dot, 'top', currentY, targetY, travelDuration, easeInOutQuart);
       triggerSonar(positions[i]);
       dot.style.boxShadow = '0 0 18px rgba(27, 61, 33, 0.8), 0 0 30px rgba(27, 61, 33, 0.3)';
-      await wait(1400);
+      await wait(2000);
       dot.style.boxShadow = '0 0 10px rgba(27, 61, 33, 0.6)';
       await wait(200);
     }
 
     const lastY = positions[positions.length - 1] - 5;
-    animateProperty(dot, 'top', lastY, lastY + 40, 800, easeInOutCubic);
-    await animateProperty(dot, 'opacity', 1, 0, 800, easeInOutCubic);
-    await wait(1000);
+    animateProperty(dot, 'top', lastY, lastY + 40, 1200, easeInOutQuart);
+    await animateProperty(dot, 'opacity', 1, 0, 1200, easeInOutQuart);
+    await wait(2000);
 
     running = false;
     runCycle();
