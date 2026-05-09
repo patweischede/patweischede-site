@@ -470,11 +470,10 @@ section { padding: 8rem 0; position: relative; }
 
 /* ═══ ORBITAL ═══ */
 .orbital-wrap { display: flex; align-items: center; justify-content: center; margin: 3rem 0; }
-.orbital-container { width: 280px; height: 280px; position: relative; }
+.orbital-container { width: 320px; height: 320px; position: relative; }
 .orbital-center {
   position: absolute;
   top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
   width: 80px; height: 80px;
   border-radius: 50%;
   background: var(--green);
@@ -488,21 +487,18 @@ section { padding: 8rem 0; position: relative; }
   color: var(--white);
   box-shadow: 0 0 40px var(--green-glow);
   z-index: 2;
+  animation: corePulse 10s ease-in-out infinite;
 }
 .orbital-ring {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  border: 1px solid rgba(27,61,33,0.25);
+  border: 1px solid rgba(27,61,33,0.15);
   border-radius: 50%;
-  animation: orbitSpin 20s linear infinite;
+  pointer-events: none;
 }
 .orbital-ring-1 { width: 180px; height: 180px; }
-.orbital-ring-2 {
-  width: 260px; height: 260px;
-  animation-direction: reverse;
-  animation-duration: 30s;
-}
+.orbital-ring-2 { width: 280px; height: 280px; }
 .orbital-node {
   position: absolute;
   width: 36px; height: 36px;
@@ -515,9 +511,15 @@ section { padding: 8rem 0; position: relative; }
   font-size: 0.55rem;
   font-weight: 500;
   color: var(--gray-200);
-  animation: counterSpin 20s linear infinite;
+  z-index: 3;
+  opacity: 0;
+  will-change: top, left, opacity;
 }
-.orbital-ring-2 .orbital-node { animation-duration: 30s; animation-direction: reverse; }
+.orbital-node-1 { animation: nodeOrbit1 10s cubic-bezier(0.25, 0.1, 0.25, 1) infinite; }
+.orbital-node-2 { animation: nodeOrbit2 10s cubic-bezier(0.25, 0.1, 0.25, 1) infinite; animation-delay: 0.3s; }
+.orbital-node-3 { animation: nodeOrbit3 10s cubic-bezier(0.25, 0.1, 0.25, 1) infinite; animation-delay: 0.6s; }
+.orbital-node-4 { animation: nodeOrbit4 10s cubic-bezier(0.25, 0.1, 0.25, 1) infinite; animation-delay: 0.9s; }
+.orbital-node-5 { animation: nodeOrbit5 10s cubic-bezier(0.25, 0.1, 0.25, 1) infinite; animation-delay: 1.2s; }
 
 /* ═══ FLOW TIMELINE ═══ */
 .flow-section { position: relative; padding-left: 3rem; }
@@ -530,22 +532,43 @@ section { padding: 8rem 0; position: relative; }
 .flow-dot {
   position: absolute;
   left: -3px;
-  width: 8px; height: 8px;
+  width: 8px;
+  height: 8px;
+  margin-left: -3px;
   border-radius: 50%;
   background: var(--green);
-  box-shadow: 0 0 12px var(--green-glow);
-  animation: travelDown 8s ease-in-out infinite;
-  will-change: top, transform, box-shadow;
+  box-shadow: 0 0 12px rgba(27, 61, 33, 0.5);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.flow-sonar {
+  position: absolute;
+  left: -3px;
+  width: 8px;
+  height: 8px;
+  margin-left: -3px;
+  border-radius: 50%;
+  border: 2px solid rgba(42, 92, 51, 0.8);
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+}
+.flow-sonar.pulse {
+  animation: sonarPulse 1s ease-out forwards;
 }
 .flow-item { padding: 2rem 0; position: relative; }
 .flow-item::before {
   content: '';
   position: absolute;
-  left: -3rem; top: 2.6rem;
-  width: 8px; height: 8px;
+  left: -3rem;
+  top: 2.4rem;
+  width: 8px;
+  height: 8px;
+  margin-left: -3px;
   border-radius: 50%;
   background: var(--green);
-  box-shadow: 0 0 8px var(--green-glow);
+  box-shadow: 0 0 8px rgba(27, 61, 33, 0.5);
 }
 .flow-label {
   font-size: 0.7rem;
@@ -685,50 +708,126 @@ footer {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-@keyframes orbitSpin {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
+@keyframes corePulse {
+  0%, 30% { box-shadow: 0 0 40px rgba(27, 61, 33, 0.5); transform: translate(-50%, -50%) scale(1); }
+  40% { box-shadow: 0 0 60px rgba(27, 61, 33, 0.8), 0 0 100px rgba(27, 61, 33, 0.3); transform: translate(-50%, -50%) scale(1.08); }
+  50% { box-shadow: 0 0 40px rgba(27, 61, 33, 0.5); transform: translate(-50%, -50%) scale(1); }
+  100% { box-shadow: 0 0 40px rgba(27, 61, 33, 0.5); transform: translate(-50%, -50%) scale(1); }
 }
-@keyframes counterSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); }
+
+@keyframes nodeOrbit1 {
+  0% { top: -40%; left: -30%; opacity: 0; }
+  5% { opacity: 1; }
+  20% { top: 15%; left: 25%; }
+  30% { top: 8%; left: 50%; }
+  35% { top: 15%; left: 72%; }
+  40% { top: 30%; left: 80%; }
+  45% { top: 50%; left: 75%; }
+  50% { top: 68%; left: 62%; }
+  55% { top: 72%; left: 42%; }
+  60% { top: 65%; left: 25%; }
+  65% { top: 48%; left: 18%; }
+  70% { top: 30%; left: 22%; }
+  75% { top: 15%; left: 38%; }
+  78% { top: 8%; left: 50%; }
+  80% { top: 8%; left: 50%; }
+  85% { top: -10%; left: 60%; }
+  95% { top: -45%; left: 110%; opacity: 1; }
+  96% { opacity: 0; }
+  100% { opacity: 0; top: -40%; left: -30%; }
 }
-@keyframes travelDown {
-  /* Start: fade in at top */
-  0% { top: 0%; opacity: 0; transform: scale(1); box-shadow: 0 0 8px rgba(27, 61, 33, 0.5); }
-  2% { opacity: 1; }
 
-  /* Travel to stop 1 */
-  10% { top: 12.5%; opacity: 1; transform: scale(1); }
+@keyframes nodeOrbit2 {
+  0% { top: 120%; left: 110%; opacity: 0; }
+  5% { opacity: 1; }
+  20% { top: 75%; left: 65%; }
+  30% { top: 75%; left: 50%; }
+  35% { top: 68%; left: 30%; }
+  40% { top: 52%; left: 20%; }
+  45% { top: 35%; left: 22%; }
+  50% { top: 20%; left: 35%; }
+  55% { top: 15%; left: 50%; }
+  60% { top: 22%; left: 68%; }
+  65% { top: 38%; left: 78%; }
+  70% { top: 55%; left: 75%; }
+  75% { top: 70%; left: 60%; }
+  78% { top: 75%; left: 50%; }
+  80% { top: 75%; left: 50%; }
+  85% { top: 85%; left: 40%; }
+  95% { top: 130%; left: -20%; opacity: 1; }
+  96% { opacity: 0; }
+  100% { opacity: 0; top: 120%; left: 110%; }
+}
 
-  /* Pause and pulse at stop 1 */
-  11% { top: 12.5%; transform: scale(1.8); box-shadow: 0 0 20px rgba(27, 61, 33, 0.8), 0 0 40px rgba(27, 61, 33, 0.4); }
-  14% { top: 12.5%; transform: scale(1); box-shadow: 0 0 8px rgba(27, 61, 33, 0.5); }
+@keyframes nodeOrbit3 {
+  0% { top: -20%; left: 130%; opacity: 0; }
+  5% { opacity: 1; }
+  20% { top: 30%; left: 70%; }
+  30% { top: 25%; left: 78%; }
+  35% { top: 40%; left: 85%; }
+  40% { top: 58%; left: 78%; }
+  45% { top: 72%; left: 65%; }
+  50% { top: 78%; left: 48%; }
+  55% { top: 72%; left: 30%; }
+  60% { top: 58%; left: 20%; }
+  65% { top: 40%; left: 18%; }
+  70% { top: 25%; left: 28%; }
+  75% { top: 18%; left: 45%; }
+  78% { top: 18%; left: 60%; }
+  80% { top: 25%; left: 78%; }
+  85% { top: 15%; left: 95%; }
+  95% { top: -30%; left: 140%; opacity: 1; }
+  96% { opacity: 0; }
+  100% { opacity: 0; top: -20%; left: 130%; }
+}
 
-  /* Travel to stop 2 */
-  30% { top: 37.5%; opacity: 1; transform: scale(1); }
+@keyframes nodeOrbit4 {
+  0% { top: 130%; left: -40%; opacity: 0; }
+  5% { opacity: 1; }
+  20% { top: 65%; left: 30%; }
+  30% { top: 50%; left: 15%; }
+  35% { top: 35%; left: 18%; }
+  40% { top: 22%; left: 30%; }
+  45% { top: 15%; left: 48%; }
+  50% { top: 22%; left: 65%; }
+  55% { top: 35%; left: 78%; }
+  60% { top: 50%; left: 82%; }
+  65% { top: 65%; left: 75%; }
+  70% { top: 75%; left: 58%; }
+  75% { top: 72%; left: 38%; }
+  78% { top: 60%; left: 22%; }
+  80% { top: 50%; left: 15%; }
+  85% { top: 55%; left: -5%; }
+  95% { top: 140%; left: -50%; opacity: 1; }
+  96% { opacity: 0; }
+  100% { opacity: 0; top: 130%; left: -40%; }
+}
 
-  /* Pause and pulse at stop 2 */
-  31% { top: 37.5%; transform: scale(1.8); box-shadow: 0 0 20px rgba(27, 61, 33, 0.8), 0 0 40px rgba(27, 61, 33, 0.4); }
-  34% { top: 37.5%; transform: scale(1); box-shadow: 0 0 8px rgba(27, 61, 33, 0.5); }
-
-  /* Travel to stop 3 */
-  52% { top: 62.5%; opacity: 1; transform: scale(1); }
-
-  /* Pause and pulse at stop 3 */
-  53% { top: 62.5%; transform: scale(1.8); box-shadow: 0 0 20px rgba(27, 61, 33, 0.8), 0 0 40px rgba(27, 61, 33, 0.4); }
-  56% { top: 62.5%; transform: scale(1); box-shadow: 0 0 8px rgba(27, 61, 33, 0.5); }
-
-  /* Travel to stop 4 */
-  74% { top: 87.5%; opacity: 1; transform: scale(1); }
-
-  /* Pause and pulse at stop 4 */
-  75% { top: 87.5%; transform: scale(1.8); box-shadow: 0 0 20px rgba(27, 61, 33, 0.8), 0 0 40px rgba(27, 61, 33, 0.4); }
-  78% { top: 87.5%; transform: scale(1); box-shadow: 0 0 8px rgba(27, 61, 33, 0.5); }
-
-  /* Travel to bottom and fade out */
-  95% { top: 100%; opacity: 1; }
-  100% { top: 100%; opacity: 0; transform: scale(1); }
+@keyframes nodeOrbit5 {
+  0% { top: -50%; left: 50%; opacity: 0; }
+  5% { opacity: 1; }
+  20% { top: 10%; left: 45%; }
+  30% { top: 5%; left: 35%; }
+  35% { top: 12%; left: 20%; }
+  40% { top: 28%; left: 12%; }
+  45% { top: 48%; left: 15%; }
+  50% { top: 62%; left: 28%; }
+  55% { top: 70%; left: 48%; }
+  60% { top: 65%; left: 68%; }
+  65% { top: 50%; left: 80%; }
+  70% { top: 32%; left: 78%; }
+  75% { top: 18%; left: 65%; }
+  78% { top: 8%; left: 48%; }
+  80% { top: 5%; left: 35%; }
+  85% { top: -10%; left: 25%; }
+  95% { top: -60%; left: 50%; opacity: 1; }
+  96% { opacity: 0; }
+  100% { opacity: 0; top: -50%; left: 50%; }
+}
+@keyframes sonarPulse {
+  0% { transform: scale(1); opacity: 0.8; border-color: rgba(42, 92, 51, 0.8); }
+  50% { transform: scale(3.5); opacity: 0.4; border-color: rgba(42, 92, 51, 0.5); }
+  100% { transform: scale(6); opacity: 0; border-color: rgba(42, 92, 51, 0); }
 }
 
 /* ═══ RESPONSIVE ═══ */
@@ -804,7 +903,7 @@ footer {
     <div class="origin-grid">
       <div class="origin-body">
         <p class="reveal reveal-d2">My grandparents migrated to New Zealand in the 1990s. I moved with my mum in the early 2000s. Temporary visas, years of uncertainty, the long road to residence. <strong>I lived the immigration process before I built a career advising on it.</strong></p>
-        <p class="reveal reveal-d3">Today I'm a fully licensed immigration adviser (IAA #202300030) operating under NZ Immigration Help Service Ltd, a family practice with over 20 years of operation and 18,000+ clients assisted. I work alongside my mother (a New Zealand barrister and solicitor) and my father (also a licensed adviser).</p>
+        <p class="reveal reveal-d3">Today I'm a fully licensed immigration adviser (IAA #202300030) operating under NZ Immigration Help Service Ltd, a family practice with over 20 years of operation and 18,000+ clients assisted.</p>
         <p class="reveal reveal-d3">But running a professional services practice taught me something else entirely: <strong>the operational side of advisory work is full of bottlenecks that technology can eliminate.</strong> Manual lead triage. Repetitive client comms. Invoice admin. Content production that takes days when it should take minutes.</p>
         <p class="reveal reveal-d4">So I started building. AI lead scoring. Automated email flows. Code-built websites. Invoice pipelines. Content systems. Everything I deploy runs inside a real practice first. If it works there, it works anywhere.</p>
       </div>
@@ -858,15 +957,17 @@ footer {
     <div class="orbital-wrap reveal reveal-d3">
       <div class="orbital-container">
         <div class="orbital-center">Systems</div>
-        <div class="orbital-ring orbital-ring-1">
-          <div class="orbital-node" style="top: 0; left: 50%; transform: translate(-50%, -50%);">AI</div>
-          <div class="orbital-node" style="bottom: 0; left: 50%; transform: translate(-50%, 50%);">CRM</div>
-        </div>
-        <div class="orbital-ring orbital-ring-2">
-          <div class="orbital-node" style="top: 50%; left: 0; transform: translate(-50%, -50%);">Ops</div>
-          <div class="orbital-node" style="top: 50%; right: 0; transform: translate(50%, -50%);">Web</div>
-          <div class="orbital-node" style="top: 0; left: 50%; transform: translate(-50%, -50%);">Data</div>
-        </div>
+
+        <!-- Static orbit rings (visual only) -->
+        <div class="orbital-ring orbital-ring-1"></div>
+        <div class="orbital-ring orbital-ring-2"></div>
+
+        <!-- Independently animated nodes -->
+        <div class="orbital-node orbital-node-1">AI</div>
+        <div class="orbital-node orbital-node-2">CRM</div>
+        <div class="orbital-node orbital-node-3">Ops</div>
+        <div class="orbital-node orbital-node-4">Web</div>
+        <div class="orbital-node orbital-node-5">Data</div>
       </div>
     </div>
 
@@ -961,6 +1062,7 @@ footer {
     <div class="flow-section reveal reveal-d3">
       <div class="flow-line">
         <div class="flow-dot"></div>
+        <div class="flow-sonar"></div>
       </div>
 
       <div class="flow-item">
@@ -1092,6 +1194,87 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Flow dot animation - travels to each static dot position with sonar pulse
+(function() {
+  const flowSection = document.querySelector('.flow-section');
+  if (!flowSection) return;
+
+  const dot = flowSection.querySelector('.flow-dot');
+  const sonar = flowSection.querySelector('.flow-sonar');
+  const items = flowSection.querySelectorAll('.flow-item');
+  if (!dot || !sonar || items.length === 0) return;
+
+  function getStopPositions() {
+    const sectionRect = flowSection.getBoundingClientRect();
+    const remInPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    return Array.from(items).map(item => {
+      const itemRect = item.getBoundingClientRect();
+      return (itemRect.top - sectionRect.top) + (2.4 * remInPx) + 4;
+    });
+  }
+
+  let positions = [];
+  let animating = false;
+
+  function updatePositions() { positions = getStopPositions(); }
+
+  function moveTo(targetTop, duration) {
+    return new Promise(resolve => {
+      const startTop = parseFloat(dot.style.top) || 0;
+      const startTime = performance.now();
+      function step(now) {
+        const p = Math.min((now - startTime) / duration, 1);
+        const e = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+        dot.style.top = (startTop + (targetTop - startTop) * e) + 'px';
+        if (p < 1) requestAnimationFrame(step);
+        else resolve();
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  function triggerSonar(topPos) {
+    sonar.classList.remove('pulse');
+    sonar.style.top = topPos + 'px';
+    void sonar.offsetWidth;
+    sonar.classList.add('pulse');
+  }
+
+  async function runCycle() {
+    if (animating) return;
+    animating = true;
+    updatePositions();
+    if (positions.length === 0) { animating = false; return; }
+
+    dot.style.top = (positions[0] - 40) + 'px';
+    dot.style.opacity = '0';
+    await new Promise(r => setTimeout(r, 200));
+    dot.style.opacity = '1';
+
+    for (let i = 0; i < positions.length; i++) {
+      await moveTo(positions[i], 600);
+      triggerSonar(positions[i]);
+      await new Promise(r => setTimeout(r, 1200));
+    }
+
+    await moveTo(positions[positions.length - 1] + 50, 400);
+    dot.style.opacity = '0';
+    await new Promise(r => setTimeout(r, 800));
+
+    animating = false;
+    runCycle();
+  }
+
+  const flowObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !animating) runCycle();
+    });
+  }, { threshold: 0.2 });
+
+  flowObserver.observe(flowSection);
+  window.addEventListener('resize', updatePositions);
+})();
 </script>
 
 </body>
