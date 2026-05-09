@@ -842,6 +842,7 @@ footer {
   .origin-stats { grid-template-columns: 1fr; }
 }
 </style>
+<script src="https://tally.so/widgets/embed.js"></script>
 </head>
 <body>
 
@@ -1171,7 +1172,7 @@ footer {
 
       <!-- Right column: Tally embed -->
       <div class="contact-form-card reveal reveal-d2">
-        <div data-tally-src="https://tally.so/embed/0Q1xb6?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" style="width:100%; border:none;"></div>
+        <iframe data-tally-src="https://tally.so/embed/0Q1xb6?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="1198" frameborder="0" marginheight="0" marginwidth="0" title="Let's see what's possible."></iframe>
       </div>
     </div>
   </div>
@@ -1195,7 +1196,6 @@ footer {
 </footer>
 
 
-<script src="https://tally.so/widgets/embed.js"></script>
 <script>
 // Mobile menu
 const toggle = document.getElementById('menuToggle');
@@ -1437,6 +1437,8 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   orbitalObserver.observe(container);
 })();
+
+Tally.loadEmbeds();
 </script>
 
 </body>
