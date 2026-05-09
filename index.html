@@ -492,14 +492,14 @@ section { padding: 8rem 0; position: relative; }
 .orbital-ring {
   position: absolute;
   top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
   border: 1px solid rgba(27,61,33,0.25);
   border-radius: 50%;
   animation: orbitSpin 20s linear infinite;
 }
-.orbital-ring-1 { width: 180px; height: 180px; margin: -90px 0 0 -90px; }
+.orbital-ring-1 { width: 180px; height: 180px; }
 .orbital-ring-2 {
   width: 260px; height: 260px;
-  margin: -130px 0 0 -130px;
   animation-direction: reverse;
   animation-duration: 30s;
 }
@@ -534,7 +534,8 @@ section { padding: 8rem 0; position: relative; }
   border-radius: 50%;
   background: var(--green);
   box-shadow: 0 0 12px var(--green-glow);
-  animation: travelDown 4s linear infinite;
+  animation: travelDown 8s ease-in-out infinite;
+  will-change: top, transform, box-shadow;
 }
 .flow-item { padding: 2rem 0; position: relative; }
 .flow-item::before {
@@ -693,10 +694,41 @@ footer {
   to { transform: rotate(-360deg); }
 }
 @keyframes travelDown {
-  0% { top: 0; opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { top: 100%; opacity: 0; }
+  /* Start: fade in at top */
+  0% { top: 0%; opacity: 0; transform: scale(1); box-shadow: 0 0 8px rgba(27, 61, 33, 0.5); }
+  2% { opacity: 1; }
+
+  /* Travel to stop 1 */
+  10% { top: 12.5%; opacity: 1; transform: scale(1); }
+
+  /* Pause and pulse at stop 1 */
+  11% { top: 12.5%; transform: scale(1.8); box-shadow: 0 0 20px rgba(27, 61, 33, 0.8), 0 0 40px rgba(27, 61, 33, 0.4); }
+  14% { top: 12.5%; transform: scale(1); box-shadow: 0 0 8px rgba(27, 61, 33, 0.5); }
+
+  /* Travel to stop 2 */
+  30% { top: 37.5%; opacity: 1; transform: scale(1); }
+
+  /* Pause and pulse at stop 2 */
+  31% { top: 37.5%; transform: scale(1.8); box-shadow: 0 0 20px rgba(27, 61, 33, 0.8), 0 0 40px rgba(27, 61, 33, 0.4); }
+  34% { top: 37.5%; transform: scale(1); box-shadow: 0 0 8px rgba(27, 61, 33, 0.5); }
+
+  /* Travel to stop 3 */
+  52% { top: 62.5%; opacity: 1; transform: scale(1); }
+
+  /* Pause and pulse at stop 3 */
+  53% { top: 62.5%; transform: scale(1.8); box-shadow: 0 0 20px rgba(27, 61, 33, 0.8), 0 0 40px rgba(27, 61, 33, 0.4); }
+  56% { top: 62.5%; transform: scale(1); box-shadow: 0 0 8px rgba(27, 61, 33, 0.5); }
+
+  /* Travel to stop 4 */
+  74% { top: 87.5%; opacity: 1; transform: scale(1); }
+
+  /* Pause and pulse at stop 4 */
+  75% { top: 87.5%; transform: scale(1.8); box-shadow: 0 0 20px rgba(27, 61, 33, 0.8), 0 0 40px rgba(27, 61, 33, 0.4); }
+  78% { top: 87.5%; transform: scale(1); box-shadow: 0 0 8px rgba(27, 61, 33, 0.5); }
+
+  /* Travel to bottom and fade out */
+  95% { top: 100%; opacity: 1; }
+  100% { top: 100%; opacity: 0; transform: scale(1); }
 }
 
 /* ═══ RESPONSIVE ═══ */
