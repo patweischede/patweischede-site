@@ -531,37 +531,37 @@ section { padding: 8rem 0; position: relative; }
 .flow-section { position: relative; padding-left: 3rem; }
 .flow-line {
   position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 2px;
-  background: rgba(27,61,33,0.2);
+  left: 1px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(27, 61, 33, 0.2);
 }
 .flow-dot {
   position: absolute;
-  left: -3px;
-  width: 8px;
-  height: 8px;
-  margin-left: -3px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  margin-left: -4px;
   border-radius: 50%;
   background: var(--green);
-  box-shadow: 0 0 12px rgba(27, 61, 33, 0.5);
+  box-shadow: 0 0 10px rgba(27, 61, 33, 0.6);
   z-index: 2;
   opacity: 0;
-  transition: opacity 0.3s;
 }
 .flow-sonar {
   position: absolute;
-  left: -3px;
-  width: 8px;
-  height: 8px;
-  margin-left: -3px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  margin-left: -4px;
   border-radius: 50%;
-  border: 2px solid rgba(42, 92, 51, 0.8);
   z-index: 1;
   opacity: 0;
   pointer-events: none;
 }
 .flow-sonar.pulse {
-  animation: sonarPulse 1s ease-out forwards;
+  animation: sonarPulse 1.6s ease-out forwards;
 }
 .flow-item { padding: 2rem 0; position: relative; }
 .flow-item::before {
@@ -569,12 +569,12 @@ section { padding: 8rem 0; position: relative; }
   position: absolute;
   left: -3rem;
   top: 2.4rem;
-  width: 8px;
-  height: 8px;
-  margin-left: -3px;
+  width: 10px;
+  height: 10px;
+  margin-left: -4px;
   border-radius: 50%;
   background: var(--green);
-  box-shadow: 0 0 8px rgba(27, 61, 33, 0.5);
+  box-shadow: 0 0 6px rgba(27, 61, 33, 0.4);
 }
 .flow-label {
   font-size: 0.7rem;
@@ -715,9 +715,30 @@ footer {
   to { opacity: 1; transform: translateY(0); }
 }
 @keyframes sonarPulse {
-  0% { transform: scale(1); opacity: 0.8; border-color: rgba(42, 92, 51, 0.8); }
-  50% { transform: scale(3.5); opacity: 0.4; border-color: rgba(42, 92, 51, 0.5); }
-  100% { transform: scale(6); opacity: 0; border-color: rgba(42, 92, 51, 0); }
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+    box-shadow: 0 0 0 0 rgba(42, 92, 51, 0.6);
+    border: 2px solid rgba(42, 92, 51, 0.5);
+  }
+  30% {
+    transform: scale(4);
+    opacity: 0.35;
+    box-shadow: 0 0 8px 2px rgba(42, 92, 51, 0.2);
+    border: 1.5px solid rgba(42, 92, 51, 0.3);
+  }
+  60% {
+    transform: scale(7);
+    opacity: 0.15;
+    box-shadow: 0 0 12px 4px rgba(42, 92, 51, 0.1);
+    border: 1px solid rgba(42, 92, 51, 0.15);
+  }
+  100% {
+    transform: scale(10);
+    opacity: 0;
+    box-shadow: 0 0 16px 6px rgba(42, 92, 51, 0);
+    border: 0.5px solid rgba(42, 92, 51, 0);
+  }
 }
 
 /* ═══ RESPONSIVE ═══ */
@@ -1081,7 +1102,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Flow dot animation - travels to each static dot position with sonar pulse
+// Flow dot animation - smooth travel with sonar pulse at each stop
 (function() {
   const flowSection = document.querySelector('.flow-section');
   if (!flowSection) return;
@@ -1089,6 +1110,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   const dot = flowSection.querySelector('.flow-dot');
   const sonar = flowSection.querySelector('.flow-sonar');
   const items = flowSection.querySelectorAll('.flow-item');
+  const line = flowSection.querySelector('.flow-line');
   if (!dot || !sonar || items.length === 0) return;
 
   function getStopPositions() {
@@ -1096,67 +1118,83 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     const remInPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
     return Array.from(items).map(item => {
       const itemRect = item.getBoundingClientRect();
-      return (itemRect.top - sectionRect.top) + (2.4 * remInPx) + 4;
+      return (itemRect.top - sectionRect.top) + (2.4 * remInPx) + 5;
     });
   }
 
   let positions = [];
-  let animating = false;
+  let running = false;
 
   function updatePositions() { positions = getStopPositions(); }
 
-  function moveTo(targetTop, duration) {
+  function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  function animateProperty(element, prop, from, to, duration, easeFn) {
     return new Promise(resolve => {
-      const startTop = parseFloat(dot.style.top) || 0;
-      const startTime = performance.now();
-      function step(now) {
-        const p = Math.min((now - startTime) / duration, 1);
-        const e = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
-        dot.style.top = (startTop + (targetTop - startTop) * e) + 'px';
-        if (p < 1) requestAnimationFrame(step);
+      const start = performance.now();
+      function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeFn ? easeFn(progress) : progress;
+        const value = from + (to - from) * eased;
+        if (prop === 'top')     element.style.top     = value + 'px';
+        else if (prop === 'opacity') element.style.opacity = value;
+        if (progress < 1) requestAnimationFrame(tick);
         else resolve();
       }
-      requestAnimationFrame(step);
+      requestAnimationFrame(tick);
     });
   }
 
   function triggerSonar(topPos) {
     sonar.classList.remove('pulse');
-    sonar.style.top = topPos + 'px';
+    sonar.style.top = (topPos - 5) + 'px';
     void sonar.offsetWidth;
     sonar.classList.add('pulse');
   }
 
-  async function runCycle() {
-    if (animating) return;
-    animating = true;
-    updatePositions();
-    if (positions.length === 0) { animating = false; return; }
+  function wait(ms) { return new Promise(r => setTimeout(r, ms)); }
 
-    dot.style.top = (positions[0] - 40) + 'px';
+  async function runCycle() {
+    if (running) return;
+    running = true;
+    updatePositions();
+    if (positions.length === 0) { running = false; return; }
+
+    dot.style.top = (positions[0] - 65) + 'px';
     dot.style.opacity = '0';
-    await new Promise(r => setTimeout(r, 200));
-    dot.style.opacity = '1';
+    await wait(300);
+    await animateProperty(dot, 'opacity', 0, 1, 600, easeInOutCubic);
 
     for (let i = 0; i < positions.length; i++) {
-      await moveTo(positions[i], 600);
+      const targetY = positions[i] - 5;
+      const currentY = parseFloat(dot.style.top) || 0;
+      const travelDuration = Math.max(500, Math.min(900, Math.abs(targetY - currentY) * 2.5));
+
+      await animateProperty(dot, 'top', currentY, targetY, travelDuration, easeInOutCubic);
       triggerSonar(positions[i]);
-      await new Promise(r => setTimeout(r, 1200));
+      dot.style.boxShadow = '0 0 18px rgba(27, 61, 33, 0.8), 0 0 30px rgba(27, 61, 33, 0.3)';
+      await wait(1400);
+      dot.style.boxShadow = '0 0 10px rgba(27, 61, 33, 0.6)';
+      await wait(200);
     }
 
-    await moveTo(positions[positions.length - 1] + 50, 400);
-    dot.style.opacity = '0';
-    await new Promise(r => setTimeout(r, 800));
+    const lastY = positions[positions.length - 1] - 5;
+    animateProperty(dot, 'top', lastY, lastY + 40, 800, easeInOutCubic);
+    await animateProperty(dot, 'opacity', 1, 0, 800, easeInOutCubic);
+    await wait(1000);
 
-    animating = false;
+    running = false;
     runCycle();
   }
 
   const flowObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting && !animating) runCycle();
+      if (entry.isIntersecting && !running) runCycle();
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.15 });
 
   flowObserver.observe(flowSection);
   window.addEventListener('resize', updatePositions);
