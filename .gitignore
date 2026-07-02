@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Local Claude Code settings (personal, not shared)
+.claude/settings.local.json
+
+# Client screenshots used only for testimonial extraction.
+# Contains client PII (names, visa/application numbers, emails, phone
+# numbers). Never commit — kept local only. The site's testimonials are
+# plain text, extracted and scrubbed separately; these source images are
+# not referenced by index.html.
+images/
