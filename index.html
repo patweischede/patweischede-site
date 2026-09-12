@@ -406,6 +406,34 @@
   }
   .aside b { font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 6px; font-weight: 500; }
 
+  /* ---------- voices ---------- */
+
+  .voices { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  @media (min-width: 760px) { .voices { grid-template-columns: 1fr 1fr; } }
+  .voice {
+    background: var(--surface);
+    padding: 24px 22px;
+    display: grid;
+    gap: 14px;
+    align-content: start;
+  }
+  .voice p {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: var(--step-0);
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0;
+    max-width: none;
+  }
+  .voice-by {
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+
   /* ---------- practice ---------- */
 
   .facts { display: grid; gap: 0; border-top: 1px solid var(--line); }
@@ -757,6 +785,41 @@
           </div>
         </article>
 
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-label="Client voices">
+    <div class="rail">In their words</div>
+    <div class="band-body">
+      <h2>What clients say</h2>
+      <p>Feedback from immigration clients, lightly trimmed for length. Names and identifying details are limited at their request.</p>
+
+      <div class="voices">
+        <blockquote class="voice">
+          <p>Heartfelt thanks to Sir Dean for the fast approval of my work visa. Transitioning from a student visa to an AEWV, his hard work and patience are truly unmatched. He is thorough and organized, ensuring no detail is overlooked.</p>
+          <cite class="voice-by">Crystal · Student visa to work visa</cite>
+        </blockquote>
+        <blockquote class="voice">
+          <p>From applying for our residency visa to achieving permanent residency, your kindness, patience and expertise gave us the strength to keep going. You made what once seemed impossible, possible.</p>
+          <cite class="voice-by">A family · Residence to permanent residency</cite>
+        </blockquote>
+        <blockquote class="voice">
+          <p>I am extremely satisfied with the service. The entire process has been incredibly smooth. He answered all our questions thoroughly, and explained the specific details of our visa perfectly.</p>
+          <cite class="voice-by">Rugien · Visa applicant</cite>
+        </blockquote>
+        <blockquote class="voice">
+          <p>Responsive and knowledgeable in terms of policies and how to achieve your move to NZ. The staff is very helpful with additional queries and requirements.</p>
+          <cite class="voice-by">Jason · Family relocation</cite>
+        </blockquote>
+        <blockquote class="voice">
+          <p>Their friendly, excellent service made the visa process a breeze. Their meticulous attention to detail left no room for errors. The team's genuine care and empathy made the journey feel like a partnership, not just a transaction.</p>
+          <cite class="voice-by">Desiree · Visa approved</cite>
+        </blockquote>
+        <blockquote class="voice">
+          <p>Thank you so much, Dean, for taking the time to answer my questions and for understanding a mother's heart. Now everything is much clearer, and I can travel with much less stress.</p>
+          <cite class="voice-by">A parent · Family visitor visa</cite>
+        </blockquote>
       </div>
     </div>
   </section>
