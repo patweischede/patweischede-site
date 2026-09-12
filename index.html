@@ -1,1449 +1,844 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-NZ">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pat Weischede — AI Systems for Professional Services</title>
-<meta name="description" content="I build AI-powered automation infrastructure for professional services firms. Lead pipelines, client onboarding, content production, and operational systems. Built and proven inside a 20-year immigration advisory practice.">
-<meta property="og:title" content="Pat Weischede — AI Systems for Professional Services">
-<meta property="og:description" content="Automation infrastructure for professional services firms. Built and proven inside a 20-year immigration practice.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Pat Weischede: Operations Manager. Marketing and growth, business operations, AI and automation, and regulated immigration advice.">
+<title>Pat Weischede</title>
+<meta property="og:title" content="Pat Weischede — Marketing, Operations &amp; Automation">
+<meta property="og:description" content="Marketing and growth, business operations, AI and automation, and regulated immigration advice — built and proven inside a regulated advisory practice.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://patweischede.com">
 <meta property="og:image" content="https://patweischede.com/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://patweischede.com">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ground: #EDF0EE;
+    --surface: #FFFFFF;
+    --surface-sunk: #E4E9E6;
+    --ink: #14201D;
+    --ink-soft: #354441;
+    --muted: #5A6B66;
+    --line: #D2DAD6;
+    --line-strong: #B4C0BB;
+    --accent: #0E5A4C;
+    --accent-soft: #DCEAE5;
+    --signal: #A94C18;
+    --focus: #0E5A4C;
 
-:root {
-  --black: #000000;
-  --card: #111111;
-  --green: #1b3d21;
-  --green-light: #2a5c33;
-  --green-glow: rgba(27, 61, 33, 0.5);
-  --green-subtle: rgba(27, 61, 33, 0.15);
-  --white: #ffffff;
-  --gray-100: #f5f5f7;
-  --gray-200: #d2d2d7;
-  --gray-400: #86868b;
-  --gray-600: #6e6e73;
-  --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Helvetica, Arial, sans-serif;
-}
+    --display: "Fraunces", "Iowan Old Style", Georgia, serif;
+    --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: var(--font);
-  background: var(--black);
-  color: var(--gray-100);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* ═══ REVEAL ═══ */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-d1 { transition-delay: 0.1s; }
-.reveal-d2 { transition-delay: 0.2s; }
-.reveal-d3 { transition-delay: 0.3s; }
-.reveal-d4 { transition-delay: 0.4s; }
-
-/* ═══ NAV ═══ */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 3rem;
-  height: 52px;
-  background: rgba(0, 0, 0, 0.72);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-.nav-name {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--gray-100);
-  letter-spacing: -0.01em;
-  text-decoration: none;
-}
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-  align-items: center;
-}
-.nav-links a {
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: var(--gray-400);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-.nav-links a:hover { color: var(--white); }
-.nav-cta {
-  color: var(--white) !important;
-  background: var(--green);
-  padding: 0.4rem 1rem;
-  border-radius: 980px;
-  font-weight: 500 !important;
-  transition: background 0.3s, box-shadow 0.3s;
-}
-.nav-cta:hover {
-  background: var(--green-light) !important;
-  box-shadow: 0 0 20px var(--green-glow);
-}
-
-/* Hamburger */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-  z-index: 1002;
-}
-.hamburger span {
-  width: 20px; height: 1.5px;
-  background: var(--gray-200);
-  transition: 0.3s;
-  display: block;
-}
-.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 4.5px); }
-.hamburger.active span:nth-child(2) { opacity: 0; }
-.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4.5px); }
-
-.mobile-menu {
-  display: none;
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 1001;
-  background: rgba(0,0,0,0.95);
-  backdrop-filter: blur(20px);
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-}
-.mobile-menu.open { display: flex; }
-.mobile-menu a {
-  font-size: 1.3rem;
-  font-weight: 400;
-  color: var(--gray-200);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-.mobile-menu a:hover { color: var(--green-light); }
-.mobile-menu .nav-cta {
-  margin-top: 1rem;
-  padding: 0.65rem 1.5rem;
-  font-size: 1rem;
-}
-
-/* ═══ UTILITIES ═══ */
-.container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
-.btn {
-  display: inline-block;
-  font-size: 0.85rem;
-  font-weight: 500;
-  text-decoration: none;
-  padding: 0.75rem 1.75rem;
-  border-radius: 980px;
-  transition: all 0.3s;
-  cursor: pointer;
-}
-.btn-primary {
-  background: var(--green);
-  color: var(--white);
-  border: 1px solid var(--green);
-}
-.btn-primary:hover {
-  background: var(--green-light);
-  box-shadow: 0 0 30px var(--green-glow);
-}
-.btn-secondary {
-  background: transparent;
-  color: var(--gray-200);
-  border: 1px solid rgba(255,255,255,0.2);
-}
-.btn-secondary:hover {
-  border-color: var(--green);
-  color: var(--white);
-}
-.divider {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(27,61,33,0.3), transparent);
-}
-
-/* ═══ SECTIONS ═══ */
-section { padding: 8rem 0; position: relative; }
-.section-label {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--green-light);
-  margin-bottom: 1rem;
-}
-.section-title {
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1.1;
-  margin-bottom: 1rem;
-}
-.section-desc {
-  font-size: 1.05rem;
-  font-weight: 300;
-  color: var(--gray-400);
-  max-width: 560px;
-  line-height: 1.6;
-  margin-bottom: 3.5rem;
-}
-
-/* ═══ INTERLUDE ═══ */
-.interlude {
-  padding: 10rem 2rem;
-  text-align: center;
-}
-.interlude-text {
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  line-height: 1.35;
-  max-width: 800px;
-  margin: 0 auto;
-  color: var(--gray-200);
-}
-.interlude-text strong { font-weight: 600; color: var(--white); }
-.interlude-text .green { color: var(--green-light); }
-
-/* ═══ HERO ═══ */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 8rem 2rem 6rem;
-  position: relative;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(27,61,33,0.12) 0%, transparent 70%);
-  pointer-events: none;
-}
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--green-light);
-  margin-bottom: 2rem;
-  opacity: 0;
-  animation: fadeDown 0.8s 0.3s ease both;
-}
-.hero-badge::before,
-.hero-badge::after {
-  content: '';
-  width: 24px; height: 1px;
-  background: var(--green);
-}
-.hero h1 {
-  font-size: clamp(2.8rem, 7vw, 5.5rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: fadeUp 1s 0.5s ease both;
-}
-.hero h1 .green { color: var(--green-light); }
-.hero-sub {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  font-weight: 300;
-  color: var(--gray-400);
-  max-width: 600px;
-  line-height: 1.6;
-  margin-bottom: 3rem;
-  opacity: 0;
-  animation: fadeUp 1s 0.7s ease both;
-}
-.hero-ctas {
-  display: flex;
-  gap: 1rem;
-  opacity: 0;
-  animation: fadeUp 1s 0.9s ease both;
-}
-
-/* ═══ ORIGIN STORY ═══ */
-.origin-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-}
-.origin-body p {
-  font-size: 0.95rem;
-  color: var(--gray-400);
-  line-height: 1.65;
-  margin-bottom: 1.25rem;
-}
-.origin-body p strong {
-  color: var(--gray-100);
-  font-weight: 500;
-}
-.origin-sidebar {
-  padding: 2rem;
-  border-radius: 16px;
-  background: var(--card);
-  border: 1px solid rgba(255,255,255,0.06);
-}
-.origin-sidebar-label {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--green-light);
-  margin-bottom: 1rem;
-}
-.origin-sidebar p {
-  font-size: 0.88rem;
-  color: var(--gray-400);
-  line-height: 1.55;
-  margin-bottom: 1.25rem;
-}
-.origin-sidebar a {
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--green-light);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-.origin-sidebar a:hover { color: var(--white); }
-.origin-sidebar a::after { content: ' →'; }
-
-.origin-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  margin-top: 2.5rem;
-}
-.stat-item {
-  padding: 1.25rem;
-  border-radius: 12px;
-  background: rgba(27,61,33,0.08);
-  border: 1px solid rgba(27,61,33,0.15);
-}
-.stat-number {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--green-light);
-  margin-bottom: 0.25rem;
-}
-.stat-label {
-  font-size: 0.75rem;
-  color: var(--gray-400);
-}
-
-/* ═══ GLASS CARDS ═══ */
-.glass-card {
-  background: rgba(255,255,255,0.03);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px;
-  padding: 2rem;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  position: relative;
-  overflow: hidden;
-}
-.glass-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--green), transparent);
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-.glass-card:hover {
-  background: rgba(255,255,255,0.06);
-  border-color: rgba(27,61,33,0.4);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(27,61,33,0.15);
-}
-.glass-card:hover::before { opacity: 1; }
-.card-icon {
-  width: 40px; height: 40px;
-  border-radius: 10px;
-  background: var(--green-subtle);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.25rem;
-  font-size: 1.1rem;
-}
-.card-title {
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--white);
-}
-.card-text {
-  font-size: 0.85rem;
-  color: var(--gray-400);
-  line-height: 1.55;
-  margin-bottom: 0.75rem;
-}
-.card-proof {
-  font-size: 0.78rem;
-  color: var(--green-light);
-  font-weight: 500;
-  padding-top: 0.5rem;
-  border-top: 1px solid rgba(27,61,33,0.2);
-}
-
-/* ═══ GRIDS ═══ */
-.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-
-/* ═══ NOTE ═══ */
-.note {
-  border-left: 3px solid var(--green);
-  padding: 1.25rem 1.5rem;
-  background: rgba(27,61,33,0.06);
-  border-radius: 0 12px 12px 0;
-  margin: 2.5rem 0;
-}
-.note-label {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--green-light);
-  margin-bottom: 0.4rem;
-}
-.note-text {
-  font-size: 0.9rem;
-  color: var(--gray-200);
-  line-height: 1.55;
-}
-
-/* ═══ TECH PILLS ═══ */
-.tech-pills { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
-.pill {
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  padding: 0.4rem 0.9rem;
-  border-radius: 980px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  color: var(--gray-200);
-  transition: all 0.3s;
-}
-.pill:hover {
-  border-color: var(--green);
-  background: var(--green-subtle);
-  color: var(--white);
-}
-
-/* ═══ ORBITAL ═══ */
-.orbital-wrap { display: flex; align-items: center; justify-content: center; margin: 3rem 0; }
-.orbital-container {
-  width: 320px;
-  height: 320px;
-  position: relative;
-  overflow: visible;
-}
-.orbital-center {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80px; height: 80px;
-  border-radius: 50%;
-  background: var(--green);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.65rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--white);
-  box-shadow: 0 0 40px rgba(27, 61, 33, 0.5);
-  z-index: 2;
-  transition: box-shadow 0.8s ease, transform 0.8s ease;
-}
-.orbital-center.pulse {
-  box-shadow: 0 0 60px rgba(27, 61, 33, 0.8), 0 0 100px rgba(27, 61, 33, 0.3);
-  transform: translate(-50%, -50%) scale(1.06);
-}
-.orbital-ring {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid rgba(27, 61, 33, 0.15);
-  border-radius: 50%;
-  pointer-events: none;
-}
-.orbital-ring-1 { width: 180px; height: 180px; }
-.orbital-ring-2 { width: 280px; height: 280px; }
-.orbital-node {
-  position: absolute;
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  background: var(--card);
-  border: 1px solid rgba(27, 61, 33, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.55rem;
-  font-weight: 500;
-  color: var(--gray-200);
-  z-index: 3;
-  opacity: 0;
-  will-change: transform, opacity;
-  transition: none;
-}
-
-/* ═══ FLOW TIMELINE ═══ */
-.flow-section { position: relative; padding-left: 3rem; }
-.flow-line {
-  position: absolute;
-  left: 1px;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: rgba(27, 61, 33, 0.2);
-}
-.flow-dot {
-  position: absolute;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  margin-left: -4px;
-  border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 10px rgba(27, 61, 33, 0.6);
-  z-index: 2;
-  opacity: 0;
-  transition: box-shadow 0.6s ease;
-}
-.flow-sonar {
-  position: absolute;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  margin-left: -4px;
-  border-radius: 50%;
-  z-index: 1;
-  opacity: 0;
-  pointer-events: none;
-}
-.flow-sonar.pulse {
-  animation: sonarPulse 1.6s ease-out forwards;
-}
-.flow-item { padding: 2rem 0; position: relative; }
-.flow-item::before {
-  content: '';
-  position: absolute;
-  left: -3rem;
-  top: 2.4rem;
-  width: 10px;
-  height: 10px;
-  margin-left: -4px;
-  border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 6px rgba(27, 61, 33, 0.4);
-}
-.flow-label {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--green-light);
-  margin-bottom: 0.5rem;
-}
-.flow-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 0.5rem;
-}
-.flow-text {
-  font-size: 0.9rem;
-  color: var(--gray-400);
-  line-height: 1.6;
-  max-width: 500px;
-}
-
-/* ═══ CASE CARDS ═══ */
-.case-card {
-  background: var(--card);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px;
-  padding: 2rem;
-  transition: all 0.4s;
-}
-.case-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(27,61,33,0.15);
-  border-color: rgba(27,61,33,0.3);
-}
-.case-type {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--green-light);
-  margin-bottom: 0.6rem;
-}
-.case-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 0.5rem;
-}
-.case-desc {
-  font-size: 0.85rem;
-  color: var(--gray-400);
-  line-height: 1.5;
-}
-.case-metric {
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--green-light);
-  margin-top: 0.75rem;
-}
-
-/* ═══ CTA ═══ */
-.cta-section {
-  text-align: left;
-  padding: 8rem 0;
-  position: relative;
-}
-.cta-section::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(ellipse 50% 60% at 50% 50%, rgba(27, 61, 33, 0.1) 0%, transparent 70%);
-  pointer-events: none;
-}
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 4rem;
-  align-items: start;
-}
-.contact-title {
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1.1;
-  margin-bottom: 1.25rem;
-}
-.contact-title .green {
-  color: var(--green-light);
-}
-.contact-desc {
-  font-size: 0.95rem;
-  font-weight: 300;
-  color: var(--gray-400);
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
-}
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  margin-bottom: 2.5rem;
-}
-.contact-detail-item {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-}
-.contact-detail-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--green-subtle);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--green-light);
-  flex-shrink: 0;
-}
-.contact-detail-label {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 0.1rem;
-}
-.contact-detail-value {
-  font-size: 0.82rem;
-  color: var(--gray-400);
-}
-.contact-imm-link {
-  grid-column: 1 / -1;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  max-width: 480px;
-}
-.cta-secondary-text {
-  font-size: 0.82rem;
-  color: var(--gray-600);
-  margin-bottom: 0.3rem;
-}
-.cta-secondary-link {
-  font-size: 0.82rem;
-  color: var(--gray-400);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-.cta-secondary-link:hover {
-  color: var(--green-light);
-}
-.contact-form-card {
-  background: var(--card);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 20px;
-  padding: 2rem;
-  position: relative;
-  overflow: hidden;
-  min-height: 500px;
-}
-.contact-form-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--green), transparent);
-}
-
-/* ═══ FOOTER ═══ */
-footer {
-  padding: 3rem 2rem;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  text-align: center;
-}
-.footer-links {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-.footer-links a {
-  font-size: 0.78rem;
-  color: var(--gray-400);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-.footer-links a:hover { color: var(--green-light); }
-.footer-text {
-  font-size: 0.78rem;
-  color: var(--gray-600);
-  line-height: 1.6;
-}
-
-/* Immigration quiet link */
-.imm-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.8rem;
-  color: var(--gray-400);
-  text-decoration: none;
-  transition: color 0.3s;
-  margin-top: 0.5rem;
-}
-.imm-link:hover { color: var(--green-light); }
-.imm-link::after { content: ' →'; }
-
-/* ═══ ANIMATIONS ═══ */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes sonarPulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.6;
-    box-shadow: 0 0 0 0 rgba(42, 92, 51, 0.6);
-    border: 2px solid rgba(42, 92, 51, 0.5);
+    --measure: 68ch;
+    --step--1: 0.8125rem;
+    --step-0: 1rem;
+    --step-1: 1.1875rem;
+    --step-2: 1.5rem;
+    --step-3: 2rem;
+    --step-4: clamp(2.4rem, 1.6rem + 3.4vw, 4rem);
   }
-  30% {
-    transform: scale(4);
-    opacity: 0.35;
-    box-shadow: 0 0 8px 2px rgba(42, 92, 51, 0.2);
-    border: 1.5px solid rgba(42, 92, 51, 0.3);
-  }
-  60% {
-    transform: scale(7);
-    opacity: 0.15;
-    box-shadow: 0 0 12px 4px rgba(42, 92, 51, 0.1);
-    border: 1px solid rgba(42, 92, 51, 0.15);
-  }
-  100% {
-    transform: scale(10);
-    opacity: 0;
-    box-shadow: 0 0 16px 6px rgba(42, 92, 51, 0);
-    border: 0.5px solid rgba(42, 92, 51, 0);
-  }
-}
 
-/* ═══ RESPONSIVE ═══ */
-@media (max-width: 1024px) {
-  .origin-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .origin-stats { grid-template-columns: repeat(3, 1fr); }
-}
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0D1311;
+      --surface: #141C19;
+      --surface-sunk: #101815;
+      --ink: #E6EBE8;
+      --ink-soft: #CBD5D1;
+      --muted: #92A39D;
+      --line: #26322E;
+      --line-strong: #38473F;
+      --accent: #57C2A6;
+      --accent-soft: #17302A;
+      --signal: #E0884F;
+      --focus: #57C2A6;
+    }
+  }
 
-@media (max-width: 768px) {
-  nav { padding: 0 1.5rem; }
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  .container { padding: 0 1.5rem; }
-  section { padding: 5rem 0; }
-  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .contact-form-card { padding: 1.5rem; min-height: 400px; }
-  .interlude { padding: 6rem 1.5rem; }
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
-  .origin-stats { grid-template-columns: 1fr 1fr 1fr; }
-  .hero { padding: 7rem 1.5rem 4rem; }
-  .hero-ctas { flex-direction: column; align-items: center; }
-  .flow-section { padding-left: 2rem; }
-  .flow-item::before { left: -2rem; }
-}
+  :root[data-theme="dark"] {
+    --ground: #0D1311;
+    --surface: #141C19;
+    --surface-sunk: #101815;
+    --ink: #E6EBE8;
+    --ink-soft: #CBD5D1;
+    --muted: #92A39D;
+    --line: #26322E;
+    --line-strong: #38473F;
+    --accent: #57C2A6;
+    --accent-soft: #17302A;
+    --signal: #E0884F;
+    --focus: #57C2A6;
+  }
 
-@media (max-width: 480px) {
-  .origin-stats { grid-template-columns: 1fr; }
-}
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-inline: 20px;
+    padding-block: 0 0;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ---------- shared section scaffolding ---------- */
+
+  .band {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px 32px;
+    padding-block: 56px;
+    border-top: 1px solid var(--line);
+  }
+
+  @media (min-width: 900px) {
+    .band {
+      grid-template-columns: 128px minmax(0, 1fr);
+      padding-block: 76px;
+    }
+  }
+
+  .rail {
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 6px;
+  }
+
+  .band-body { min-width: 0; display: grid; gap: 28px; }
+
+  h2 {
+    font-family: var(--display);
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: var(--step-3);
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: var(--step-2);
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  p { margin: 0; max-width: var(--measure); color: var(--ink-soft); }
+  .lede { font-size: var(--step-1); color: var(--ink); }
+
+  /* ---------- masthead ---------- */
+
+  .masthead { padding-block: 64px 8px; }
+
+  .stamp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 6px 14px;
+    background: var(--surface);
+  }
+  .stamp b { font-weight: 500; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .stamp .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--signal);
+    flex: none;
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: var(--step-4);
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+    margin: 24px 0 0;
+  }
+
+  .role {
+    font-family: var(--mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin-top: 14px;
+    max-width: 46ch;
+  }
+
+  .thesis {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(1.35rem, 1.05rem + 1.1vw, 1.75rem);
+    line-height: 1.32;
+    color: var(--ink);
+    max-width: 34ch;
+    margin: 32px 0 0;
+    text-wrap: balance;
+  }
+  .thesis em { font-style: italic; color: var(--accent); }
+
+  .masthead-grid { display: grid; gap: 32px; }
+  @media (min-width: 820px) {
+    .masthead-grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: end; gap: 48px; }
+  }
+
+  .intro p + p { margin-top: 14px; }
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+    padding-block: 0 0;
+  }
+  .contact a {
+    font-family: var(--mono);
+    font-size: 0.8125rem;
+    text-decoration: none;
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    padding: 9px 16px;
+    border-radius: 2px;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .contact a:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ---------- snapshot ---------- */
+
+  .snapshot {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(178px, 1fr));
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+  }
+  .metric {
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 18px 18px 20px;
+    background: var(--surface);
+  }
+  .metric .fig {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.75rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+  }
+  .metric .cap {
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 10px;
+    line-height: 1.45;
+  }
+
+  /* ---------- domains ---------- */
+
+  .domains { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  @media (min-width: 760px) { .domains { grid-template-columns: 1fr 1fr; } }
+
+  .domain {
+    background: var(--surface);
+    padding: 26px 24px 28px;
+    display: grid;
+    gap: 14px;
+    align-content: start;
+  }
+  .domain-head { display: flex; align-items: baseline; gap: 12px; }
+  .domain-head .idx {
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    color: var(--signal);
+    letter-spacing: 0.08em;
+    flex: none;
+  }
+  .domain ul { margin: 0; padding-left: 1.05em; color: var(--ink-soft); display: grid; gap: 7px; }
+  .domain li::marker { color: var(--line-strong); }
+  .domain .proof {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    line-height: 1.55;
+    color: var(--accent);
+    border-top: 1px dashed var(--line-strong);
+    padding-top: 14px;
+    margin-top: 4px;
+  }
+
+  /* ---------- operating stack ---------- */
+
+  .stack { display: grid; gap: 10px; }
+  .layer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px 20px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    padding: 16px 18px;
+    transition: border-left-color 0.18s ease, transform 0.18s ease;
+  }
+  @media (min-width: 700px) {
+    .layer { grid-template-columns: 26px minmax(0, 220px) minmax(0, 1fr); align-items: baseline; }
+  }
+  .layer:hover { border-left-color: var(--signal); }
+  .layer .n {
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .layer .name { font-weight: 600; color: var(--ink); }
+  .layer .what { color: var(--ink-soft); font-size: var(--step--1); line-height: 1.55; }
+  .layer .tools {
+    grid-column: 1 / -1;
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+    padding-top: 4px;
+  }
+  @media (min-width: 700px) { .layer .tools { grid-column: 2 / -1; } }
+  .stack-note {
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  /* ---------- work ---------- */
+
+  .work { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .case {
+    background: var(--surface);
+    padding: 28px 24px 30px;
+    display: grid;
+    gap: 22px;
+  }
+  @media (min-width: 860px) {
+    .case { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 40px; }
+  }
+  .case-main { display: grid; gap: 14px; align-content: start; }
+  .case-ref {
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--signal);
+  }
+  .case-main p { font-size: var(--step--1); line-height: 1.65; }
+  .case-main .built { color: var(--ink); }
+  .case-main .built b { font-weight: 600; }
+
+  .results { align-self: start; }
+  .results table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .results caption {
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+    padding-bottom: 10px;
+  }
+  .results th, .results td {
+    text-align: left;
+    padding: 8px 10px 8px 0;
+    border-bottom: 1px solid var(--line);
+    vertical-align: baseline;
+  }
+  .results th { font-weight: 400; color: var(--muted); }
+  .results td { text-align: right; padding-right: 0; color: var(--ink); font-weight: 500; }
+  .results tr:last-child th, .results tr:last-child td { border-bottom: none; }
+  .results td.hi { color: var(--accent); }
+
+  .aside {
+    background: var(--surface-sunk);
+    border-left: 2px solid var(--line-strong);
+    padding: 14px 16px;
+    font-size: var(--step--1);
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+  .aside b { font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 6px; font-weight: 500; }
+
+  /* ---------- practice ---------- */
+
+  .facts { display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .fact {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px 24px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  @media (min-width: 700px) { .fact { grid-template-columns: 200px minmax(0, 1fr); } }
+  .fact dt {
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 3px;
+  }
+  .fact dd { margin: 0; color: var(--ink-soft); font-size: var(--step--1); line-height: 1.6; }
+  .fact dd b { color: var(--ink); font-weight: 600; }
+
+  .toolset { display: grid; gap: 14px; }
+  .toolrow { display: grid; gap: 6px 20px; }
+  @media (min-width: 700px) { .toolrow { grid-template-columns: 200px minmax(0, 1fr); } }
+  .toolrow dt {
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .toolrow dd { margin: 0; font-size: var(--step--1); color: var(--ink-soft); }
+
+  /* ---------- footer ---------- */
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding-block: 48px 64px;
+    display: grid;
+    gap: 22px;
+  }
+  .sign {
+    font-family: var(--display);
+    font-size: var(--step-2);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .colophon {
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    line-height: 1.7;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
 </style>
-<script src="https://tally.so/widgets/embed.js"></script>
+<style>
+  html { color-scheme: light dark; }
+  body { margin: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-name" href="#">Pat Weischede</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#systems">What I Build</a></li>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#contact" class="nav-cta">Start a Conversation</a></li>
-  </ul>
-  <button class="hamburger" id="menuToggle" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#about" onclick="closeMenu()">About</a>
-  <a href="#systems" onclick="closeMenu()">What I Build</a>
-  <a href="#work" onclick="closeMenu()">Work</a>
-  <a href="#contact" class="nav-cta" onclick="closeMenu()">Start a Conversation</a>
-</div>
+<div class="page">
 
-
-<!-- ═══ HERO ═══ -->
-<section class="hero">
-  <div class="hero-badge">AI & Automation</div>
-  <h1>I build the systems that<br>make practices <span class="green">scale</span>.</h1>
-  <p class="hero-sub">Automated lead pipelines, client onboarding, content production, and operational infrastructure for professional services firms. Built and proven inside a 20-year immigration advisory practice.</p>
-  <div class="hero-ctas">
-    <a href="#contact" class="btn btn-primary">Work With Me</a>
-    <a href="#systems" class="btn btn-secondary">See What I Build</a>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-
-<!-- ═══ ORIGIN: How I got here ═══ -->
-<section id="about">
-  <div class="container">
-    <p class="section-label reveal">Background</p>
-    <h2 class="section-title reveal reveal-d1">I didn't start in tech.<br>I started in immigration.</h2>
-
-    <div class="origin-grid">
-      <div class="origin-body">
-        <p class="reveal reveal-d2">My grandparents migrated to New Zealand in the 1990s. I moved with my mum in the early 2000s. Temporary visas, years of uncertainty, the long road to residence. <strong>I lived the immigration process before I built a career advising on it.</strong></p>
-        <p class="reveal reveal-d3">Today I'm a fully licensed immigration adviser (IAA #202300030) operating under NZ Immigration Help Service Ltd, a family practice with over 20 years of operation and 18,000+ clients assisted.</p>
-        <p class="reveal reveal-d3">But running a professional services practice taught me something else entirely: <strong>the operational side of advisory work is full of bottlenecks that technology can eliminate.</strong> Manual lead triage. Repetitive client comms. Invoice admin. Content production that takes days when it should take minutes.</p>
-        <p class="reveal reveal-d4">So I started building. AI lead scoring. Automated email flows. Code-built websites. Invoice pipelines. Content systems. Everything I deploy runs inside a real practice first. If it works there, it works anywhere.</p>
+  <header class="masthead">
+    <div class="masthead-grid">
+      <div>
+        <span class="stamp"><span class="dot" aria-hidden="true"></span>Operations Manager · Licensed Immigration Adviser <b>202300030</b></span>
+        <h1>Pat<br>Weischede</h1>
+        <p class="role">Operations Manager, NZ Immigration Help Service Ltd. Marketing, automation and business systems. Auckland, Manila, Isabela.</p>
+        <p class="thesis">I build the <em>marketing, automation and operations systems</em> that make a professional practice run — immigration advice included.</p>
       </div>
-
-      <div class="origin-sidebar reveal reveal-d3">
-        <div class="origin-sidebar-label">Immigration Advisory</div>
-        <p>I still actively advise on New Zealand immigration: skilled workers, employers, students, partners, and families. If you're looking for visa help, everything starts at NZIHS.</p>
-        <a href="https://nzihs.com" target="_blank" rel="noopener">NZ Immigration Help Service</a>
-      </div>
-    </div>
-
-    <div class="origin-stats reveal reveal-d4">
-      <div class="stat-item">
-        <div class="stat-number">20+</div>
-        <div class="stat-label">Years of practice (NZIHS)</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">18,000+</div>
-        <div class="stat-label">Clients assisted</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">NZ + PH</div>
-        <div class="stat-label">Dual-country operation</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- INTERLUDE -->
-<div class="divider"></div>
-<div class="interlude reveal">
-  <p class="interlude-text">
-    Most professional services firms are <strong>good at the work</strong><br>
-    and completely manual in <span class="green">everything around it</span>.
-  </p>
-</div>
-<div class="divider"></div>
-
-
-<!-- ═══ WHAT I BUILD ═══ -->
-<section id="systems">
-  <div class="container">
-    <p class="section-label reveal">What I Build</p>
-    <h2 class="section-title reveal reveal-d1">Operational infrastructure<br>for professional services.</h2>
-    <p class="section-desc reveal reveal-d2">
-      I help small firms automate what slows them down: lead qualification, client onboarding, content production, invoicing, and internal workflows. Every system below was built to solve a real problem in a real practice.
-    </p>
-
-    <!-- Orbital -->
-    <div class="orbital-wrap reveal reveal-d3">
-      <div class="orbital-container" id="orbitalContainer">
-        <div class="orbital-center" id="orbitalCore">Systems</div>
-        <div class="orbital-ring orbital-ring-1"></div>
-        <div class="orbital-ring orbital-ring-2"></div>
-        <div class="orbital-node" data-label="AI">AI</div>
-        <div class="orbital-node" data-label="CRM">CRM</div>
-        <div class="orbital-node" data-label="Ops">Ops</div>
-        <div class="orbital-node" data-label="Web">Web</div>
-        <div class="orbital-node" data-label="Data">Data</div>
-      </div>
-    </div>
-
-    <div class="grid-3 reveal">
-      <div class="glass-card">
-        <div class="card-icon">⚡</div>
-        <div class="card-title">Lead Qualification</div>
-        <div class="card-text">AI-powered scoring that grades every enquiry in real-time and routes them into the right sequence. No manual triage, no leads slipping through.</div>
-        <div class="card-proof">Live: Claude API + Make.com pipeline grading 1,200+ leads with personalised routing</div>
-      </div>
-
-      <div class="glass-card">
-        <div class="card-icon">📧</div>
-        <div class="card-title">Client Nurture & Onboarding</div>
-        <div class="card-text">Automated sequences that move prospects from first touch to paid engagement. Confirmation flows, payment reconciliation, bilingual delivery.</div>
-        <div class="card-proof">Live: Brevo engine, 1,200+ registrations across four cities, zero manual confirmation</div>
-      </div>
-
-      <div class="glass-card">
-        <div class="card-icon">🌐</div>
-        <div class="card-title">Web Properties</div>
-        <div class="card-text">Code-built websites on modern infrastructure. No templates, no page builders. Fast, mobile-first, and designed to convert.</div>
-        <div class="card-proof">Live: Three Vercel-deployed sites, mobile-first, sub-second load times</div>
-      </div>
-
-      <div class="glass-card">
-        <div class="card-icon">📊</div>
-        <div class="card-title">Content Production</div>
-        <div class="card-text">Automated pipelines that turn source material into multi-platform content. Strategy, scripting, and distribution across four channels.</div>
-        <div class="card-proof">Live: Policy document to publish-ready video package in a single session</div>
-      </div>
-
-      <div class="glass-card">
-        <div class="card-icon">💰</div>
-        <div class="card-title">Invoicing & Billing</div>
-        <div class="card-text">Send a message, get a draft invoice. Automated extraction, creation, and push to your accounting system.</div>
-        <div class="card-proof">Live: Telegram message to Xero draft invoice, minutes reduced to seconds</div>
-      </div>
-
-      <div class="glass-card">
-        <div class="card-icon">🎯</div>
-        <div class="card-title">Conversion Funnels</div>
-        <div class="card-text">Full-stack acquisition architecture: content to lead capture, scoring, nurture, booking, and engagement. Diagnosed and optimised at every stage.</div>
-        <div class="card-proof">Live: Full pipeline from first touch to signed engagement, AI-scored and automated</div>
-      </div>
-    </div>
-
-    <h3 class="reveal" style="font-size: 1.2rem; font-weight: 600; margin: 4rem 0 1.5rem; color: var(--white);">Tech Stack</h3>
-    <div class="tech-pills reveal">
-      <span class="pill">Make.com</span>
-      <span class="pill">Claude API</span>
-      <span class="pill">Brevo</span>
-      <span class="pill">Tally</span>
-      <span class="pill">Stripe</span>
-      <span class="pill">Xero</span>
-      <span class="pill">Vercel</span>
-      <span class="pill">HTML / CSS / JS</span>
-      <span class="pill">Cursor + Claude Code</span>
-      <span class="pill">Notion</span>
-      <span class="pill">Cal.com</span>
-      <span class="pill">Google Drive</span>
-    </div>
-
-    <div class="note reveal" style="margin-top: 2.5rem;">
-      <div class="note-label">Who This Is For</div>
-      <div class="note-text">Immigration advisers, accountants, lawyers, financial advisers, recruiters: any small professional services firm where the operators are too busy delivering to build the systems that would let them scale. I've been there. I built my way out of it.</div>
-    </div>
-  </div>
-</section>
-
-
-<!-- INTERLUDE -->
-<div class="divider"></div>
-<div class="interlude reveal">
-  <p class="interlude-text">
-    Every system on this page is <span class="green">live and running</span><br>
-    inside a real practice.
-  </p>
-</div>
-<div class="divider"></div>
-
-
-<!-- ═══ PROCESS ═══ -->
-<section>
-  <div class="container">
-    <p class="section-label reveal">How I Work</p>
-    <h2 class="section-title reveal reveal-d1">From bottleneck<br>to infrastructure.</h2>
-    <p class="section-desc reveal reveal-d2">
-      You tell me what's manual, what breaks, and what doesn't scale. I build the system that fixes it.
-    </p>
-
-    <div class="flow-section reveal reveal-d3">
-      <div class="flow-line">
-        <div class="flow-dot"></div>
-        <div class="flow-sonar"></div>
-      </div>
-
-      <div class="flow-item">
-        <div class="flow-label">01 — Audit</div>
-        <div class="flow-title">Map the current state</div>
-        <div class="flow-text">Walk through your workflow end to end. Where are leads coming from? What happens after first contact? Where do things get stuck, dropped, or duplicated? What's taking your time that shouldn't be?</div>
-      </div>
-
-      <div class="flow-item">
-        <div class="flow-label">02 — Architect</div>
-        <div class="flow-title">Design the system</div>
-        <div class="flow-text">Choose the tools, map the data flow, define the triggers and routing. You get a clear blueprint before any building starts. No scope creep, no guesswork.</div>
-      </div>
-
-      <div class="flow-item">
-        <div class="flow-label">03 — Build</div>
-        <div class="flow-title">Deploy and test</div>
-        <div class="flow-text">Build the automations, connect the integrations, deploy the infrastructure. Test with real data before anything goes live. If it doesn't work reliably, it doesn't ship.</div>
-      </div>
-
-      <div class="flow-item">
-        <div class="flow-label">04 — Iterate</div>
-        <div class="flow-title">Monitor and improve</div>
-        <div class="flow-text">Nothing is set-and-forget. Track what's working, identify failure points, optimise continuously. Systems get better over time, not just at launch.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-
-<!-- ═══ SELECTED WORK ═══ -->
-<section id="work">
-  <div class="container">
-    <p class="section-label reveal">In Production</p>
-    <h2 class="section-title reveal reveal-d1">Systems I've built and shipped.</h2>
-    <p class="section-desc reveal reveal-d2">Everything here is running in production, not a prototype or a concept.</p>
-
-    <div class="grid-2 reveal reveal-d3">
-      <div class="case-card">
-        <div class="case-type">AI + Automation</div>
-        <div class="case-title">Lead Scoring and Client Pipeline</div>
-        <div class="case-desc">Claude API integration via Make.com grades every inbound enquiry A/B/C in real-time, routes into personalised Brevo sequences with voice note scripts, and syncs to Google Contacts. From form fill to first adviser touchpoint, fully automated. Built on top of a multi-stage funnel architecture spanning eligibility assessments, webinar registrations, and consultation booking.</div>
-        <div class="case-metric">1,200+ leads scored and routed, zero manual triage</div>
-      </div>
-
-      <div class="case-card">
-        <div class="case-type">Campaign Infrastructure</div>
-        <div class="case-title">Philippines Seminar Series</div>
-        <div class="case-desc">End-to-end campaign infrastructure for a multi-city seminar series across Manila, Quezon City, Rizal, and Isabela. Automated registration flows, confirmation sequences, GCash payment reconciliation, and bilingual comms, all managed through Brevo and Make.com with zero manual processing.</div>
-        <div class="case-metric">2.5 million impressions, 1,200+ registrations, fully automated campaign management</div>
-      </div>
-
-      <div class="case-card">
-        <div class="case-type">Web + Content Systems</div>
-        <div class="case-title">Code-Built Sites and Content Pipeline</div>
-        <div class="case-desc">Hand-coded websites and landing pages deployed on Vercel with mobile-first design, scroll animations, and conversion-focused funnel architecture. Paired with an AI content pipeline that turns policy documents into publish-ready video packages, social posts, and email content across four platforms.</div>
-        <div class="case-metric">Sub-second load times, zero platform fees, source document to multi-platform output</div>
-      </div>
-
-      <div class="case-card">
-        <div class="case-type">Operations + CRM</div>
-        <div class="case-title">Practice Operations Infrastructure</div>
-        <div class="case-desc">Centralised Notion hub for lead management, client tracking, internal SOPs, and staff onboarding across a dual-country practice. Integrated with Telegram-to-Xero invoice automation that eliminates manual billing: one message creates a draft invoice, extracts client details, and pushes to accounting for review.</div>
-        <div class="case-metric">Single operational source of truth, invoice creation reduced from minutes to seconds</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══ CTA ═══ -->
-<div class="divider"></div>
-<section class="cta-section" id="contact">
-  <div class="container">
-    <div class="contact-grid">
-      <!-- Left column -->
-      <div class="contact-info reveal">
-        <p class="section-label">Get Started</p>
-        <h2 class="contact-title">What's eating your<br>team's <span class="green">time</span>?</h2>
-        <p class="contact-desc">
-          Tell me about the manual work slowing your practice down. I'll review it and come back within 48 hours with an honest assessment of what can be automated.
-        </p>
-
-        <div class="contact-details">
-          <div class="contact-detail-item">
-            <div class="contact-detail-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <div class="contact-detail-label">Based in</div>
-              <div class="contact-detail-value">Auckland, New Zealand</div>
-            </div>
-          </div>
-
-          <div class="contact-detail-item">
-            <div class="contact-detail-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            </div>
-            <div>
-              <div class="contact-detail-label">Email</div>
-              <div class="contact-detail-value">pat@patweischede.com</div>
-            </div>
-          </div>
-
-          <div class="contact-detail-item">
-            <div class="contact-detail-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            </div>
-            <div>
-              <div class="contact-detail-label">Working with</div>
-              <div class="contact-detail-value">Professional services firms</div>
-            </div>
-          </div>
+      <div class="intro">
+        <p>Five years inside a regulated advisory practice, from marketing coordinator to Operations Manager. In that time I designed and built the firm's CRM, its automation layer, its AI-assisted document pipeline, its client acquisition system and its offshore delivery team.</p>
+        <p>Four things I actually do: marketing and growth, business operations, AI and automation, and regulated immigration advice. They are the same job: growth fills the pipeline, systems and automation deliver the work, and the license lets me sign off on the parts that need one.</p>
+        <div class="contact">
+          <a href="mailto:pat@patweischede.com">pat@patweischede.com</a>
+          <a href="https://www.linkedin.com/in/patweischede" target="_blank" rel="noopener">LinkedIn</a>
         </div>
-
-      </div>
-
-      <!-- Right column: Tally embed -->
-      <div class="contact-form-card reveal reveal-d2">
-        <iframe data-tally-src="https://tally.so/embed/0Q1xb6?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="1198" frameborder="0" marginheight="0" marginwidth="0" title="Let's see what's possible."></iframe>
-      </div>
-
-      <!-- Immigration link - appears after form on mobile -->
-      <div class="contact-imm-link reveal reveal-d3">
-        <p class="cta-secondary-text">Looking for immigration advice?</p>
-        <a href="https://nzihs.com" target="_blank" rel="noopener" class="cta-secondary-link">Visit NZ Immigration Help Service →</a>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
+  <section class="band" aria-label="Scale of the operation">
+    <div class="rail">Scale</div>
+    <div class="band-body">
+      <div class="snapshot">
+        <div class="metric"><div class="fig">15,000+</div><div class="cap">Records on one CRM spine</div></div>
+        <div class="metric"><div class="fig">100+</div><div class="cap">Automated executions per day</div></div>
+        <div class="metric"><div class="fig">~500</div><div class="cap">Inbound leads per month, auto-triaged</div></div>
+        <div class="metric"><div class="fig">200+</div><div class="cap">Client assessment reports produced</div></div>
+        <div class="metric"><div class="fig">4 / 3 / 2</div><div class="cap">Direct reports, sites, countries</div></div>
+        <div class="metric"><div class="fig">5M+</div><div class="cap">Organic views in a 30-day window</div></div>
+      </div>
+      <p style="font-family: var(--mono); font-size: 0.6875rem; color: var(--muted); letter-spacing: 0.04em; max-width: none;">Figures are practice-level and current as at 2026. Commercial values, fees and client identifiers are withheld.</p>
+    </div>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-links">
-    <a href="https://www.linkedin.com/in/patrick-weischede-8a31b01b9/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://patweischede.com" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://tiktok.com/@askpatvisas" target="_blank" rel="noopener">TikTok</a>
-    <a href="https://youtube.com/@askpatvisas" target="_blank" rel="noopener">YouTube</a>
-  </div>
-  <p class="footer-text">
-    Pat Weischede · Auckland, New Zealand<br>
-    Licensed Immigration Adviser, IAA #202300030 · NZ Immigration Help Service Ltd<br><br>
-    Immigration advice provided under the Immigration Advisers Licensing Act 2007.<br>
-    Systems and automation consulting is a separate service offering.
-  </p>
-</footer>
+  <section class="band" aria-label="Areas of work">
+    <div class="rail">Practice areas</div>
+    <div class="band-body">
+      <h2>Four areas, one operating problem</h2>
+      <p>A professional services firm is constrained by how much expert attention it can spend per client. Everything below is an attack on that constraint from a different side.</p>
 
+      <div class="domains">
+        <article class="domain">
+          <div class="domain-head"><span class="idx">A</span><h3>Marketing and growth</h3></div>
+          <p style="font-size: var(--step--1); line-height: 1.6;">Organic-first demand generation, funnel architecture and conversion design. I own the numbers end to end, not just the top of the funnel.</p>
+          <ul>
+            <li>Funnel architecture and stage gating from first touch to signed engagement</li>
+            <li>Landing pages and conversion design, built and deployed in-house</li>
+            <li>Email lifecycle, segmentation and list management</li>
+            <li>In-market seminar programmes with registration-to-consultation tracking</li>
+            <li>Source attribution and funnel reporting on a deduplicated base</li>
+          </ul>
+          <p class="proof">Audience grown from 50,000 to 130,000+ followers, a 160% increase, with inbound enquiry volume up tenfold, from 10 to 100+ per month, on organic distribution.</p>
+        </article>
 
-<script>
-// Mobile menu
-const toggle = document.getElementById('menuToggle');
-const menu = document.getElementById('mobileMenu');
-toggle.addEventListener('click', () => {
-  toggle.classList.toggle('active');
-  menu.classList.toggle('open');
-  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
-});
-function closeMenu() {
-  toggle.classList.remove('active');
-  menu.classList.remove('open');
-  document.body.style.overflow = '';
-}
+        <article class="domain">
+          <div class="domain-head"><span class="idx">B</span><h3>Business operations</h3></div>
+          <p style="font-size: var(--step--1); line-height: 1.6;">Process design, systems build and offshore delivery. The goal is a team that runs without needing me in the loop.</p>
+          <ul>
+            <li>Stage-gated CRM architecture and pipeline ownership</li>
+            <li>SOPs for enquiry handling, onboarding, document tracking and deliverable production</li>
+            <li>Hiring, employment documentation, onboarding packs and cross-timezone cadence</li>
+            <li>Incident response, permissions, retention and access control</li>
+            <li>Business analysis and business plan writing assessed to an external standard</li>
+          </ul>
+          <p class="proof">Offshore team grown from 2 to 4 across two sites. Four freelance business plans independently assessed pass or fail, all approved first time with no resubmissions.</p>
+        </article>
 
-// Scroll reveal
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        <article class="domain">
+          <div class="domain-head"><span class="idx">C</span><h3>AI and automation</h3></div>
+          <p style="font-size: var(--step--1); line-height: 1.6;">Applied, not experimental. Every AI system I have shipped sits behind a human review gate, because in a regulated context a fast wrong answer costs more than a slow right one.</p>
+          <ul>
+            <li>Retrieval-backed document generation for a structured client deliverable</li>
+            <li>Lead scoring against qualification criteria via the Claude API</li>
+            <li>Intake forms and meeting transcription wired in as structured inputs</li>
+            <li>No-code orchestration across CRM, email, payments and booking</li>
+          </ul>
+          <p class="proof">Flagship report cut from 3 hours to under 30 minutes, an 83% reduction, after six months of retrieval tuning before it went near a client file.</p>
+        </article>
 
-// Flow dot animation - smooth travel with sonar pulse at each stop
-(function() {
-  const flowSection = document.querySelector('.flow-section');
-  if (!flowSection) return;
+        <article class="domain">
+          <div class="domain-head"><span class="idx">D</span><h3>Immigration advice</h3></div>
+          <p style="font-size: var(--step--1); line-height: 1.6;">Full licence held under a statutory code of conduct since 2023. Client matters run end to end, with a written audit trail on every file.</p>
+          <ul>
+            <li>Eligibility analysis and pathway strategy: AEWV, Skilled Migrant, Green List, student and partnership categories</li>
+            <li>Scope, engagement agreements and staged fee structures</li>
+            <li>Evidence assembly, submission and outcome management</li>
+            <li>Escalations, regulator correspondence and contested matters</li>
+          </ul>
+          <p class="proof">200+ clients personally advised. 112 structured assessments delivered. Zero complaints upheld, formal or informal. 100% of statutory-deadline responses filed on time across 10 contested matters.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-  const dot = flowSection.querySelector('.flow-dot');
-  const sonar = flowSection.querySelector('.flow-sonar');
-  const items = flowSection.querySelectorAll('.flow-item');
-  const line = flowSection.querySelector('.flow-line');
-  if (!dot || !sonar || items.length === 0) return;
+  <section class="band" aria-label="The operating stack">
+    <div class="rail">The stack</div>
+    <div class="band-body">
+      <h2>What the practice actually runs on</h2>
+      <p>Four layers, built in this order, each one feeding the next. A lead entering at layer 1 reaches a licensed adviser at layer 3 without anyone retyping it.</p>
 
-  function getStopPositions() {
-    const sectionRect = flowSection.getBoundingClientRect();
-    const remInPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
-    return Array.from(items).map(item => {
-      const itemRect = item.getBoundingClientRect();
-      return (itemRect.top - sectionRect.top) + (2.4 * remInPx) + 5;
-    });
-  }
+      <div class="stack">
+        <div class="layer">
+          <span class="n">01</span>
+          <span class="name">Acquisition</span>
+          <span class="what">Organic content, seminar programmes and landing pages. Registration and waitlist capture, QR check-in at venue.</span>
+          <span class="tools">Meta and TikTok organic · Tally · in-house landing pages · Vercel · Cloudflare</span>
+        </div>
+        <div class="layer">
+          <span class="n">02</span>
+          <span class="name">Intake and qualification</span>
+          <span class="what">Form to CRM with spam filtering, deduplication by email, routing between new and existing records, AI-assisted scoring, and segmented transactional email on submission.</span>
+          <span class="tools">Make.com · Claude API · Brevo · Notion</span>
+        </div>
+        <div class="layer">
+          <span class="n">03</span>
+          <span class="name">Delivery</span>
+          <span class="what">Payment to booking to consultation to report, with the adviser's judgement as the only manual step that stays manual. Retrieval-backed drafting, human review gate, templated output.</span>
+          <span class="tools">Stripe · cal.com · Microsoft Teams · document generation pipeline · Xero</span>
+        </div>
+        <div class="layer">
+          <span class="n">04</span>
+          <span class="name">Governance</span>
+          <span class="what">File-level audit trail, records and retention, permission model, CPD and supervision records, weekly leadership cadence across both countries.</span>
+          <span class="tools">Microsoft 365 · SharePoint · Notion HR hub · statutory code of conduct</span>
+        </div>
+      </div>
+      <div class="stack-note">10+ platforms owned end to end</div>
+    </div>
+  </section>
 
-  let positions = [];
-  let running = false;
+  <section class="band" aria-label="Selected work">
+    <div class="rail">Selected work</div>
+    <div class="band-body">
+      <h2>Six things I built</h2>
 
-  function updatePositions() { positions = getStopPositions(); }
+      <div class="work">
 
-  function easeInOutQuart(t) {
-    return t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
-  }
+        <article class="case">
+          <div class="case-main">
+            <div class="case-ref">01 · Marketing</div>
+            <h3>Offshore client acquisition campaign</h3>
+            <p>In-market seminars are the practice's main acquisition channel for a market 8,000 km away, delivered by a team in a different country and time zone. Six sessions across three cities.</p>
+            <p class="built"><b>Built:</b> the acquisition stack end to end. Registration forms, email campaigns, the QR-to-payment funnel, booking, venue coordination and the seminar decks. Organic-first rather than buying reach, on the basis that the practice's content already had distribution. A four-person offshore team executed on a weekly cadence while I held the design.</p>
+            <div class="aside">
+              <b>Data integrity finding</b>
+              Raw platform exports reported 1,756 registrations and 423 attendees. Deduplicated against source data the true figures were 1,690 and 413: a 3.8% overstatement. I rebuilt campaign reporting on the deduplicated base, which gave the practice a defensible funnel benchmark for the first time.
+            </div>
+            <div class="aside">
+              <b>How I read the result</b>
+              The show rate is the constraint, not the conversion rate. A ten-point lift on 24.4% is roughly 170 additional attendees, which at 10.4% conversion is roughly 40% more output for no additional spend. The next run targets the registration-to-attendance gap with reminder sequencing and a commitment device at registration.
+            </div>
+          </div>
+          <div class="results">
+            <table>
+              <caption>Funnel, deduplicated</caption>
+              <tbody>
+                <tr><th scope="row">Organic reach, 30 days</th><td>5M+ views</td></tr>
+                <tr><th scope="row">Waitlist</th><td>5,140</td></tr>
+                <tr><th scope="row">Unique registrations</th><td>1,690</td></tr>
+                <tr><th scope="row">Attendees</th><td>413</td></tr>
+                <tr><th scope="row">Show rate</th><td class="hi">24.4%</td></tr>
+                <tr><th scope="row">Attendee conversion</th><td class="hi">10.4%</td></tr>
+                <tr><th scope="row">Campaigns delivered to date</th><td>8</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
 
-  function animateProperty(element, prop, from, to, duration, easeFn) {
-    return new Promise(resolve => {
-      const start = performance.now();
-      function tick(now) {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = easeFn ? easeFn(progress) : progress;
-        const value = from + (to - from) * eased;
-        if (prop === 'top')     element.style.top     = value + 'px';
-        else if (prop === 'opacity') element.style.opacity = value;
-        if (progress < 1) requestAnimationFrame(tick);
-        else resolve();
-      }
-      requestAnimationFrame(tick);
-    });
-  }
+        <article class="case">
+          <div class="case-main">
+            <div class="case-ref">02 · Funnel</div>
+            <h3>End-to-end consultation pipeline</h3>
+            <p>Moving a client from enquiry to a paid consultation involved a manual handoff at every step. Clients who had already paid waited days for confirmation and booking instructions.</p>
+            <p class="built"><b>Built:</b> an automated path from landing page to payment link to booking to video call to post-consultation sequence, with no manual handoff at any point. Conditional transactional email segments each enquiry on submission and routes it to a sequence matched to intent. Two payment rails, card and local wallet, feed the same confirmation flow, so the offshore market runs on the same automation as the domestic one.</p>
+          </div>
+          <div class="results">
+            <table>
+              <caption>Result</caption>
+              <tbody>
+                <tr><th scope="row">Confirmation lag</th><td class="hi">Days to instant</td></tr>
+                <tr><th scope="row">Payments through the flow</th><td>300</td></tr>
+                <tr><th scope="row">Leads segmented per month</th><td>~500</td></tr>
+                <tr><th scope="row">Contact database</th><td>20,000+</td></tr>
+                <tr><th scope="row">Campaigns run, 12 months</th><td>20+</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
 
-  function triggerSonar(topPos) {
-    sonar.classList.remove('pulse');
-    sonar.style.top = (topPos - 5) + 'px';
-    void sonar.offsetWidth;
-    sonar.classList.add('pulse');
-  }
+        <article class="case">
+          <div class="case-main">
+            <div class="case-ref">03 · Systems</div>
+            <h3>The practice's first CRM</h3>
+            <p>Client tracking lived in spreadsheets on a single local machine. No shared source of truth, no pipeline visibility, no continuity if that machine or that person was unavailable, for a caseload spanning two countries.</p>
+            <p class="built"><b>Built:</b> a stage-gated CRM in Notion as one linked structure rather than a set of separate trackers. Seven pipeline stages from enquiry to closed engagement, four linked databases (client CRM, team activity, HR hub, weekly schedule), three months from first design to team-adopted MVP.</p>
+            <div class="aside">
+              <b>What I got wrong</b>
+              The build was not the hard part. Adoption was. I had designed for the system rather than for the people using it, and rollout stalled because the team had to learn a new tool on top of doing their jobs. The fix was automating the entries so the system filled itself. Tool selection is not a technical decision: it is a function of who is on the team and whether the change actually benefits them. I assess that before I build now, not after.
+            </div>
+          </div>
+          <div class="results">
+            <table>
+              <caption>Result</caption>
+              <tbody>
+                <tr><th scope="row">Records on one spine</th><td class="hi">15,000+</td></tr>
+                <tr><th scope="row">Daily users, two countries</th><td>5</td></tr>
+                <tr><th scope="row">Automated entries per day</th><td>100+</td></tr>
+                <tr><th scope="row">Pipeline stages</th><td>7</td></tr>
+                <tr><th scope="row">Linked databases</th><td>4</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
 
-  function wait(ms) { return new Promise(r => setTimeout(r, ms)); }
+        <article class="case">
+          <div class="case-main">
+            <div class="case-ref">04 · AI</div>
+            <h3>AI-assisted document generation pipeline</h3>
+            <p>The flagship client deliverable is a structured multi-section assessment report. It took three hours per report, produced entirely by hand, and it was the binding constraint on how many clients could be served.</p>
+            <p class="built"><b>Built:</b> a generation pipeline on a structured retrieval knowledge base, tuned over six months before it was scaled into use. Pre-consultation intake forms and meeting transcription wired in as inputs, so it starts from captured data rather than notes. A human review gate at the end: the pipeline drafts, it does not file.</p>
+            <div class="aside">
+              <b>The judgement behind it</b>
+              The six months of tuning is the point, not the speed. In a regulated context the failure mode of a fast wrong answer is worse than the cost of a slow right one, so the effort went into retrieval quality rather than throughput, and the review step stayed human.
+            </div>
+          </div>
+          <div class="results">
+            <table>
+              <caption>Before and after</caption>
+              <tbody>
+                <tr><th scope="row">Production time, before</th><td>3 hours</td></tr>
+                <tr><th scope="row">Production time, after</th><td>Under 30 min</td></tr>
+                <tr><th scope="row">Reduction</th><td class="hi">83%</td></tr>
+                <tr><th scope="row">Reports produced</th><td>200+</td></tr>
+                <tr><th scope="row">Production time removed</th><td>~500 hours</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
 
-  async function runCycle() {
-    if (running) return;
-    running = true;
-    updatePositions();
-    if (positions.length === 0) { running = false; return; }
+        <article class="case">
+          <div class="case-main">
+            <div class="case-ref">05 · People</div>
+            <h3>Building the offshore operation</h3>
+            <p>The practice needed delivery capacity in its largest source market. No offshore structure existed: no roles, no employment documentation, no operating rhythm.</p>
+            <p class="built"><b>Built:</b> recruited the National Manager and defined the role rather than filling one someone else had scoped. Authored the employment agreement, the onboarding pack and the business development tracker the office runs on. Established the weekly schedule and the one-to-one cadence, cascading from manager level down. Opened a second site with a Branch Manager, extending coverage beyond the capital.</p>
+          </div>
+          <div class="results">
+            <table>
+              <caption>Result</caption>
+              <tbody>
+                <tr><th scope="row">Team size</th><td class="hi">2 to 4</td></tr>
+                <tr><th scope="row">Offshore sites opened</th><td>2</td></tr>
+                <tr><th scope="row">Time to independent operation</th><td>Week one</td></tr>
+                <tr><th scope="row">Leadership cadence</th><td>Weekly</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
 
-    dot.style.top = (positions[0] - 65) + 'px';
-    dot.style.opacity = '0';
-    await wait(300);
-    await animateProperty(dot, 'opacity', 0, 1, 1000, easeInOutQuart);
+        <article class="case">
+          <div class="case-main">
+            <div class="case-ref">06 · Build</div>
+            <h3>Web properties and a product of my own</h3>
+            <p>The practice's web presence sat on a hosted page builder, with cost and flexibility both set by the platform. Separately, the visa lifecycle problem I watch clients run into every week has no decent tool behind it.</p>
+            <p class="built"><b>Built:</b> three company sites plus conversion pages (booking landing page, pre-appointment preparation page), hand-built in HTML, CSS and JavaScript, mobile-first, deployed on Vercel with DNS on Cloudflare. And Ovrstay, a lifecycle tracking product for a compliance-driven use case, taken from concept to live deployment.</p>
+          </div>
+          <div class="results">
+            <table>
+              <caption>Result</caption>
+              <tbody>
+                <tr><th scope="row">Sites brought in house</th><td>3</td></tr>
+                <tr><th scope="row">Annual hosting cost</th><td class="hi">97% lower</td></tr>
+                <tr><th scope="row">Platform dependency</th><td>Removed</td></tr>
+                <tr><th scope="row">Products shipped to live</th><td>1</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
 
-    for (let i = 0; i < positions.length; i++) {
-      const targetY = positions[i] - 5;
-      const currentY = parseFloat(dot.style.top) || 0;
-      const travelDuration = Math.max(1400, Math.min(2200, Math.abs(targetY - currentY) * 6));
+      </div>
+    </div>
+  </section>
 
-      await animateProperty(dot, 'top', currentY, targetY, travelDuration, easeInOutQuart);
-      triggerSonar(positions[i]);
-      dot.style.boxShadow = '0 0 18px rgba(27, 61, 33, 0.8), 0 0 30px rgba(27, 61, 33, 0.3)';
-      await wait(2000);
-      dot.style.boxShadow = '0 0 10px rgba(27, 61, 33, 0.6)';
-      await wait(200);
-    }
+  <section class="band" aria-label="Credentials and scope">
+    <div class="rail">On the record</div>
+    <div class="band-body">
+      <h2>Credentials and scope</h2>
 
-    const lastY = positions[positions.length - 1] - 5;
-    animateProperty(dot, 'top', lastY, lastY + 40, 1200, easeInOutQuart);
-    await animateProperty(dot, 'opacity', 1, 0, 1200, easeInOutQuart);
-    await wait(2000);
+      <dl class="facts">
+        <div class="fact">
+          <dt>Current role</dt>
+          <dd><b>Operations Manager</b>, NZ Immigration Help Service Ltd. Auckland, Manila and Isabela. Five years with the practice, from Marketing Communications Coordinator to Operations Manager.</dd>
+        </div>
+        <div class="fact">
+          <dt>Team and sites</dt>
+          <dd>4 direct reports across 3 sites in 2 countries: National Manager, Branch Manager, Client Services Coordinator, Office Administration Assistant. Weekly leadership cadence across both countries.</dd>
+        </div>
+        <div class="fact">
+          <dt>Ownership</dt>
+          <dd>Discretionary budget authority over the technology stack and campaign media. 10+ platforms owned end to end, including vendor relationships.</dd>
+        </div>
+        <div class="fact">
+          <dt>Licence</dt>
+          <dd><b>Licensed Immigration Adviser (Full), No. 202300030.</b> Immigration Advisers Authority, New Zealand. Held under a statutory code of conduct with mandatory continuing professional development and supervision. 20+ CPD hours per year, full compliance every cycle.</dd>
+        </div>
+        <div class="fact">
+          <dt>Independent work</dt>
+          <dd>Business analysis and business plan consulting for SME owner-operators across hospitality, healthcare, automotive and retail. Each plan independently assessed against a regulatory standard on a pass or fail basis. All approved first time.</dd>
+        </div>
+        <div class="fact">
+          <dt>Education</dt>
+          <dd>Graduate Diploma in New Zealand Immigration Advice, Toi Ohomai Institute of Technology (2024). Bachelor of Commerce in Marketing, Victoria University of Wellington (2021).</dd>
+        </div>
+        <div class="fact">
+          <dt>Before this</dt>
+          <dd>Founded, built and exited an independent apparel label, with retail placement in Wellington stores. Retail and hospitality management before that, including Second Assistant Manager at Foot Locker.</dd>
+        </div>
+        <div class="fact">
+          <dt>Right to work</dt>
+          <dd>New Zealand citizen. Unrestricted right to work in Australia (subclass 444).</dd>
+        </div>
+      </dl>
 
-    running = false;
-    runCycle();
-  }
+      <dl class="toolset">
+        <div class="toolrow">
+          <dt>Operations and CRM</dt>
+          <dd>Notion (database architecture, relations, rollups, views), Microsoft 365, SharePoint, OneDrive, Teams, Outlook, Google Workspace</dd>
+        </div>
+        <div class="toolrow">
+          <dt>Automation and AI</dt>
+          <dd>Make.com, n8n, REST APIs and webhooks, Claude API, retrieval-backed generation, Tally, Brevo</dd>
+        </div>
+        <div class="toolrow">
+          <dt>Build and deploy</dt>
+          <dd>HTML, CSS, JavaScript, Cursor, Vercel, Cloudflare, Wix</dd>
+        </div>
+        <div class="toolrow">
+          <dt>Finance and payments</dt>
+          <dd>Xero, Stripe, cal.com</dd>
+        </div>
+        <div class="toolrow">
+          <dt>Design and content</dt>
+          <dd>Canva, Photoshop, Illustrator, Lightroom, DaVinci Resolve</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
 
-  const flowObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !running) runCycle();
-    });
-  }, { threshold: 0.15 });
+  <footer>
+    <div class="sign">Happy to talk about any of the above.</div>
+    <div class="contact" style="margin-top: 0;">
+      <a href="mailto:pat@patweischede.com">pat@patweischede.com</a>
+      <a href="https://www.linkedin.com/in/patweischede" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="colophon">
+      Pat Weischede · Auckland, New Zealand · Operations, Marketing &amp; Automation<br>
+      All figures are practice-level and anonymised. No client-identifying information appears on this page. Nothing here constitutes immigration advice.
+    </div>
+  </footer>
 
-  flowObserver.observe(flowSection);
-  window.addEventListener('resize', updatePositions);
-})();
-
-// Orbital animation - smooth physics-based scatter, orbit, disperse
-(function() {
-  const container = document.getElementById('orbitalContainer');
-  const core = document.getElementById('orbitalCore');
-  if (!container || !core) return;
-
-  const nodes = container.querySelectorAll('.orbital-node');
-  if (nodes.length === 0) return;
-
-  const centerX = 160;
-  const centerY = 160;
-
-  const nodeConfigs = [
-    { orbitRadius: 75,  orbitSpeed: 0.0008,  startAngle: 0,          scatterDist: 280, scatterAngle: -0.8 },
-    { orbitRadius: 75,  orbitSpeed: 0.0009,  startAngle: Math.PI,    scatterDist: 300, scatterAngle: 2.5  },
-    { orbitRadius: 120, orbitSpeed: 0.0006,  startAngle: 0.5,        scatterDist: 320, scatterAngle: -2.0 },
-    { orbitRadius: 120, orbitSpeed: 0.0007,  startAngle: 2.8,        scatterDist: 260, scatterAngle: 1.2  },
-    { orbitRadius: 120, orbitSpeed: 0.00055, startAngle: 4.5,        scatterDist: 340, scatterAngle: 3.8  },
-  ];
-
-  const SCATTER_DURATION  = 2000;
-  const SETTLE_DURATION   = 1500;
-  const ORBIT_DURATION    = 5000;
-  const DISPERSE_DURATION = 2000;
-  const PAUSE_DURATION    = 500;
-  const TOTAL_CYCLE = SCATTER_DURATION + SETTLE_DURATION + ORBIT_DURATION + DISPERSE_DURATION + PAUSE_DURATION;
-
-  let startTime   = null;
-  let animFrameId = null;
-  let isVisible   = false;
-
-  function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
-  function easeInCubic(t)  { return t * t * t; }
-  function lerp(a, b, t)   { return a + (b - a) * t; }
-
-  function animate(timestamp) {
-    if (!startTime) startTime = timestamp;
-    const elapsed = (timestamp - startTime) % TOTAL_CYCLE;
-
-    nodes.forEach((node, i) => {
-      const config   = nodeConfigs[i];
-      const nodeSize = 18;
-
-      const scatterX = centerX + Math.cos(config.scatterAngle) * config.scatterDist;
-      const scatterY = centerY + Math.sin(config.scatterAngle) * config.scatterDist;
-
-      const orbitTime = timestamp * config.orbitSpeed + config.startAngle;
-      const orbitX    = centerX + Math.cos(orbitTime) * config.orbitRadius;
-      const orbitY    = centerY + Math.sin(orbitTime) * config.orbitRadius;
-
-      let x, y, opacity;
-
-      if (elapsed < SCATTER_DURATION) {
-        const t      = elapsed / SCATTER_DURATION;
-        const eased  = easeOutCubic(t);
-        const wobbleX = Math.sin(t * 8 + i * 2) * (1 - eased) * 15;
-        const wobbleY = Math.cos(t * 6 + i * 3) * (1 - eased) * 15;
-        x       = lerp(scatterX, orbitX, eased) + wobbleX;
-        y       = lerp(scatterY, orbitY, eased) + wobbleY;
-        opacity = easeOutCubic(Math.min(t * 3, 1));
-
-      } else if (elapsed < SCATTER_DURATION + SETTLE_DURATION) {
-        const t = (elapsed - SCATTER_DURATION) / SETTLE_DURATION;
-        x       = orbitX;
-        y       = orbitY;
-        opacity = 1;
-        if (t < 0.1)      core.classList.add('pulse');
-        else if (t > 0.5) core.classList.remove('pulse');
-
-      } else if (elapsed < SCATTER_DURATION + SETTLE_DURATION + ORBIT_DURATION) {
-        x       = orbitX;
-        y       = orbitY;
-        opacity = 1;
-
-      } else if (elapsed < SCATTER_DURATION + SETTLE_DURATION + ORBIT_DURATION + DISPERSE_DURATION) {
-        const t              = (elapsed - SCATTER_DURATION - SETTLE_DURATION - ORBIT_DURATION) / DISPERSE_DURATION;
-        const eased          = easeInCubic(t);
-        const spiralRadius   = config.orbitRadius + eased * (config.scatterDist - config.orbitRadius);
-        const spiralAngle    = orbitTime + eased * 0.5;
-        const disperseStartX = centerX + Math.cos(orbitTime) * config.orbitRadius;
-        const disperseStartY = centerY + Math.sin(orbitTime) * config.orbitRadius;
-        x       = lerp(disperseStartX, centerX + Math.cos(spiralAngle) * spiralRadius * 1.2, eased);
-        y       = lerp(disperseStartY, centerY + Math.sin(spiralAngle) * spiralRadius * 1.2, eased);
-        opacity = 1 - easeInCubic(t);
-
-      } else {
-        opacity = 0;
-        x       = scatterX;
-        y       = scatterY;
-        core.classList.remove('pulse');
-      }
-
-      node.style.transform = `translate(${x - nodeSize}px, ${y - nodeSize}px)`;
-      node.style.opacity   = opacity;
-    });
-
-    if (isVisible) animFrameId = requestAnimationFrame(animate);
-  }
-
-  function startAnimation() {
-    if (animFrameId) return;
-    isVisible   = true;
-    startTime   = null;
-    animFrameId = requestAnimationFrame(animate);
-  }
-
-  function stopAnimation() {
-    isVisible = false;
-    if (animFrameId) { cancelAnimationFrame(animFrameId); animFrameId = null; }
-  }
-
-  const orbitalObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) startAnimation();
-      else stopAnimation();
-    });
-  }, { threshold: 0.1 });
-
-  orbitalObserver.observe(container);
-})();
-
-Tally.loadEmbeds();
-</script>
+</div>
 
 </body>
 </html>
