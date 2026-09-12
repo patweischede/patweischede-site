@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Pat Weischede: Operations Manager. Marketing and growth, business operations, AI and automation, and regulated immigration advice.">
+<meta name="description" content="Pat Weischede: I build systems that make complicated things simpler. Immigration, business operations, technology and entrepreneurship.">
 <title>Pat Weischede</title>
-<meta property="og:title" content="Pat Weischede — Marketing, Operations &amp; Automation">
-<meta property="og:description" content="Marketing and growth, business operations, AI and automation, and regulated immigration advice — built and proven inside a regulated advisory practice.">
+<meta property="og:title" content="Pat Weischede — I build systems that make complicated things simpler.">
+<meta property="og:description" content="Immigration, business operations, technology and entrepreneurship — an operator, adviser and builder based in Auckland, New Zealand.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://patweischede.com">
 <meta property="og:image" content="https://patweischede.com/og-image.jpg">
@@ -78,6 +78,8 @@
 
   * { box-sizing: border-box; }
 
+  html { scroll-behavior: smooth; }
+
   body {
     background: var(--ground);
     color: var(--ink);
@@ -100,6 +102,43 @@
     outline-offset: 3px;
     border-radius: 2px;
   }
+
+  section[id], header[id] { scroll-margin-top: 76px; }
+
+  /* ---------- nav ---------- */
+
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    padding-block: 18px;
+    background: var(--ground);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-brand {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .nav-links { display: flex; flex-wrap: wrap; gap: 18px; }
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--muted);
+    transition: color 0.15s ease;
+  }
+  .nav-links a:hover { color: var(--accent); }
 
   /* ---------- shared section scaffolding ---------- */
 
@@ -151,77 +190,62 @@
   }
 
   p { margin: 0; max-width: var(--measure); color: var(--ink-soft); }
-  .lede { font-size: var(--step-1); color: var(--ink); }
+  .lede { font-size: var(--step-1); color: var(--ink-soft); max-width: 56ch; }
 
-  /* ---------- masthead ---------- */
+  /* ---------- hero ---------- */
 
-  .masthead { padding-block: 64px 8px; }
+  .masthead { padding-block: 48px 8px; }
 
-  .stamp {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    border: 1px solid var(--line-strong);
-    border-radius: 999px;
-    padding: 6px 14px;
-    background: var(--surface);
-  }
-  .stamp b { font-weight: 500; color: var(--ink); font-variant-numeric: tabular-nums; }
-  .stamp .dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--signal);
-    flex: none;
-  }
-
-  h1 {
+  .hero h1 {
     font-family: var(--display);
     font-optical-sizing: auto;
     font-weight: 600;
     font-size: var(--step-4);
-    line-height: 0.98;
+    line-height: 1.04;
     letter-spacing: -0.03em;
-    margin: 24px 0 0;
-  }
-
-  .role {
-    font-family: var(--mono);
-    font-size: 0.8125rem;
-    letter-spacing: 0.04em;
-    color: var(--muted);
-    margin-top: 14px;
-    max-width: 46ch;
-  }
-
-  .thesis {
-    font-family: var(--display);
-    font-weight: 400;
-    font-size: clamp(1.35rem, 1.05rem + 1.1vw, 1.75rem);
-    line-height: 1.32;
-    color: var(--ink);
-    max-width: 34ch;
-    margin: 32px 0 0;
+    margin: 0;
+    max-width: 16ch;
     text-wrap: balance;
   }
-  .thesis em { font-style: italic; color: var(--accent); }
 
-  .masthead-grid { display: grid; gap: 32px; }
-  @media (min-width: 820px) {
-    .masthead-grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: end; gap: 48px; }
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
   }
 
-  .intro p + p { margin-top: 14px; }
+  .btn {
+    font-family: var(--mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 2px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid transparent;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .btn-primary { background: var(--ink); color: var(--ground); border-color: var(--ink); }
+  .btn-primary:hover { background: var(--accent); border-color: var(--accent); color: var(--ground); }
+  .btn-secondary { background: transparent; color: var(--ink); border-color: var(--line-strong); }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+  .credential-note {
+    margin-top: 28px;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
 
   .contact {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 28px;
-    padding-block: 0 0;
+    margin-top: 0;
   }
   .contact a {
     font-family: var(--mono);
@@ -288,9 +312,15 @@
     letter-spacing: 0.08em;
     flex: none;
   }
-  .domain ul { margin: 0; padding-left: 1.05em; color: var(--ink-soft); display: grid; gap: 7px; }
-  .domain li::marker { color: var(--line-strong); }
-  .domain .proof {
+  .domain ul, .imm-services {
+    margin: 0;
+    padding-left: 1.05em;
+    color: var(--ink-soft);
+    display: grid;
+    gap: 7px;
+  }
+  .domain li::marker, .imm-services li::marker { color: var(--line-strong); }
+  .proof {
     font-family: var(--mono);
     font-size: 0.75rem;
     line-height: 1.55;
@@ -298,6 +328,7 @@
     border-top: 1px dashed var(--line-strong);
     padding-top: 14px;
     margin-top: 4px;
+    max-width: none;
   }
 
   /* ---------- operating stack ---------- */
@@ -434,7 +465,18 @@
     color: var(--muted);
   }
 
-  /* ---------- practice ---------- */
+  /* ---------- notes / thinking ---------- */
+
+  .notes-empty {
+    border: 1px dashed var(--line-strong);
+    padding: 22px 24px;
+    font-family: var(--mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+  }
+
+  /* ---------- record / credentials ---------- */
 
   .facts { display: grid; gap: 0; border-top: 1px solid var(--line); }
   .fact {
@@ -472,15 +514,7 @@
 
   footer {
     border-top: 1px solid var(--line);
-    padding-block: 48px 64px;
-    display: grid;
-    gap: 22px;
-  }
-  .sign {
-    font-family: var(--display);
-    font-size: var(--step-2);
-    font-weight: 600;
-    letter-spacing: -0.01em;
+    padding-block: 40px 56px;
   }
   .colophon {
     font-family: var(--mono);
@@ -491,6 +525,7 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
     * { transition: none !important; animation: none !important; }
   }
 </style>
@@ -506,24 +541,66 @@
 
 <div class="page">
 
-  <header class="masthead">
-    <div class="masthead-grid">
-      <div>
-        <span class="stamp"><span class="dot" aria-hidden="true"></span>Operations Manager · Licensed Immigration Adviser <b>202300030</b></span>
-        <h1>Pat<br>Weischede</h1>
-        <p class="role">Operations Manager, NZ Immigration Help Service Ltd. Marketing, automation and business systems. Auckland, Manila, Isabela.</p>
-        <p class="thesis">I build the <em>marketing, automation and operations systems</em> that make a professional practice run — immigration advice included.</p>
+  <nav class="nav" aria-label="Primary">
+    <a class="nav-brand" href="#top">Pat Weischede</a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#immigration">Immigration</a>
+      <a href="#about">About</a>
+      <a href="#thinking">Thinking</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="masthead" id="top">
+    <div class="hero">
+      <h1>I build systems that make complicated things simpler.</h1>
+      <p class="lede">I'm Pat Weischede. I work across immigration, business, operations and technology — solving difficult problems and building better ways of doing things.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact">Work with me</a>
+        <a class="btn btn-secondary" href="#about">About Pat</a>
       </div>
-      <div class="intro">
-        <p>Five years inside a regulated advisory practice, from marketing coordinator to Operations Manager. In that time I designed and built the firm's CRM, its automation layer, its AI-assisted document pipeline, its client acquisition system and its offshore delivery team.</p>
-        <p>Four things I actually do: marketing and growth, business operations, AI and automation, and regulated immigration advice. They are the same job: growth fills the pipeline, systems and automation deliver the work, and the license lets me sign off on the parts that need one.</p>
-        <div class="contact">
-          <a href="mailto:pat@patweischede.com">pat@patweischede.com</a>
-          <a href="https://www.linkedin.com/in/patweischede" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
+      <p class="credential-note">New Zealand Licensed Immigration Adviser — Licence No. 202300030</p>
     </div>
   </header>
+
+  <section class="band" id="pov" aria-label="Point of view">
+    <div class="rail">Point of view</div>
+    <div class="band-body">
+      <h2>Complexity is usually a systems problem.</h2>
+      <p>Whether it's navigating immigration, running a business or adopting new technology, most problems become easier once the right structure exists.</p>
+      <p>I like finding that structure.</p>
+    </div>
+  </section>
+
+  <section class="band" id="what-i-do" aria-label="What I do">
+    <div class="rail">What I do</div>
+    <div class="band-body">
+      <h2>Four areas. One way of thinking.</h2>
+
+      <div class="domains">
+        <article class="domain">
+          <div class="domain-head"><span class="idx">01</span><h3>Immigration</h3></div>
+          <p>Strategic immigration advice for individuals and employers navigating New Zealand's immigration system.</p>
+        </article>
+
+        <article class="domain">
+          <div class="domain-head"><span class="idx">02</span><h3>Business &amp; Operations</h3></div>
+          <p>Building workflows, processes and operating systems that make organisations easier to run.</p>
+        </article>
+
+        <article class="domain">
+          <div class="domain-head"><span class="idx">03</span><h3>Technology &amp; AI</h3></div>
+          <p>Exploring and implementing practical technology that reduces friction and increases leverage.</p>
+        </article>
+
+        <article class="domain">
+          <div class="domain-head"><span class="idx">04</span><h3>Building</h3></div>
+          <p>Experimenting with businesses, products, systems and ideas.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
   <section class="band" aria-label="Scale of the operation">
     <div class="rail">Scale</div>
@@ -536,74 +613,14 @@
         <div class="metric"><div class="fig">4 / 3 / 2</div><div class="cap">Direct reports, sites, countries</div></div>
         <div class="metric"><div class="fig">5M+</div><div class="cap">Organic views in a 30-day window</div></div>
       </div>
-      <p style="font-family: var(--mono); font-size: 0.6875rem; color: var(--muted); letter-spacing: 0.04em; max-width: none;">Figures are practice-level and current as at 2026. Commercial values, fees and client identifiers are withheld.</p>
-    </div>
-  </section>
-
-  <section class="band" aria-label="Areas of work">
-    <div class="rail">Practice areas</div>
-    <div class="band-body">
-      <h2>Four areas, one operating problem</h2>
-      <p>A professional services firm is constrained by how much expert attention it can spend per client. Everything below is an attack on that constraint from a different side.</p>
-
-      <div class="domains">
-        <article class="domain">
-          <div class="domain-head"><span class="idx">A</span><h3>Marketing and growth</h3></div>
-          <p style="font-size: var(--step--1); line-height: 1.6;">Organic-first demand generation, funnel architecture and conversion design. I own the numbers end to end, not just the top of the funnel.</p>
-          <ul>
-            <li>Funnel architecture and stage gating from first touch to signed engagement</li>
-            <li>Landing pages and conversion design, built and deployed in-house</li>
-            <li>Email lifecycle, segmentation and list management</li>
-            <li>In-market seminar programmes with registration-to-consultation tracking</li>
-            <li>Source attribution and funnel reporting on a deduplicated base</li>
-          </ul>
-          <p class="proof">Audience grown from 50,000 to 130,000+ followers, a 160% increase, with inbound enquiry volume up tenfold, from 10 to 100+ per month, on organic distribution.</p>
-        </article>
-
-        <article class="domain">
-          <div class="domain-head"><span class="idx">B</span><h3>Business operations</h3></div>
-          <p style="font-size: var(--step--1); line-height: 1.6;">Process design, systems build and offshore delivery. The goal is a team that runs without needing me in the loop.</p>
-          <ul>
-            <li>Stage-gated CRM architecture and pipeline ownership</li>
-            <li>SOPs for enquiry handling, onboarding, document tracking and deliverable production</li>
-            <li>Hiring, employment documentation, onboarding packs and cross-timezone cadence</li>
-            <li>Incident response, permissions, retention and access control</li>
-            <li>Business analysis and business plan writing assessed to an external standard</li>
-          </ul>
-          <p class="proof">Offshore team grown from 2 to 4 across two sites. Four freelance business plans independently assessed pass or fail, all approved first time with no resubmissions.</p>
-        </article>
-
-        <article class="domain">
-          <div class="domain-head"><span class="idx">C</span><h3>AI and automation</h3></div>
-          <p style="font-size: var(--step--1); line-height: 1.6;">Applied, not experimental. Every AI system I have shipped sits behind a human review gate, because in a regulated context a fast wrong answer costs more than a slow right one.</p>
-          <ul>
-            <li>Retrieval-backed document generation for a structured client deliverable</li>
-            <li>Lead scoring against qualification criteria via the Claude API</li>
-            <li>Intake forms and meeting transcription wired in as structured inputs</li>
-            <li>No-code orchestration across CRM, email, payments and booking</li>
-          </ul>
-          <p class="proof">Flagship report cut from 3 hours to under 30 minutes, an 83% reduction, after six months of retrieval tuning before it went near a client file.</p>
-        </article>
-
-        <article class="domain">
-          <div class="domain-head"><span class="idx">D</span><h3>Immigration advice</h3></div>
-          <p style="font-size: var(--step--1); line-height: 1.6;">Full licence held under a statutory code of conduct since 2023. Client matters run end to end, with a written audit trail on every file.</p>
-          <ul>
-            <li>Eligibility analysis and pathway strategy: AEWV, Skilled Migrant, Green List, student and partnership categories</li>
-            <li>Scope, engagement agreements and staged fee structures</li>
-            <li>Evidence assembly, submission and outcome management</li>
-            <li>Escalations, regulator correspondence and contested matters</li>
-          </ul>
-          <p class="proof">200+ clients personally advised. 112 structured assessments delivered. Zero complaints upheld, formal or informal. 100% of statutory-deadline responses filed on time across 10 contested matters.</p>
-        </article>
-      </div>
+      <p style="font-family: var(--mono); font-size: 0.6875rem; color: var(--muted); letter-spacing: 0.04em; max-width: none;">Figures are practice-level, current as at 2026. Commercial and client details are withheld.</p>
     </div>
   </section>
 
   <section class="band" aria-label="The operating stack">
     <div class="rail">The stack</div>
     <div class="band-body">
-      <h2>What the practice actually runs on</h2>
+      <h2>How the systems fit together</h2>
       <p>Four layers, built in this order, each one feeding the next. A lead entering at layer 1 reaches a licensed adviser at layer 3 without anyone retyping it.</p>
 
       <div class="stack">
@@ -636,8 +653,8 @@
     </div>
   </section>
 
-  <section class="band" aria-label="Selected work">
-    <div class="rail">Selected work</div>
+  <section class="band" id="work" aria-label="Selected work">
+    <div class="rail">Work</div>
     <div class="band-body">
       <h2>Six things I built</h2>
 
@@ -789,45 +806,73 @@
     </div>
   </section>
 
-  <section class="band" aria-label="Client voices">
-    <div class="rail">In their words</div>
+  <section class="band" id="immigration" aria-label="Immigration">
+    <div class="rail">Immigration</div>
     <div class="band-body">
-      <h2>What clients say</h2>
-      <p>Feedback from immigration clients, lightly trimmed for length. Names and identifying details are limited at their request.</p>
+      <h2>Immigration is complicated enough. The advice shouldn't be.</h2>
+      <p class="lede">I provide strategic New Zealand immigration advice to individuals and employers, licensed and accountable under a statutory code of conduct since 2023.</p>
 
-      <div class="voices">
-        <blockquote class="voice">
-          <p>Heartfelt thanks to Sir Dean for the fast approval of my work visa. Transitioning from a student visa to an AEWV, his hard work and patience are truly unmatched. He is thorough and organized, ensuring no detail is overlooked.</p>
-          <cite class="voice-by">Crystal · Student visa to work visa</cite>
-        </blockquote>
-        <blockquote class="voice">
-          <p>From applying for our residency visa to achieving permanent residency, your kindness, patience and expertise gave us the strength to keep going. You made what once seemed impossible, possible.</p>
-          <cite class="voice-by">A family · Residence to permanent residency</cite>
-        </blockquote>
-        <blockquote class="voice">
-          <p>I am extremely satisfied with the service. The entire process has been incredibly smooth. He answered all our questions thoroughly, and explained the specific details of our visa perfectly.</p>
-          <cite class="voice-by">Rugien · Visa applicant</cite>
-        </blockquote>
-        <blockquote class="voice">
-          <p>Responsive and knowledgeable in terms of policies and how to achieve your move to NZ. The staff is very helpful with additional queries and requirements.</p>
-          <cite class="voice-by">Jason · Family relocation</cite>
-        </blockquote>
-        <blockquote class="voice">
-          <p>Their friendly, excellent service made the visa process a breeze. Their meticulous attention to detail left no room for errors. The team's genuine care and empathy made the journey feel like a partnership, not just a transaction.</p>
-          <cite class="voice-by">Desiree · Visa approved</cite>
-        </blockquote>
-        <blockquote class="voice">
-          <p>Thank you so much, Dean, for taking the time to answer my questions and for understanding a mother's heart. Now everything is much clearer, and I can travel with much less stress.</p>
-          <cite class="voice-by">A parent · Family visitor visa</cite>
-        </blockquote>
+      <ul class="imm-services">
+        <li>Eligibility analysis and pathway strategy: AEWV, Skilled Migrant, Green List, student and partnership categories</li>
+        <li>Scope, engagement agreements and staged fee structures</li>
+        <li>Evidence assembly, submission and outcome management</li>
+        <li>Escalations, regulator correspondence and contested matters</li>
+      </ul>
+
+      <p class="proof">200+ clients personally advised. 112 structured assessments delivered. Zero complaints upheld, formal or informal. 100% of statutory-deadline responses filed on time across 10 contested matters.</p>
+
+      <div>
+        <a class="btn btn-primary" href="mailto:pat@patweischede.com?subject=Immigration%20enquiry">Discuss your situation</a>
+      </div>
+
+      <div>
+        <h3 style="font-size: var(--step-1); margin-bottom: 14px;">What clients say</h3>
+        <p style="font-size: var(--step--1); margin-bottom: 18px;">Feedback from immigration clients, lightly trimmed for length. Names and identifying details are limited at their request.</p>
+        <div class="voices">
+          <blockquote class="voice">
+            <p>Heartfelt thanks to Sir Dean for the fast approval of my work visa. Transitioning from a student visa to an AEWV, his hard work and patience are truly unmatched. He is thorough and organized, ensuring no detail is overlooked.</p>
+            <cite class="voice-by">Crystal · Student visa to work visa</cite>
+          </blockquote>
+          <blockquote class="voice">
+            <p>From applying for our residency visa to achieving permanent residency, your kindness, patience and expertise gave us the strength to keep going. You made what once seemed impossible, possible.</p>
+            <cite class="voice-by">A family · Residence to permanent residency</cite>
+          </blockquote>
+          <blockquote class="voice">
+            <p>I am extremely satisfied with the service. The entire process has been incredibly smooth. He answered all our questions thoroughly, and explained the specific details of our visa perfectly.</p>
+            <cite class="voice-by">Rugien · Visa applicant</cite>
+          </blockquote>
+          <blockquote class="voice">
+            <p>Responsive and knowledgeable in terms of policies and how to achieve your move to NZ. The staff is very helpful with additional queries and requirements.</p>
+            <cite class="voice-by">Jason · Family relocation</cite>
+          </blockquote>
+          <blockquote class="voice">
+            <p>Their friendly, excellent service made the visa process a breeze. Their meticulous attention to detail left no room for errors. The team's genuine care and empathy made the journey feel like a partnership, not just a transaction.</p>
+            <cite class="voice-by">Desiree · Visa approved</cite>
+          </blockquote>
+          <blockquote class="voice">
+            <p>Thank you so much, Dean, for taking the time to answer my questions and for understanding a mother's heart. Now everything is much clearer, and I can travel with much less stress.</p>
+            <cite class="voice-by">A parent · Family visitor visa</cite>
+          </blockquote>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="band" aria-label="Credentials and scope">
-    <div class="rail">On the record</div>
+  <section class="band" id="about" aria-label="About">
+    <div class="rail">About</div>
     <div class="band-body">
-      <h2>Credentials and scope</h2>
+      <h2>I'm Pat.</h2>
+      <p>I'm interested in complicated systems — and how to make them work better.</p>
+      <p>My background spans immigration, business, marketing and operations. Five years inside a regulated advisory practice took me from Marketing Communications Coordinator to Operations Manager, building the CRM, automation layer and client systems it runs on today.</p>
+      <p>Before that: a founded-and-exited apparel label, and years in retail and hospitality management.</p>
+      <p>Increasingly, I'm also exploring technology, AI and entrepreneurship. This website is where those things come together.</p>
+    </div>
+  </section>
+
+  <section class="band" aria-label="Credentials and scope">
+    <div class="rail">Record</div>
+    <div class="band-body">
+      <h2>For the record.</h2>
 
       <dl class="facts">
         <div class="fact">
@@ -889,15 +934,30 @@
     </div>
   </section>
 
-  <footer>
-    <div class="sign">Happy to talk about any of the above.</div>
-    <div class="contact" style="margin-top: 0;">
-      <a href="mailto:pat@patweischede.com">pat@patweischede.com</a>
-      <a href="https://www.linkedin.com/in/patweischede" target="_blank" rel="noopener">LinkedIn</a>
+  <section class="band" id="thinking" aria-label="Thinking">
+    <div class="rail">Thinking</div>
+    <div class="band-body">
+      <h2>Notes, eventually.</h2>
+      <p>This is where I'll write about immigration, business, systems, AI and entrepreneurship.</p>
+      <div class="notes-empty">Nothing published yet. Check back.</div>
     </div>
+  </section>
+
+  <section class="band" id="contact" aria-label="Contact">
+    <div class="rail">Contact</div>
+    <div class="band-body">
+      <h2>Have something interesting to work on?</h2>
+      <div class="contact">
+        <a href="mailto:pat@patweischede.com">pat@patweischede.com</a>
+        <a href="https://www.linkedin.com/in/patweischede" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
     <div class="colophon">
-      Pat Weischede · Auckland, New Zealand · Operations, Marketing &amp; Automation<br>
-      All figures are practice-level and anonymised. No client-identifying information appears on this page. Nothing here constitutes immigration advice.
+      Pat Weischede · Auckland, New Zealand · New Zealand Licensed Immigration Adviser, No. 202300030<br>
+      Nothing on this website constitutes immigration advice.
     </div>
   </footer>
 
