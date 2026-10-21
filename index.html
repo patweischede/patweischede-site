@@ -3,965 +3,953 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Pat Weischede: I build systems that make complicated things simpler. Immigration, business operations, technology and entrepreneurship.">
 <title>Pat Weischede</title>
-<meta property="og:title" content="Pat Weischede — I build systems that make complicated things simpler.">
-<meta property="og:description" content="Immigration, business operations, technology and entrepreneurship — an operator, adviser and builder based in Auckland, New Zealand.">
+<meta name="description" content="13.4M organic views and 111k+ followers in 10 months, in one of the most regulated niches there is. Pat Weischede helps coaches, consultants, advisors and growing businesses build acquisition, offers and AI-assisted lead gen that actually converts.">
+<meta property="og:title" content="13.4M views. 111k followers. 10 months. — Pat Weischede">
+<meta property="og:description" content="Acquisition, offer design and AI lead gen for coaches, consultants, advisors and growing businesses.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://patweischede.com">
 <meta property="og:image" content="https://patweischede.com/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://patweischede.com">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111311'/><text x='50' y='68' font-family='Arial' font-weight='700' font-size='52' text-anchor='middle' fill='%23D4FF3A'>P</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
   :root {
-    --ground: #EDF0EE;
+    --ground: #F4F3EE;
     --surface: #FFFFFF;
-    --surface-sunk: #E4E9E6;
-    --ink: #14201D;
-    --ink-soft: #354441;
-    --muted: #5A6B66;
-    --line: #D2DAD6;
-    --line-strong: #B4C0BB;
-    --accent: #0E5A4C;
-    --accent-soft: #DCEAE5;
-    --signal: #A94C18;
-    --focus: #0E5A4C;
-
-    --display: "Fraunces", "Iowan Old Style", Georgia, serif;
-    --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
-    --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
-
-    --measure: 68ch;
-    --step--1: 0.8125rem;
-    --step-0: 1rem;
-    --step-1: 1.1875rem;
-    --step-2: 1.5rem;
-    --step-3: 2rem;
-    --step-4: clamp(2.4rem, 1.6rem + 3.4vw, 4rem);
+    --surface-sunk: #EAE9E2;
+    --ink: #111311;
+    --ink-soft: #3A3F3B;
+    --muted: #686E69;
+    --line: #DEDDD5;
+    --line-strong: #C3C2B8;
+    --accent: #1F5A3A;
+    --hi: #D4FF3A;
+    --hi-ink: #111311;
+    --down: #B4472A;
+    --shot-bg: #18191A;
+    --bar: color-mix(in srgb, #D4FF3A 60%, transparent);
+    --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --body: "Inter", "Helvetica Neue", Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+    --measure: 64ch;
+    --gutter: 16px;
   }
-
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --ground: #0D1311;
-      --surface: #141C19;
-      --surface-sunk: #101815;
-      --ink: #E6EBE8;
-      --ink-soft: #CBD5D1;
-      --muted: #92A39D;
-      --line: #26322E;
-      --line-strong: #38473F;
-      --accent: #57C2A6;
-      --accent-soft: #17302A;
-      --signal: #E0884F;
-      --focus: #57C2A6;
+      --ground: #0D0E0D;
+      --surface: #151715;
+      --surface-sunk: #111311;
+      --ink: #F1F2EE;
+      --ink-soft: #C8CBC5;
+      --muted: #8E938C;
+      --line: #252825;
+      --line-strong: #383C38;
+      --accent: #D4FF3A;
+      --down: #F08A68;
+      --shot-bg: #18191A;
+      --bar: color-mix(in srgb, #D4FF3A 20%, transparent);
     }
   }
-
   :root[data-theme="dark"] {
-    --ground: #0D1311;
-    --surface: #141C19;
-    --surface-sunk: #101815;
-    --ink: #E6EBE8;
-    --ink-soft: #CBD5D1;
-    --muted: #92A39D;
-    --line: #26322E;
-    --line-strong: #38473F;
-    --accent: #57C2A6;
-    --accent-soft: #17302A;
-    --signal: #E0884F;
-    --focus: #57C2A6;
+    --ground: #0D0E0D;
+    --surface: #151715;
+    --surface-sunk: #111311;
+    --ink: #F1F2EE;
+    --ink-soft: #C8CBC5;
+    --muted: #8E938C;
+    --line: #252825;
+    --line-strong: #383C38;
+    --accent: #D4FF3A;
+    --down: #F08A68;
+    --shot-bg: #18191A;
+    --bar: color-mix(in srgb, #D4FF3A 20%, transparent);
   }
+  @media (min-width: 640px) { :root { --gutter: 28px; } }
 
   * { box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
+  html { scroll-behavior: smooth; color-scheme: light dark; }
   body {
+    margin: 0;
     background: var(--ground);
     color: var(--ink);
     font-family: var(--body);
-    font-size: var(--step-0);
+    font-size: 1rem;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
-
-  .page {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding-inline: 20px;
-    padding-block: 0 0;
-  }
-
+  img { max-width: 100%; display: block; }
   a { color: inherit; }
-  a:focus-visible, button:focus-visible {
-    outline: 2px solid var(--focus);
+  a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--accent);
     outline-offset: 3px;
-    border-radius: 2px;
+    border-radius: 4px;
   }
-
-  section[id], header[id] { scroll-margin-top: 76px; }
-
-  /* ---------- nav ---------- */
-
-  .nav {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px 20px;
-    padding-block: 18px;
-    background: var(--ground);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-brand {
-    font-family: var(--display);
-    font-weight: 600;
-    font-size: 1.0625rem;
-    letter-spacing: -0.01em;
-    text-decoration: none;
-    color: var(--ink);
-  }
-  .nav-links { display: flex; flex-wrap: wrap; gap: 18px; }
-  .nav-links a {
-    font-family: var(--mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--muted);
-    transition: color 0.15s ease;
-  }
-  .nav-links a:hover { color: var(--accent); }
-
-  /* ---------- shared section scaffolding ---------- */
-
-  .band {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px 32px;
-    padding-block: 56px;
-    border-top: 1px solid var(--line);
-  }
-
-  @media (min-width: 900px) {
-    .band {
-      grid-template-columns: 128px minmax(0, 1fr);
-      padding-block: 76px;
-    }
-  }
-
-  .rail {
-    font-family: var(--mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    padding-top: 6px;
-  }
-
-  .band-body { min-width: 0; display: grid; gap: 28px; }
-
-  h2 {
-    font-family: var(--display);
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-size: var(--step-3);
-    line-height: 1.12;
-    letter-spacing: -0.015em;
-    margin: 0;
-    text-wrap: balance;
-  }
-
-  h3 {
-    font-family: var(--display);
-    font-weight: 600;
-    font-size: var(--step-2);
-    line-height: 1.18;
-    letter-spacing: -0.01em;
-    margin: 0;
-    text-wrap: balance;
-  }
-
+  .wrap { max-width: 1160px; margin: 0 auto; padding-inline: var(--gutter); }
+  section[id] { scroll-margin-top: 72px; }
   p { margin: 0; max-width: var(--measure); color: var(--ink-soft); }
-  .lede { font-size: var(--step-1); color: var(--ink-soft); max-width: 56ch; }
-
-  /* ---------- hero ---------- */
-
-  .masthead { padding-block: 48px 8px; }
-
-  .hero h1 {
-    font-family: var(--display);
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-size: var(--step-4);
+  h1, h2, h3 { font-family: var(--display); margin: 0; text-wrap: balance; color: var(--ink); }
+  h2 {
+    font-weight: 700;
+    font-size: clamp(1.9rem, 1.3rem + 2.6vw, 3.1rem);
     line-height: 1.04;
     letter-spacing: -0.03em;
-    margin: 0;
-    max-width: 16ch;
-    text-wrap: balance;
   }
-
-  .cta-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 32px;
-  }
-
-  .btn {
+  h3 { font-weight: 700; font-size: 1.3rem; line-height: 1.2; letter-spacing: -0.015em; }
+  .mark { background: var(--hi); color: var(--hi-ink); padding: 0 0.12em; border-radius: 3px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  .kicker {
     font-family: var(--mono);
-    font-size: 0.8125rem;
-    letter-spacing: 0.02em;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 2px;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    border: 1px solid transparent;
-    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-  }
-  .btn-primary { background: var(--ink); color: var(--ground); border-color: var(--ink); }
-  .btn-primary:hover { background: var(--accent); border-color: var(--accent); color: var(--ground); }
-  .btn-secondary { background: transparent; color: var(--ink); border-color: var(--line-strong); }
-  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
-
-  .credential-note {
-    margin-top: 28px;
-    font-family: var(--mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.04em;
-    color: var(--muted);
-  }
-
-  .contact {
-    display: flex;
-    flex-wrap: wrap;
     gap: 10px;
-    margin-top: 0;
   }
-  .contact a {
-    font-family: var(--mono);
-    font-size: 0.8125rem;
-    text-decoration: none;
-    border: 1px solid var(--line-strong);
-    background: var(--surface);
-    padding: 9px 16px;
-    border-radius: 2px;
-    transition: border-color 0.15s ease, color 0.15s ease;
-  }
-  .contact a:hover { border-color: var(--accent); color: var(--accent); }
+  .kicker::before { content: ""; width: 18px; height: 2px; background: var(--accent); }
+  .lede { font-size: clamp(1.06rem, 1rem + 0.35vw, 1.22rem); line-height: 1.55; color: var(--ink-soft); }
+  .sec { padding-block: 72px; border-top: 1px solid var(--line); }
+  @media (min-width: 900px) { .sec { padding-block: 104px; } }
+  .sec-head { display: grid; gap: 18px; margin-bottom: 44px; max-width: 820px; }
 
-  /* ---------- snapshot ---------- */
-
-  .snapshot {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(178px, 1fr));
-    border-top: 1px solid var(--line);
-    border-left: 1px solid var(--line);
-  }
-  .metric {
-    border-right: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    padding: 18px 18px 20px;
-    background: var(--surface);
-  }
-  .metric .fig {
-    font-family: var(--display);
+  /* ---------- buttons ---------- */
+  .btn {
+    font-family: var(--body);
     font-weight: 600;
-    font-size: 1.75rem;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    font-variant-numeric: tabular-nums;
-    color: var(--ink);
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding: 14px 22px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid transparent;
+    transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
   }
-  .metric .cap {
-    font-family: var(--mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 10px;
-    line-height: 1.45;
-  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--hi); color: var(--hi-ink); border-color: var(--hi); }
+  .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line-strong); }
+  .btn-ghost:hover { border-color: var(--ink); }
+  .btn .arr { transition: transform 0.15s ease; }
+  .btn:hover .arr { transform: translateX(3px); }
 
-  /* ---------- domains ---------- */
-
-  .domains { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
-  @media (min-width: 760px) { .domains { grid-template-columns: 1fr 1fr; } }
-
-  .domain {
-    background: var(--surface);
-    padding: 26px 24px 28px;
-    display: grid;
-    gap: 14px;
-    align-content: start;
+  /* ---------- nav ---------- */
+  .nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: color-mix(in srgb, var(--ground) 88%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
   }
-  .domain-head { display: flex; align-items: baseline; gap: 12px; }
-  .domain-head .idx {
-    font-family: var(--mono);
-    font-size: 0.6875rem;
-    color: var(--signal);
-    letter-spacing: 0.08em;
-    flex: none;
-  }
-  .domain ul, .imm-services {
-    margin: 0;
-    padding-left: 1.05em;
-    color: var(--ink-soft);
-    display: grid;
-    gap: 7px;
-  }
-  .domain li::marker, .imm-services li::marker { color: var(--line-strong); }
-  .proof {
-    font-family: var(--mono);
-    font-size: 0.75rem;
-    line-height: 1.55;
-    color: var(--accent);
-    border-top: 1px dashed var(--line-strong);
-    padding-top: 14px;
-    margin-top: 4px;
-    max-width: none;
-  }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 64px; }
+  .brand { font-family: var(--display); font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; text-decoration: none; }
+  .nav-links { display: none; gap: 26px; }
+  .nav-links a { font-size: 0.9rem; text-decoration: none; color: var(--muted); transition: color 0.15s ease; }
+  .nav-links a:hover { color: var(--ink); }
+  @media (min-width: 860px) { .nav-links { display: flex; } }
+  .nav .btn { padding: 9px 16px; font-size: 0.875rem; }
 
-  /* ---------- operating stack ---------- */
+  /* ---------- hero ---------- */
+  .hero { padding-block: 56px 72px; }
+  @media (min-width: 900px) { .hero { padding-block: 88px 104px; } }
+  .hero-grid { display: grid; gap: 48px; align-items: center; }
+  @media (min-width: 980px) { .hero-grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 56px; } }
+  .hero-copy { display: grid; gap: 24px; }
+  .hero h1 {
+    font-weight: 800;
+    font-size: clamp(2.6rem, 1.4rem + 5.6vw, 5.4rem);
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+  }
+  .hero h1 .line { display: block; }
+  .hero h1 .dim { color: var(--muted); }
+  .hero .lede { max-width: 54ch; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+  .fine { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.02em; }
 
-  .stack { display: grid; gap: 10px; }
-  .layer {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 6px 20px;
+  .receipt {
     background: var(--surface);
     border: 1px solid var(--line);
-    border-left: 3px solid var(--accent);
-    padding: 16px 18px;
-    transition: border-left-color 0.18s ease, transform 0.18s ease;
+    border-radius: 20px;
+    padding: 22px;
+    display: grid;
+    gap: 18px;
+    box-shadow: 0 1px 0 var(--line), 0 24px 60px -30px rgba(0,0,0,0.25);
   }
-  @media (min-width: 700px) {
-    .layer { grid-template-columns: 26px minmax(0, 220px) minmax(0, 1fr); align-items: baseline; }
-  }
-  .layer:hover { border-left-color: var(--signal); }
-  .layer .n {
-    font-family: var(--mono);
-    font-size: 0.6875rem;
-    color: var(--muted);
+  .receipt-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .live { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); display: inline-flex; align-items: center; gap: 8px; }
+  .live::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #3BD16F; box-shadow: 0 0 0 4px color-mix(in srgb, #3BD16F 22%, transparent); }
+  .big-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .big-stat { background: var(--surface-sunk); border-radius: 14px; padding: 16px; }
+  .big-stat.wide { grid-column: 1 / -1; }
+  .big-stat .fig {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(2rem, 1.5rem + 2vw, 2.9rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
     font-variant-numeric: tabular-nums;
   }
-  .layer .name { font-weight: 600; color: var(--ink); }
-  .layer .what { color: var(--ink-soft); font-size: var(--step--1); line-height: 1.55; }
-  .layer .tools {
-    grid-column: 1 / -1;
-    font-family: var(--mono);
-    font-size: 0.6875rem;
-    color: var(--muted);
-    letter-spacing: 0.03em;
-    padding-top: 4px;
-  }
-  @media (min-width: 700px) { .layer .tools { grid-column: 2 / -1; } }
-  .stack-note {
-    font-family: var(--mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-align: right;
-  }
+  .big-stat.wide .fig { font-size: clamp(2.6rem, 2rem + 2.6vw, 3.6rem); }
+  .big-stat .cap { font-size: 0.85rem; color: var(--muted); margin-top: 8px; line-height: 1.4; }
+  .receipt-foot { font-size: 0.85rem; color: var(--ink-soft); border-top: 1px dashed var(--line-strong); padding-top: 14px; }
 
-  /* ---------- work ---------- */
+  /* ---------- ticker ---------- */
+  .ticker { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; background: var(--surface); }
+  .ticker-track { display: flex; gap: 44px; padding-block: 16px; width: max-content; animation: tick 40s linear infinite; }
+  .ticker span { font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.04em; color: var(--muted); white-space: nowrap; }
+  .ticker b { color: var(--ink); font-weight: 500; }
+  @keyframes tick { to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
 
-  .work { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
-  .case {
+  /* ---------- proof ---------- */
+  .proof-grid { display: grid; gap: 16px; }
+  @media (min-width: 900px) { .proof-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); } }
+  .shot {
     background: var(--surface);
-    padding: 28px 24px 30px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    margin: 0;
+  }
+  .shot-frame { background: var(--shot-bg); padding: 14px; }
+  .shot-frame img { width: 100%; height: auto; border-radius: 8px; }
+  .shot figcaption { padding: 18px 20px 20px; display: grid; gap: 6px; align-content: start; }
+  .shot .fig-line { font-family: var(--display); font-weight: 700; font-size: 1.25rem; letter-spacing: -0.02em; color: var(--ink); }
+  .shot .note { font-size: 0.9rem; color: var(--ink-soft); }
+  @media (min-width: 900px) {
+    .shot.s-views { grid-column: span 12; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); grid-template-rows: none; }
+    .shot.s-views figcaption { padding: 28px; align-content: center; }
+    .shot.s-split, .shot.s-follow { grid-column: span 6; }
+  }
+  .proof-foot { margin-top: 20px; font-size: 0.85rem; color: var(--muted); max-width: 80ch; }
+  .tag-down { color: var(--down); font-weight: 500; }
+
+  /* ---------- funnel ---------- */
+  .funnel-grid { display: grid; gap: 40px; }
+  @media (min-width: 960px) { .funnel-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: start; } }
+  .funnel { display: grid; gap: 8px; }
+  .step {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 16px 18px;
+    border-radius: 12px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .step::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: var(--w, 100%);
+    background: var(--bar);
+    z-index: 0;
+  }
+  .step > * { position: relative; z-index: 1; }
+  .step .lbl { font-size: 0.95rem; color: var(--ink); }
+  .step .val { font-family: var(--display); font-weight: 800; font-size: 1.5rem; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; color: var(--ink); }
+  .ratio { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); padding-left: 18px; }
+  .insight {
+    background: var(--ink);
+    color: var(--ground);
+    border-radius: 18px;
+    padding: 26px;
+    display: grid;
+    gap: 12px;
+  }
+  .insight .kicker { color: color-mix(in srgb, var(--ground) 65%, transparent); }
+  .insight .kicker::before { background: var(--hi); }
+  .insight p { color: color-mix(in srgb, var(--ground) 82%, transparent); }
+  .insight strong { color: var(--ground); }
+  .system-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin-top: 24px; }
+  .system-stats div { background: var(--surface); padding: 16px; }
+  .system-stats b { display: block; font-family: var(--display); font-size: 1.35rem; letter-spacing: -0.02em; color: var(--ink); }
+  .system-stats span { font-size: 0.82rem; color: var(--muted); line-height: 1.4; display: block; margin-top: 4px; }
+
+  /* ---------- pain ---------- */
+  .pains { display: grid; gap: 12px; }
+  @media (min-width: 760px) { .pains { grid-template-columns: 1fr 1fr; } }
+  .pain { padding: 22px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); display: grid; gap: 8px; }
+  .pain q { font-family: var(--display); font-weight: 700; font-size: 1.2rem; letter-spacing: -0.015em; color: var(--ink); quotes: "\201C" "\201D"; line-height: 1.25; }
+  .pain p { font-size: 0.95rem; }
+
+  /* ---------- pillars ---------- */
+  .pillars { display: grid; gap: 16px; }
+  @media (min-width: 760px) { .pillars { grid-template-columns: 1fr 1fr; } }
+  .pillar { padding: 26px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); display: grid; gap: 12px; align-content: start; }
+  .pillar .n { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
+  .pillar ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+  .pillar li { padding-left: 22px; position: relative; color: var(--ink-soft); font-size: 0.95rem; }
+  .pillar li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 10px; height: 10px; border-radius: 3px; background: var(--hi); border: 1px solid color-mix(in srgb, var(--ink) 25%, transparent); }
+  .pillar .from { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); border-top: 1px dashed var(--line-strong); padding-top: 12px; margin-top: 4px; }
+
+  /* ---------- ladder ---------- */
+  .ladder { display: grid; gap: 10px; }
+  @media (min-width: 900px) { .ladder { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; } }
+  .rung { border-radius: 16px; padding: 20px; display: grid; gap: 10px; align-content: start; border: 1px solid var(--line); background: var(--surface); }
+  .rung .temp { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; display: inline-flex; gap: 8px; align-items: center; color: var(--muted); }
+  .rung .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .rung h3 { font-size: 1.15rem; }
+  .rung dl { margin: 0; display: grid; gap: 8px; }
+  .rung dt { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .rung dd { margin: 0; font-size: 0.9rem; color: var(--ink-soft); }
+  .rung .eg { font-size: 0.85rem; color: var(--ink); background: var(--surface-sunk); border-radius: 10px; padding: 10px 12px; }
+  @media (min-width: 900px) {
+    .rung { position: relative; }
+    .rung:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -11px;
+      top: 22px;
+      width: 22px; height: 22px;
+      display: grid; place-items: center;
+      font-size: 0.8rem;
+      background: var(--ink);
+      color: var(--ground);
+      border-radius: 50%;
+      z-index: 2;
+    }
+  }
+  .rules { display: grid; gap: 16px; margin-top: 40px; }
+  @media (min-width: 860px) { .rules { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .rule { padding: 24px; border-radius: 18px; display: grid; gap: 14px; align-content: start; background: var(--surface); border: 1px solid var(--line); }
+  .rule.add { border-top: 4px solid #3BD16F; }
+  .rule.cut { border-top: 4px solid var(--down); }
+  .rule.keep { border-top: 4px solid var(--ink); }
+  .rule ol { margin: 0; padding-left: 1.15em; display: grid; gap: 10px; color: var(--ink-soft); font-size: 0.93rem; }
+  .rule li::marker { font-family: var(--mono); color: var(--muted); font-size: 0.8rem; }
+
+  /* ---------- who ---------- */
+  .who { display: grid; gap: 12px; }
+  @media (min-width: 700px) { .who { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1040px) { .who { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  .who-card { padding: 22px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); display: grid; gap: 10px; align-content: start; }
+  .who-card .ic { width: 40px; height: 40px; border-radius: 12px; background: var(--hi); color: var(--hi-ink); display: grid; place-items: center; }
+  .who-card .ic svg { width: 20px; height: 20px; }
+  .who-card p { font-size: 0.92rem; }
+  .who-card .fix { font-size: 0.85rem; color: var(--ink); font-weight: 500; }
+
+  /* ---------- process ---------- */
+  .process { display: grid; gap: 14px; counter-reset: p; }
+  @media (min-width: 860px) { .process { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .proc { padding: 26px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); display: grid; gap: 10px; align-content: start; }
+  .proc .num { font-family: var(--display); font-weight: 800; font-size: 2.4rem; letter-spacing: -0.04em; line-height: 1; color: var(--line-strong); }
+  .proc .out { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); margin-top: 6px; }
+
+  /* ---------- about ---------- */
+  .about-grid { display: grid; gap: 40px; }
+  @media (min-width: 960px) { .about-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 64px; } }
+  .about-copy { display: grid; gap: 18px; }
+  .facts { display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .fact { display: grid; grid-template-columns: 1fr; gap: 4px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  @media (min-width: 560px) { .fact { grid-template-columns: 150px minmax(0, 1fr); gap: 16px; } }
+  .fact dt { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
+  .fact dd { margin: 0; font-size: 0.93rem; color: var(--ink-soft); }
+  .tools { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tools span { font-family: var(--mono); font-size: 0.75rem; padding: 6px 10px; border: 1px solid var(--line-strong); border-radius: 999px; color: var(--ink-soft); }
+
+  /* ---------- faq ---------- */
+  .faq { display: grid; gap: 10px; max-width: 860px; }
+  .faq details { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+  .faq summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 18px 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; font-family: var(--mono); color: var(--muted); transition: transform 0.15s ease; }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq .a { padding: 0 20px 20px; }
+  .faq .a p { font-size: 0.95rem; }
+
+  /* ---------- final cta ---------- */
+  .final { padding-block: 72px 88px; }
+  .final-card {
+    background: var(--ink);
+    color: var(--ground);
+    border-radius: 28px;
+    padding: clamp(28px, 5vw, 64px);
     display: grid;
     gap: 22px;
+    position: relative;
+    overflow: hidden;
   }
-  @media (min-width: 860px) {
-    .case { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 40px; }
-  }
-  .case-main { display: grid; gap: 14px; align-content: start; }
-  .case-ref {
-    font-family: var(--mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--signal);
-  }
-  .case-main p { font-size: var(--step--1); line-height: 1.65; }
-  .case-main .built { color: var(--ink); }
-  .case-main .built b { font-weight: 600; }
-
-  .results { align-self: start; }
-  .results table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: var(--mono);
-    font-size: 0.75rem;
-    font-variant-numeric: tabular-nums;
-  }
-  .results caption {
-    font-family: var(--mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-align: left;
-    padding-bottom: 10px;
-  }
-  .results th, .results td {
-    text-align: left;
-    padding: 8px 10px 8px 0;
-    border-bottom: 1px solid var(--line);
-    vertical-align: baseline;
-  }
-  .results th { font-weight: 400; color: var(--muted); }
-  .results td { text-align: right; padding-right: 0; color: var(--ink); font-weight: 500; }
-  .results tr:last-child th, .results tr:last-child td { border-bottom: none; }
-  .results td.hi { color: var(--accent); }
-
-  .aside {
-    background: var(--surface-sunk);
-    border-left: 2px solid var(--line-strong);
-    padding: 14px 16px;
-    font-size: var(--step--1);
-    line-height: 1.6;
-    color: var(--ink-soft);
-    margin-top: 4px;
-  }
-  .aside b { font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 6px; font-weight: 500; }
-
-  /* ---------- voices ---------- */
-
-  .voices { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
-  @media (min-width: 760px) { .voices { grid-template-columns: 1fr 1fr; } }
-  .voice {
-    background: var(--surface);
-    padding: 24px 22px;
-    display: grid;
-    gap: 14px;
-    align-content: start;
-  }
-  .voice p {
+  .final-card h2 { color: var(--ground); max-width: 18ch; }
+  .final-card p { color: color-mix(in srgb, var(--ground) 78%, transparent); }
+  .final-card .btn-ghost { color: var(--ground); border-color: color-mix(in srgb, var(--ground) 35%, transparent); }
+  .final-card .btn-ghost:hover { border-color: var(--ground); }
+  .final-card .bigfig {
+    position: absolute;
+    right: -0.04em;
+    bottom: -0.22em;
     font-family: var(--display);
-    font-style: italic;
-    font-size: var(--step-0);
-    line-height: 1.6;
-    color: var(--ink);
-    margin: 0;
-    max-width: none;
+    font-weight: 800;
+    font-size: clamp(6rem, 18vw, 15rem);
+    letter-spacing: -0.06em;
+    line-height: 1;
+    color: color-mix(in srgb, var(--hi) 16%, transparent);
+    pointer-events: none;
+    user-select: none;
   }
-  .voice-by {
-    font-style: normal;
-    font-family: var(--mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.04em;
-    color: var(--muted);
-  }
+  .final-card > *:not(.bigfig) { position: relative; z-index: 1; }
 
-  /* ---------- notes / thinking ---------- */
+  footer { border-top: 1px solid var(--line); padding-block: 28px 40px; }
+  .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; font-size: 0.85rem; color: var(--muted); }
+  .foot a { color: var(--ink-soft); text-decoration: none; }
+  .foot a:hover { color: var(--ink); }
+  .foot-links { display: flex; gap: 18px; }
 
-  .notes-empty {
-    border: 1px dashed var(--line-strong);
-    padding: 22px 24px;
-    font-family: var(--mono);
-    font-size: 0.8125rem;
-    letter-spacing: 0.02em;
-    color: var(--muted);
-  }
-
-  /* ---------- record / credentials ---------- */
-
-  .facts { display: grid; gap: 0; border-top: 1px solid var(--line); }
-  .fact {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 4px 24px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--line);
-  }
-  @media (min-width: 700px) { .fact { grid-template-columns: 200px minmax(0, 1fr); } }
-  .fact dt {
-    font-family: var(--mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-    padding-top: 3px;
-  }
-  .fact dd { margin: 0; color: var(--ink-soft); font-size: var(--step--1); line-height: 1.6; }
-  .fact dd b { color: var(--ink); font-weight: 600; }
-
-  .toolset { display: grid; gap: 14px; }
-  .toolrow { display: grid; gap: 6px 20px; }
-  @media (min-width: 700px) { .toolrow { grid-template-columns: 200px minmax(0, 1fr); } }
-  .toolrow dt {
-    font-family: var(--mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .toolrow dd { margin: 0; font-size: var(--step--1); color: var(--ink-soft); }
-
-  /* ---------- footer ---------- */
-
-  footer {
-    border-top: 1px solid var(--line);
-    padding-block: 40px 56px;
-  }
-  .colophon {
-    font-family: var(--mono);
-    font-size: 0.6875rem;
-    color: var(--muted);
-    letter-spacing: 0.04em;
-    line-height: 1.7;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    * { transition: none !important; animation: none !important; }
-  }
-</style>
-<style>
-  html { color-scheme: light dark; }
-  body { margin: 0; }
-  img { max-width: 100%; }
-  [hidden] { display: none !important; }
+  /* ---------- reveal ---------- */
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
 
-
-<div class="page">
-
-  <nav class="nav" aria-label="Primary">
-    <a class="nav-brand" href="#top">Pat Weischede</a>
+<div class="nav-bar">
+  <nav class="wrap nav" aria-label="Primary">
+    <a class="brand" href="#top">Pat Weischede</a>
     <div class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#immigration">Immigration</a>
+      <a href="#proof">Proof</a>
+      <a href="#playbook">Playbook</a>
+      <a href="#offers">Offers</a>
+      <a href="#who">Who it's for</a>
       <a href="#about">About</a>
-      <a href="#thinking">Thinking</a>
-      <a href="#contact">Contact</a>
     </div>
+    <a class="btn btn-primary" href="https://cal.com/patweischede/strategy-call" target="_blank" rel="noopener">Book a call</a>
   </nav>
+</div>
 
-  <header class="masthead" id="top">
-    <div class="hero">
-      <h1>I build systems that make complicated things simpler.</h1>
-      <p class="lede">I'm Pat Weischede. I work across immigration, business, operations and technology — solving difficult problems and building better ways of doing things.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#contact">Work with me</a>
-        <a class="btn btn-secondary" href="#about">About Pat</a>
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <header class="wrap hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="kicker">Acquisition · Offers · AI lead gen</span>
+        <h1>
+          <span class="line">13.4M views.</span>
+          <span class="line">111k followers.</span>
+          <span class="line dim">10 months.</span>
+        </h1>
+        <p class="lede">
+          I built that audience organically, in one of the most regulated, trust-heavy niches there is. Then I built the system that turned the attention into <strong>qualified leads and paying clients</strong>. Now I help coaches, consultants, advisors and growing businesses do the same.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://cal.com/patweischede/strategy-call" target="_blank" rel="noopener">Book a strategy call <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="#proof">See the receipts</a>
+        </div>
+        <span class="fine">Screenshots below are unedited platform exports. No ad-account smoke and mirrors.</span>
       </div>
-      <p class="credential-note">New Zealand Licensed Immigration Adviser — Licence No. 202300030</p>
+
+      <aside class="receipt" aria-label="Results summary">
+        <div class="receipt-top">
+          <span class="live">10-month snapshot</span>
+          <span class="fine">Organic-first</span>
+        </div>
+        <div class="big-stats">
+          <div class="big-stat wide">
+            <div class="fig" data-count="13.4" data-suffix="M+" data-decimals="1">13.4M+</div>
+            <div class="cap">Organic views across the channels I run</div>
+          </div>
+          <div class="big-stat">
+            <div class="fig" data-count="111" data-suffix="k+">111k+</div>
+            <div class="cap">Followers gained</div>
+          </div>
+          <div class="big-stat">
+            <div class="fig" data-count="89.9" data-suffix="%" data-decimals="1">89.9%</div>
+            <div class="cap">Of views from people who didn't follow yet</div>
+          </div>
+          <div class="big-stat">
+            <div class="fig" data-count="5140" data-suffix="">5,140</div>
+            <div class="cap">Waitlist sign-ups from one campaign</div>
+          </div>
+          <div class="big-stat">
+            <div class="fig" data-count="500" data-prefix="~" data-suffix="/mo">~500/mo</div>
+            <div class="cap">Inbound leads, triaged automatically</div>
+          </div>
+        </div>
+        <div class="receipt-foot">Views are vanity until something catches them. The rest of this page is about the catching.</div>
+      </aside>
     </div>
   </header>
 
-  <section class="band" id="pov" aria-label="Point of view">
-    <div class="rail">Point of view</div>
-    <div class="band-body">
-      <h2>Complexity is usually a systems problem.</h2>
-      <p>Whether it's navigating immigration, running a business or adopting new technology, most problems become easier once the right structure exists.</p>
-      <p>I like finding that structure.</p>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span><b>3,733,849</b> views · last 60 days</span>
+      <span><b>50,643</b> new follows · last 90 days</span>
+      <span><b>2,738,363</b> views · single reel</span>
+      <span><b>1,690</b> unique event registrations</span>
+      <span><b>413</b> in-person attendees</span>
+      <span><b>20,000+</b> contacts in the database</span>
+      <span><b>3 hrs → 30 min</b> per deliverable with AI</span>
+      <span><b>Days → instant</b> booking confirmation</span>
+      <span><b>3,733,849</b> views · last 60 days</span>
+      <span><b>50,643</b> new follows · last 90 days</span>
+      <span><b>2,738,363</b> views · single reel</span>
+      <span><b>1,690</b> unique event registrations</span>
+      <span><b>413</b> in-person attendees</span>
+      <span><b>20,000+</b> contacts in the database</span>
+      <span><b>3 hrs → 30 min</b> per deliverable with AI</span>
+      <span><b>Days → instant</b> booking confirmation</span>
+    </div>
+  </div>
+
+  <!-- ================= PROOF ================= -->
+  <section class="sec" id="proof">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">The receipts</span>
+        <h2>Don't take my word for it. <span class="mark">Here's the dashboard.</span></h2>
+        <p class="lede">These are straight from the Meta professional dashboard of the page I run. Cropped to remove client faces and page details, nothing else changed. Down arrows included, because real growth comes in waves.</p>
+      </div>
+
+      <div class="proof-grid">
+        <figure class="shot s-views reveal">
+          <div class="shot-frame">
+            <img src="assets/proof-views-60d.jpg" width="1172" height="446" loading="lazy" alt="Meta dashboard: 3,733,849 views over the last 60 days, with a spike past 400,000 daily views in mid-September.">
+          </div>
+          <figcaption>
+            <span class="kicker">Last 60 days</span>
+            <span class="fig-line">3.73M views in 60 days</span>
+            <span class="note">The spike is a campaign launch, not luck: one in-person event series, announced through short-form video, pulled 400k+ views in a single day. The <span class="tag-down">−42%</span> is against an even bigger previous 60 days. Growth comes in waves, and each wave is planned.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="shot s-split reveal">
+          <div class="shot-frame">
+            <img src="assets/proof-audience-split.jpg" width="1172" height="274" loading="lazy" alt="Meta dashboard: views by followers vs non-followers, 89.9% non-followers and 10.1% followers.">
+          </div>
+          <figcaption>
+            <span class="fig-line">89.9% non-followers</span>
+            <span class="note">Nine in ten views came from people who'd never followed. That's what acquisition content is for: reaching new buyers, not entertaining the ones you already have.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="shot s-follow reveal">
+          <div class="shot-frame">
+            <img src="assets/proof-follows-90d.jpg" width="637" height="323" loading="lazy" alt="Meta dashboard, last 90 days: 50,643 follows, up 18%, and 154,402 engagements, up 2%.">
+          </div>
+          <figcaption>
+            <span class="fig-line">50,643 follows in 90 days</span>
+            <span class="note">Up 18% on the quarter before, with 154k engagements. Followers matter because they're the cheapest audience to re-offer to next time.</span>
+          </figcaption>
+        </figure>
+      </div>
+      <p class="proof-foot">Snapshot exported 22 October 2026. The 13.4M views and 111k followers cover the full 10-month period; the screenshots show the most recent 60- and 90-day windows.</p>
     </div>
   </section>
 
-  <section class="band" id="what-i-do" aria-label="What I do">
-    <div class="rail">What I do</div>
-    <div class="band-body">
-      <h2>Four areas. One way of thinking.</h2>
+  <!-- ================= PLAYBOOK: AFTER THE VIEWS ================= -->
+  <section class="sec" id="playbook">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">What happened after the views</span>
+        <h2>Views don't pay the bills. <span class="mark">The system behind them does.</span></h2>
+        <p class="lede">One real campaign: a free in-person event series for a high-consideration service, sold to an audience 8,000 km away. Here's the funnel, deduplicated against source data, not the platform's inflated version.</p>
+      </div>
 
-      <div class="domains">
-        <article class="domain">
-          <div class="domain-head"><span class="idx">01</span><h3>Immigration</h3></div>
-          <p>Strategic immigration advice for individuals and employers navigating New Zealand's immigration system.</p>
-        </article>
+      <div class="funnel-grid">
+        <div class="reveal">
+          <div class="funnel" role="list">
+            <div class="step" role="listitem" style="--w:100%"><span class="lbl">Waitlist sign-ups</span><span class="val">5,140</span></div>
+            <div class="ratio">↓ 33% registered for a specific session</div>
+            <div class="step" role="listitem" style="--w:33%"><span class="lbl">Unique registrations</span><span class="val">1,690</span></div>
+            <div class="ratio">↓ 24.4% showed up</div>
+            <div class="step" role="listitem" style="--w:8%"><span class="lbl">Attendees</span><span class="val">413</span></div>
+            <div class="ratio">↓ 10.4% converted to the paid next step</div>
+            <div class="step" role="listitem" style="--w:3%"><span class="lbl">Paid conversion</span><span class="val">10.4%</span></div>
+          </div>
+          <div class="system-stats">
+            <div><b>~500/mo</b><span>Inbound leads scored and routed by AI, no manual triage</span></div>
+            <div><b>Days → instant</b><span>From payment to booking confirmation</span></div>
+            <div><b>20,000+</b><span>Contacts segmented by intent, not just "subscribed"</span></div>
+            <div><b>3 hrs → 30 min</b><span>Per client deliverable, with an AI drafting pipeline and a human review gate</span></div>
+          </div>
+        </div>
 
-        <article class="domain">
-          <div class="domain-head"><span class="idx">02</span><h3>Business &amp; Operations</h3></div>
-          <p>Building workflows, processes and operating systems that make organisations easier to run.</p>
-        </article>
-
-        <article class="domain">
-          <div class="domain-head"><span class="idx">03</span><h3>Technology &amp; AI</h3></div>
-          <p>Exploring and implementing practical technology that reduces friction and increases leverage.</p>
-        </article>
-
-        <article class="domain">
-          <div class="domain-head"><span class="idx">04</span><h3>Building</h3></div>
-          <p>Experimenting with businesses, products, systems and ideas.</p>
-        </article>
+        <div class="reveal" style="display:grid; gap:16px;">
+          <div class="insight">
+            <span class="kicker">How I read it</span>
+            <h3 style="color:inherit">The constraint wasn't conversion. It was the show rate.</h3>
+            <p>Most people would've chased more reach. But a <strong>10-point lift on a 24.4% show rate is ~170 more people in the room</strong>, which at 10.4% conversion is roughly <strong>40% more paid clients for zero extra spend</strong>. So the next campaign targets the gap between "registered" and "showed up": reminder sequencing and a small commitment at sign-up.</p>
+          </div>
+          <div class="insight" style="background:var(--surface); color:var(--ink); border:1px solid var(--line);">
+            <span class="kicker" style="color:var(--muted)">Data honesty</span>
+            <p style="color:var(--ink-soft)">The platform exports said 1,756 registrations and 423 attendees. Deduplicated, the true numbers were 1,690 and 413, a <strong style="color:var(--ink)">3.8% overstatement</strong>. If you're making offer decisions on inflated dashboards, you're making them wrong. I fix the numbers before I touch the funnel.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="band" aria-label="Scale of the operation">
-    <div class="rail">Scale</div>
-    <div class="band-body">
-      <div class="snapshot">
-        <div class="metric"><div class="fig">15,000+</div><div class="cap">Records on one CRM spine</div></div>
-        <div class="metric"><div class="fig">100+</div><div class="cap">Automated executions per day</div></div>
-        <div class="metric"><div class="fig">~500</div><div class="cap">Inbound leads per month, auto-triaged</div></div>
-        <div class="metric"><div class="fig">200+</div><div class="cap">Client assessment reports produced</div></div>
-        <div class="metric"><div class="fig">4 / 3 / 2</div><div class="cap">Direct reports, sites, countries</div></div>
-        <div class="metric"><div class="fig">5M+</div><div class="cap">Organic views in a 30-day window</div></div>
+  <!-- ================= PAIN ================= -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Sound familiar?</span>
+        <h2>You don't have an attention problem. You have a <span class="mark">catching</span> problem.</h2>
       </div>
-      <p style="font-family: var(--mono); font-size: 0.6875rem; color: var(--muted); letter-spacing: 0.04em; max-width: none;">Figures are practice-level, current as at 2026. Commercial and client details are withheld.</p>
+      <div class="pains">
+        <div class="pain reveal">
+          <q>My posts do numbers but my calendar's empty.</q>
+          <p>Reach without a next step. Content gets watched, then nothing tells the viewer what to do or why now.</p>
+        </div>
+        <div class="pain reveal">
+          <q>I've got four offers and they're eating each other.</q>
+          <p>Your free content answers the same question your paid offer does, so people take the free one. Or your mid-tier makes your premium look unnecessary.</p>
+        </div>
+        <div class="pain reveal">
+          <q>Leads come in, then go cold in my DMs.</q>
+          <p>No qualification, no routing, no follow-up sequence. Good leads wait days. Tyre-kickers eat your hours.</p>
+        </div>
+        <div class="pain reveal">
+          <q>Everyone says "use AI" but nobody says where.</q>
+          <p>You've got tools. You don't have a system. AI bolted onto a messy funnel just makes the mess faster.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="band" aria-label="The operating stack">
-    <div class="rail">The stack</div>
-    <div class="band-body">
-      <h2>How the systems fit together</h2>
-      <p>Four layers, built in this order, each one feeding the next. A lead entering at layer 1 reaches a licensed adviser at layer 3 without anyone retyping it.</p>
-
-      <div class="stack">
-        <div class="layer">
+  <!-- ================= WHAT I DO ================= -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">What I help with</span>
+        <h2>Four parts of one engine.</h2>
+        <p class="lede">I don't just consult on one slice. I've built every piece of this myself, end to end, in a business where getting it wrong has regulatory consequences.</p>
+      </div>
+      <div class="pillars">
+        <article class="pillar reveal">
           <span class="n">01</span>
-          <span class="name">Acquisition</span>
-          <span class="what">Organic content, seminar programmes and landing pages. Registration and waitlist capture, QR check-in at venue.</span>
-          <span class="tools">Meta and TikTok organic · Tally · in-house landing pages · Vercel · Cloudflare</span>
-        </div>
-        <div class="layer">
+          <h3>Acquisition</h3>
+          <p>Content that reaches people who don't know you yet, with a reason to raise their hand.</p>
+          <ul>
+            <li>Short-form angles built around buyer questions, not trends</li>
+            <li>Event, waitlist and lead-magnet mechanics that create urgency honestly</li>
+            <li>Landing pages that convert the traffic you already have</li>
+          </ul>
+          <span class="from">From the build: 13.4M organic views · 5,140-person waitlist</span>
+        </article>
+        <article class="pillar reveal">
           <span class="n">02</span>
-          <span class="name">Intake and qualification</span>
-          <span class="what">Form to CRM with spam filtering, deduplication by email, routing between new and existing records, AI-assisted scoring, and segmented transactional email on submission.</span>
-          <span class="tools">Make.com · Claude API · Brevo · Notion</span>
-        </div>
-        <div class="layer">
+          <h3>Lead gen & management, with AI</h3>
+          <p>Every lead captured, scored, routed and followed up, without you living in the inbox.</p>
+          <ul>
+            <li>Form → CRM with dedupe, spam filtering and AI-assisted scoring</li>
+            <li>Segmented follow-up sequences matched to intent</li>
+            <li>Payment → booking → call flows with no manual handoffs</li>
+          </ul>
+          <span class="from">From the build: ~500 leads/mo auto-triaged · 15,000+ records on one CRM</span>
+        </article>
+        <article class="pillar reveal">
           <span class="n">03</span>
-          <span class="name">Delivery</span>
-          <span class="what">Payment to booking to consultation to report, with the adviser's judgement as the only manual step that stays manual. Retrieval-backed drafting, human review gate, templated output.</span>
-          <span class="tools">Stripe · cal.com · Microsoft Teams · document generation pipeline · Xero</span>
-        </div>
-        <div class="layer">
+          <h3>Offer design</h3>
+          <p>Offers people can say yes to quickly, priced and positioned so each one leads to the next.</p>
+          <ul>
+            <li>Value propositions that survive scrutiny in trust-heavy markets</li>
+            <li>A clear entry offer, core offer and continuity path</li>
+            <li>Messaging that pre-qualifies so your calls are with buyers</li>
+          </ul>
+          <span class="from">From the build: free event → paid assessment at 10.4% of attendees</span>
+        </article>
+        <article class="pillar reveal">
           <span class="n">04</span>
-          <span class="name">Governance</span>
-          <span class="what">File-level audit trail, records and retention, permission model, CPD and supervision records, weekly leadership cadence across both countries.</span>
-          <span class="tools">Microsoft 365 · SharePoint · Notion HR hub · statutory code of conduct</span>
+          <h3>Offer management</h3>
+          <p>Running several offers across several audiences, without them cannibalising each other.</p>
+          <ul>
+            <li>Audience segmentation by readiness, not demographics</li>
+            <li>Clear signals for when to add, merge or kill an offer</li>
+            <li>Reporting you can trust, so decisions are made on real numbers</li>
+          </ul>
+          <span class="from">From the build: 20+ campaigns run across two countries</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OFFER ARCHITECTURE ================= -->
+  <section class="sec" id="offers">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">How I think about offers</span>
+        <h2>One audience. Four temperatures. <span class="mark">One job per offer.</span></h2>
+        <p class="lede">Cannibalisation happens when two offers do the same job for the same person. The fix isn't fewer offers. It's giving every offer exactly one job, one audience temperature and one next step.</p>
+      </div>
+
+      <div class="ladder">
+        <article class="rung reveal">
+          <span class="temp"><span class="dot" style="background:#6FA8FF"></span>Cold</span>
+          <h3>Free content</h3>
+          <dl>
+            <div><dt>Job</dt><dd>Answer "is this for people like me?"</dd></div>
+            <div><dt>Never</dt><dd>Solve their specific problem. That's what they'll pay for.</dd></div>
+          </dl>
+          <div class="eg">Short-form video, free events, waitlists</div>
+        </article>
+        <article class="rung reveal">
+          <span class="temp"><span class="dot" style="background:#F2C94C"></span>Warm</span>
+          <h3>Entry offer</h3>
+          <dl>
+            <div><dt>Job</dt><dd>Turn "interested" into "committed" with a small, specific yes.</dd></div>
+            <div><dt>Never</dt><dd>Deliver the full outcome. It should reveal the path, not walk it.</dd></div>
+          </dl>
+          <div class="eg">Paid assessment, audit, intensive, trial block</div>
+        </article>
+        <article class="rung reveal">
+          <span class="temp"><span class="dot" style="background:#F2994A"></span>Hot</span>
+          <h3>Core offer</h3>
+          <dl>
+            <div><dt>Job</dt><dd>Deliver the transformation they came for.</dd></div>
+            <div><dt>Never</dt><dd>Compete on price with your own entry offer.</dd></div>
+          </dl>
+          <div class="eg">Coaching programme, engagement, done-for-you</div>
+        </article>
+        <article class="rung reveal">
+          <span class="temp"><span class="dot" style="background:#3BD16F"></span>Retained</span>
+          <h3>Continuity</h3>
+          <dl>
+            <div><dt>Job</dt><dd>Keep the result going, and turn clients into referrers.</dd></div>
+            <div><dt>Never</dt><dd>Be a cheaper version of the core offer.</dd></div>
+          </dl>
+          <div class="eg">Membership, retainer, check-ins, community</div>
+        </article>
+      </div>
+
+      <div class="rules">
+        <div class="rule add reveal">
+          <h3>Add an offer when…</h3>
+          <ol>
+            <li>The same question keeps coming up that no current offer answers.</li>
+            <li>There's a big drop-off between two steps that a smaller commitment could bridge.</li>
+            <li>Your core offer is at capacity and buyers are waiting.</li>
+          </ol>
         </div>
-      </div>
-      <div class="stack-note">10+ platforms owned end to end</div>
-    </div>
-  </section>
-
-  <section class="band" id="work" aria-label="Selected work">
-    <div class="rail">Work</div>
-    <div class="band-body">
-      <h2>Six things I built</h2>
-
-      <div class="work">
-
-        <article class="case">
-          <div class="case-main">
-            <div class="case-ref">01 · Marketing</div>
-            <h3>Offshore client acquisition campaign</h3>
-            <p>In-market seminars are the practice's main acquisition channel for a market 8,000 km away, delivered by a team in a different country and time zone. Six sessions across three cities.</p>
-            <p class="built"><b>Built:</b> the acquisition stack end to end. Registration forms, email campaigns, the QR-to-payment funnel, booking, venue coordination and the seminar decks. Organic-first rather than buying reach, on the basis that the practice's content already had distribution. A four-person offshore team executed on a weekly cadence while I held the design.</p>
-            <div class="aside">
-              <b>Data integrity finding</b>
-              Raw platform exports reported 1,756 registrations and 423 attendees. Deduplicated against source data the true figures were 1,690 and 413: a 3.8% overstatement. I rebuilt campaign reporting on the deduplicated base, which gave the practice a defensible funnel benchmark for the first time.
-            </div>
-            <div class="aside">
-              <b>How I read the result</b>
-              The show rate is the constraint, not the conversion rate. A ten-point lift on 24.4% is roughly 170 additional attendees, which at 10.4% conversion is roughly 40% more output for no additional spend. The next run targets the registration-to-attendance gap with reminder sequencing and a commitment device at registration.
-            </div>
-          </div>
-          <div class="results">
-            <table>
-              <caption>Funnel, deduplicated</caption>
-              <tbody>
-                <tr><th scope="row">Organic reach, 30 days</th><td>5M+ views</td></tr>
-                <tr><th scope="row">Waitlist</th><td>5,140</td></tr>
-                <tr><th scope="row">Unique registrations</th><td>1,690</td></tr>
-                <tr><th scope="row">Attendees</th><td>413</td></tr>
-                <tr><th scope="row">Show rate</th><td class="hi">24.4%</td></tr>
-                <tr><th scope="row">Attendee conversion</th><td class="hi">10.4%</td></tr>
-                <tr><th scope="row">Campaigns delivered to date</th><td>8</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
-
-        <article class="case">
-          <div class="case-main">
-            <div class="case-ref">02 · Funnel</div>
-            <h3>End-to-end consultation pipeline</h3>
-            <p>Moving a client from enquiry to a paid consultation involved a manual handoff at every step. Clients who had already paid waited days for confirmation and booking instructions.</p>
-            <p class="built"><b>Built:</b> an automated path from landing page to payment link to booking to video call to post-consultation sequence, with no manual handoff at any point. Conditional transactional email segments each enquiry on submission and routes it to a sequence matched to intent. Two payment rails, card and local wallet, feed the same confirmation flow, so the offshore market runs on the same automation as the domestic one.</p>
-          </div>
-          <div class="results">
-            <table>
-              <caption>Result</caption>
-              <tbody>
-                <tr><th scope="row">Confirmation lag</th><td class="hi">Days to instant</td></tr>
-                <tr><th scope="row">Payments through the flow</th><td>300</td></tr>
-                <tr><th scope="row">Leads segmented per month</th><td>~500</td></tr>
-                <tr><th scope="row">Contact database</th><td>20,000+</td></tr>
-                <tr><th scope="row">Campaigns run, 12 months</th><td>20+</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
-
-        <article class="case">
-          <div class="case-main">
-            <div class="case-ref">03 · Systems</div>
-            <h3>The practice's first CRM</h3>
-            <p>Client tracking lived in spreadsheets on a single local machine. No shared source of truth, no pipeline visibility, no continuity if that machine or that person was unavailable, for a caseload spanning two countries.</p>
-            <p class="built"><b>Built:</b> a stage-gated CRM in Notion as one linked structure rather than a set of separate trackers. Seven pipeline stages from enquiry to closed engagement, four linked databases (client CRM, team activity, HR hub, weekly schedule), three months from first design to team-adopted MVP.</p>
-            <div class="aside">
-              <b>What I got wrong</b>
-              The build was not the hard part. Adoption was. I had designed for the system rather than for the people using it, and rollout stalled because the team had to learn a new tool on top of doing their jobs. The fix was automating the entries so the system filled itself. Tool selection is not a technical decision: it is a function of who is on the team and whether the change actually benefits them. I assess that before I build now, not after.
-            </div>
-          </div>
-          <div class="results">
-            <table>
-              <caption>Result</caption>
-              <tbody>
-                <tr><th scope="row">Records on one spine</th><td class="hi">15,000+</td></tr>
-                <tr><th scope="row">Daily users, two countries</th><td>5</td></tr>
-                <tr><th scope="row">Automated entries per day</th><td>100+</td></tr>
-                <tr><th scope="row">Pipeline stages</th><td>7</td></tr>
-                <tr><th scope="row">Linked databases</th><td>4</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
-
-        <article class="case">
-          <div class="case-main">
-            <div class="case-ref">04 · AI</div>
-            <h3>AI-assisted document generation pipeline</h3>
-            <p>The flagship client deliverable is a structured multi-section assessment report. It took three hours per report, produced entirely by hand, and it was the binding constraint on how many clients could be served.</p>
-            <p class="built"><b>Built:</b> a generation pipeline on a structured retrieval knowledge base, tuned over six months before it was scaled into use. Pre-consultation intake forms and meeting transcription wired in as inputs, so it starts from captured data rather than notes. A human review gate at the end: the pipeline drafts, it does not file.</p>
-            <div class="aside">
-              <b>The judgement behind it</b>
-              The six months of tuning is the point, not the speed. In a regulated context the failure mode of a fast wrong answer is worse than the cost of a slow right one, so the effort went into retrieval quality rather than throughput, and the review step stayed human.
-            </div>
-          </div>
-          <div class="results">
-            <table>
-              <caption>Before and after</caption>
-              <tbody>
-                <tr><th scope="row">Production time, before</th><td>3 hours</td></tr>
-                <tr><th scope="row">Production time, after</th><td>Under 30 min</td></tr>
-                <tr><th scope="row">Reduction</th><td class="hi">83%</td></tr>
-                <tr><th scope="row">Reports produced</th><td>200+</td></tr>
-                <tr><th scope="row">Production time removed</th><td>~500 hours</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
-
-        <article class="case">
-          <div class="case-main">
-            <div class="case-ref">05 · People</div>
-            <h3>Building the offshore operation</h3>
-            <p>The practice needed delivery capacity in its largest source market. No offshore structure existed: no roles, no employment documentation, no operating rhythm.</p>
-            <p class="built"><b>Built:</b> recruited the National Manager and defined the role rather than filling one someone else had scoped. Authored the employment agreement, the onboarding pack and the business development tracker the office runs on. Established the weekly schedule and the one-to-one cadence, cascading from manager level down. Opened a second site with a Branch Manager, extending coverage beyond the capital.</p>
-          </div>
-          <div class="results">
-            <table>
-              <caption>Result</caption>
-              <tbody>
-                <tr><th scope="row">Team size</th><td class="hi">2 to 4</td></tr>
-                <tr><th scope="row">Offshore sites opened</th><td>2</td></tr>
-                <tr><th scope="row">Time to independent operation</th><td>Week one</td></tr>
-                <tr><th scope="row">Leadership cadence</th><td>Weekly</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
-
-        <article class="case">
-          <div class="case-main">
-            <div class="case-ref">06 · Build</div>
-            <h3>Web properties and a product of my own</h3>
-            <p>The practice's web presence sat on a hosted page builder, with cost and flexibility both set by the platform. Separately, the visa lifecycle problem I watch clients run into every week has no decent tool behind it.</p>
-            <p class="built"><b>Built:</b> three company sites plus conversion pages (booking landing page, pre-appointment preparation page), hand-built in HTML, CSS and JavaScript, mobile-first, deployed on Vercel with DNS on Cloudflare. And Ovrstay, a lifecycle tracking product for a compliance-driven use case, taken from concept to live deployment.</p>
-          </div>
-          <div class="results">
-            <table>
-              <caption>Result</caption>
-              <tbody>
-                <tr><th scope="row">Sites brought in house</th><td>3</td></tr>
-                <tr><th scope="row">Annual hosting cost</th><td class="hi">97% lower</td></tr>
-                <tr><th scope="row">Platform dependency</th><td>Removed</td></tr>
-                <tr><th scope="row">Products shipped to live</th><td>1</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="immigration" aria-label="Immigration">
-    <div class="rail">Immigration</div>
-    <div class="band-body">
-      <h2>Immigration is complicated enough. The advice shouldn't be.</h2>
-      <p class="lede">I provide strategic New Zealand immigration advice to individuals and employers, licensed and accountable under a statutory code of conduct since 2023.</p>
-
-      <ul class="imm-services">
-        <li>Eligibility analysis and pathway strategy: AEWV, Skilled Migrant, Green List, student and partnership categories</li>
-        <li>Scope, engagement agreements and staged fee structures</li>
-        <li>Evidence assembly, submission and outcome management</li>
-        <li>Escalations, regulator correspondence and contested matters</li>
-      </ul>
-
-      <p class="proof">200+ clients personally advised. 112 structured assessments delivered. Zero complaints upheld, formal or informal. 100% of statutory-deadline responses filed on time across 10 contested matters.</p>
-
-      <div>
-        <a class="btn btn-primary" href="mailto:pat@patweischede.com?subject=Immigration%20enquiry">Discuss your situation</a>
-      </div>
-
-      <div>
-        <h3 style="font-size: var(--step-1); margin-bottom: 14px;">What clients say</h3>
-        <p style="font-size: var(--step--1); margin-bottom: 18px;">Feedback from immigration clients, lightly trimmed for length. Names and identifying details are limited at their request.</p>
-        <div class="voices">
-          <blockquote class="voice">
-            <p>Heartfelt thanks to Sir Dean for the fast approval of my work visa. Transitioning from a student visa to an AEWV, his hard work and patience are truly unmatched. He is thorough and organized, ensuring no detail is overlooked.</p>
-            <cite class="voice-by">Crystal · Student visa to work visa</cite>
-          </blockquote>
-          <blockquote class="voice">
-            <p>From applying for our residency visa to achieving permanent residency, your kindness, patience and expertise gave us the strength to keep going. You made what once seemed impossible, possible.</p>
-            <cite class="voice-by">A family · Residence to permanent residency</cite>
-          </blockquote>
-          <blockquote class="voice">
-            <p>I am extremely satisfied with the service. The entire process has been incredibly smooth. He answered all our questions thoroughly, and explained the specific details of our visa perfectly.</p>
-            <cite class="voice-by">Rugien · Visa applicant</cite>
-          </blockquote>
-          <blockquote class="voice">
-            <p>Responsive and knowledgeable in terms of policies and how to achieve your move to NZ. The staff is very helpful with additional queries and requirements.</p>
-            <cite class="voice-by">Jason · Family relocation</cite>
-          </blockquote>
-          <blockquote class="voice">
-            <p>Their friendly, excellent service made the visa process a breeze. Their meticulous attention to detail left no room for errors. The team's genuine care and empathy made the journey feel like a partnership, not just a transaction.</p>
-            <cite class="voice-by">Desiree · Visa approved</cite>
-          </blockquote>
-          <blockquote class="voice">
-            <p>Thank you so much, Dean, for taking the time to answer my questions and for understanding a mother's heart. Now everything is much clearer, and I can travel with much less stress.</p>
-            <cite class="voice-by">A parent · Family visitor visa</cite>
-          </blockquote>
+        <div class="rule cut reveal">
+          <h3>Cut or merge when…</h3>
+          <ol>
+            <li>Two offers answer the same question for the same buyer.</li>
+            <li>It sells, but it leads nowhere. A dead end, not a step.</li>
+            <li>You can't say in one sentence who it's <em>not</em> for.</li>
+          </ol>
+        </div>
+        <div class="rule keep reveal">
+          <h3>Fix it, don't add, when…</h3>
+          <ol>
+            <li>The offer is right but the show rate or follow-up is broken.</li>
+            <li>Leads are going cold before anyone talks to them.</li>
+            <li>The numbers you're deciding on haven't been cleaned.</li>
+          </ol>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="band" id="about" aria-label="About">
-    <div class="rail">About</div>
-    <div class="band-body">
-      <h2>I'm Pat.</h2>
-      <p>I'm interested in complicated systems — and how to make them work better.</p>
-      <p>My background spans immigration, business, marketing and operations. Five years inside a regulated advisory practice took me from Marketing Communications Coordinator to Operations Manager, building the CRM, automation layer and client systems it runs on today.</p>
-      <p>Before that: a founded-and-exited apparel label, and years in retail and hospitality management.</p>
-      <p>Increasingly, I'm also exploring technology, AI and entrepreneurship. This website is where those things come together.</p>
-    </div>
-  </section>
-
-  <section class="band" aria-label="Credentials and scope">
-    <div class="rail">Record</div>
-    <div class="band-body">
-      <h2>For the record.</h2>
-
-      <dl class="facts">
-        <div class="fact">
-          <dt>Current role</dt>
-          <dd><b>Operations Manager</b>, the practice Auckland, Manila and Isabela. Five years with the practice, from Marketing Communications Coordinator to Operations Manager.</dd>
-        </div>
-        <div class="fact">
-          <dt>Team and sites</dt>
-          <dd>4 direct reports across 3 sites in 2 countries: National Manager, Branch Manager, Client Services Coordinator, Office Administration Assistant. Weekly leadership cadence across both countries.</dd>
-        </div>
-        <div class="fact">
-          <dt>Ownership</dt>
-          <dd>Discretionary budget authority over the technology stack and campaign media. 10+ platforms owned end to end, including vendor relationships.</dd>
-        </div>
-        <div class="fact">
-          <dt>Licence</dt>
-          <dd><b>Licensed Immigration Adviser (Full), No. 202300030.</b> Immigration Advisers Authority, New Zealand. Held under a statutory code of conduct with mandatory continuing professional development and supervision. 20+ CPD hours per year, full compliance every cycle.</dd>
-        </div>
-        <div class="fact">
-          <dt>Independent work</dt>
-          <dd>Business analysis and business plan consulting for SME owner-operators across hospitality, healthcare, automotive and retail. Each plan independently assessed against a regulatory standard on a pass or fail basis. All approved first time.</dd>
-        </div>
-        <div class="fact">
-          <dt>Education</dt>
-          <dd>Graduate Diploma in New Zealand Immigration Advice, Toi Ohomai Institute of Technology (2024). Bachelor of Commerce in Marketing, Victoria University of Wellington (2021).</dd>
-        </div>
-        <div class="fact">
-          <dt>Before this</dt>
-          <dd>Founded, built and exited an independent apparel label, with retail placement in Wellington stores. Retail and hospitality management before that, including Second Assistant Manager at Foot Locker.</dd>
-        </div>
-        <div class="fact">
-          <dt>Right to work</dt>
-          <dd>New Zealand citizen. Unrestricted right to work in Australia (subclass 444).</dd>
-        </div>
-      </dl>
-
-      <dl class="toolset">
-        <div class="toolrow">
-          <dt>Operations and CRM</dt>
-          <dd>Notion (database architecture, relations, rollups, views), Microsoft 365, SharePoint, OneDrive, Teams, Outlook, Google Workspace</dd>
-        </div>
-        <div class="toolrow">
-          <dt>Automation and AI</dt>
-          <dd>Make.com, n8n, REST APIs and webhooks, Claude API, retrieval-backed generation, Tally, Brevo</dd>
-        </div>
-        <div class="toolrow">
-          <dt>Build and deploy</dt>
-          <dd>HTML, CSS, JavaScript, Cursor, Vercel, Cloudflare, Wix</dd>
-        </div>
-        <div class="toolrow">
-          <dt>Finance and payments</dt>
-          <dd>Xero, Stripe, cal.com</dd>
-        </div>
-        <div class="toolrow">
-          <dt>Design and content</dt>
-          <dd>Canva, Photoshop, Illustrator, Lightroom, DaVinci Resolve</dd>
-        </div>
-      </dl>
-    </div>
-  </section>
-
-  <section class="band" id="thinking" aria-label="Thinking">
-    <div class="rail">Thinking</div>
-    <div class="band-body">
-      <h2>Notes, eventually.</h2>
-      <p>This is where I'll write about immigration, business, systems, AI and entrepreneurship.</p>
-      <div class="notes-empty">Nothing published yet. Check back.</div>
-    </div>
-  </section>
-
-  <section class="band" id="contact" aria-label="Contact">
-    <div class="rail">Contact</div>
-    <div class="band-body">
-      <h2>Have something interesting to work on?</h2>
-      <div class="contact">
-        <a href="mailto:pat@patweischede.com">pat@patweischede.com</a>
-        <a href="https://www.linkedin.com/in/patweischede" target="_blank" rel="noopener">LinkedIn</a>
+  <!-- ================= WHO ================= -->
+  <section class="sec" id="who">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Who I work with</span>
+        <h2>Built in a trust-heavy niche. <span class="mark">Made for yours.</span></h2>
+        <p class="lede">If your buyer needs to trust you before they pay you, this transfers directly. That's the common thread across everyone I work with.</p>
+      </div>
+      <div class="who">
+        <article class="who-card reveal">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5h11M6.5 17.5h11M3 9.5v5M21 9.5v5M6.5 4v16M17.5 4v16"/></svg></span>
+          <h3>Fitness coaches</h3>
+          <p>Strong content, crowded market. You need offers that stand apart and a pipeline that books consults without you chasing DMs.</p>
+          <span class="fix">Offer ladder · DM-to-call system · retention</span>
+        </article>
+        <article class="who-card reveal">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+          <h3>Consultants & creators</h3>
+          <p>You've got expertise and maybe an audience. You need a productised entry offer and a clear path from follower to client.</p>
+          <span class="fix">Positioning · entry offer · content-to-lead</span>
+        </article>
+        <article class="who-card reveal">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></span>
+          <h3>Financial advisors</h3>
+          <p>Compliance limits what you can say. I've grown an audience under a statutory code of conduct, so I know how to sell without overpromising.</p>
+          <span class="fix">Compliant content · qualification · nurture</span>
+        </article>
+        <article class="who-card reveal">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></span>
+          <h3>Small & medium businesses</h3>
+          <p>You want AI in your lead gen but don't want a science project. I map where it actually saves time, then build it with a human in the loop.</p>
+          <span class="fix">AI lead scoring · automation · CRM</span>
+        </article>
       </div>
     </div>
   </section>
 
-  <footer>
-    <div class="colophon">
-      Pat Weischede · Auckland, New Zealand · New Zealand Licensed Immigration Adviser, No. 202300030<br>
-      Nothing on this website constitutes immigration advice.
+  <!-- ================= PROCESS ================= -->
+  <section class="sec" id="book">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">How we'd work together</span>
+        <h2>Start with a conversation. Leave with a plan.</h2>
+      </div>
+      <div class="process">
+        <article class="proc reveal">
+          <span class="num">01</span>
+          <h3>Strategy call</h3>
+          <p>We look at your audience, your offers and where leads are leaking. You'll leave with at least one thing to fix this week, whether we work together or not.</p>
+          <span class="out">Output: the biggest constraint, named</span>
+        </article>
+        <article class="proc reveal">
+          <span class="num">02</span>
+          <h3>Acquisition & offer audit</h3>
+          <p>A full review of your content, funnel, offers and numbers. I map your offer ladder, find the cannibalisation and clean the data you're deciding on.</p>
+          <span class="out">Output: offer map + prioritised fix list</span>
+        </article>
+        <article class="proc reveal">
+          <span class="num">03</span>
+          <h3>Build or advise</h3>
+          <p>I either build the system with you (lead capture, AI triage, CRM, follow-up) or advise your team while they build it. Your call.</p>
+          <span class="out">Output: a working pipeline you own</span>
+        </article>
+      </div>
     </div>
-  </footer>
+  </section>
 
-</div>
+  <!-- ================= ABOUT ================= -->
+  <section class="sec" id="about">
+    <div class="wrap about-grid">
+      <div class="about-copy reveal">
+        <span class="kicker">About</span>
+        <h2>I'm Pat. I learned this the hard way, in a niche that doesn't forgive mistakes.</h2>
+        <p class="lede">For five years I've worked inside a New Zealand immigration advisory practice, going from Marketing Communications Coordinator to Operations Manager.</p>
+        <p>Immigration is about as high-stakes and high-trust as a purchase gets. People are betting their family's future on who they hire. You can't hype, you can't overpromise, and every claim has to stand up to a regulator. That's exactly why it taught me so much about offers and value propositions.</p>
+        <p>I built the acquisition engine, the CRM, the automation layer and the AI tooling the practice runs on today, across two countries and a team of four. The 13.4M views were the visible part. The part that made money was everything underneath.</p>
+        <p>Now I'm taking what worked and helping coaches, consultants, advisors and business owners build the same thing, without the five years of trial and error.</p>
+      </div>
+      <div class="reveal" style="display:grid; gap:24px; align-content:start;">
+        <dl class="facts">
+          <div class="fact"><dt>Experience</dt><dd>5 years building acquisition, operations and client systems in a regulated advisory practice</dd></div>
+          <div class="fact"><dt>Reach</dt><dd>13.4M+ organic views and 111k+ followers in 10 months</dd></div>
+          <div class="fact"><dt>Systems</dt><dd>15,000+ records on one CRM · 100+ automated executions a day · 10+ platforms owned end to end</dd></div>
+          <div class="fact"><dt>AI in production</dt><dd>Client deliverables from 3 hours to under 30 minutes, 200+ produced, with a human review gate</dd></div>
+          <div class="fact"><dt>Credentials</dt><dd>BCom in Marketing, Victoria University of Wellington · Licensed Immigration Adviser (NZ), No. 202300030</dd></div>
+          <div class="fact"><dt>Before this</dt><dd>Founded and exited an apparel label. Years in retail and hospitality management.</dd></div>
+        </dl>
+        <div class="tools" aria-label="Tools I build with">
+          <span>Claude API</span><span>Make.com</span><span>n8n</span><span>Notion CRM</span><span>Brevo</span><span>Tally</span><span>Stripe</span><span>cal.com</span><span>Vercel</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ================= FAQ ================= -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Questions</span>
+        <h2>Fair questions.</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>Your results are in immigration. Does that apply to my business?</summary>
+          <div class="a"><p>The niche is specific, the mechanics aren't. Any business where the buyer has to trust you before paying (coaching, advisory, consulting, professional services) runs on the same engine: reach new people, earn a small yes, deliver, retain. Immigration is just a particularly unforgiving place to learn it.</p></div>
+        </details>
+        <details>
+          <summary>Do I need a big audience to start?</summary>
+          <div class="a"><p>No. Plenty of businesses I'd work with have more leads than they're converting. If you're getting enquiries and losing them, we start with the catching, not the reach.</p></div>
+        </details>
+        <details>
+          <summary>What does "AI in lead gen" actually mean here?</summary>
+          <div class="a"><p>Practical, boring, useful things: scoring and routing enquiries on arrival, drafting follow-ups and client documents, summarising calls into your CRM. Always with a human checkpoint where judgement matters. No chatbots pretending to be you.</p></div>
+        </details>
+        <details>
+          <summary>Will you build it, or just tell me what to do?</summary>
+          <div class="a"><p>Either. Some clients want the audit and a plan for their team. Others want me to build the pipeline with them. We'll work out which fits on the first call.</p></div>
+        </details>
+        <details>
+          <summary>How do I know the numbers are real?</summary>
+          <div class="a"><p>The screenshots on this page are unedited exports from the Meta dashboard, cropped only to protect client privacy. I'm happy to walk you through the live dashboards on a call.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FINAL CTA ================= -->
+  <section class="wrap final">
+    <div class="final-card reveal">
+      <span class="bigfig" aria-hidden="true">13.4M</span>
+      <span class="kicker" style="color:color-mix(in srgb, var(--ground) 65%, transparent)">Let's talk</span>
+      <h2>Your audience is already out there. Let's build the thing that catches it.</h2>
+      <p class="lede" style="color:inherit; opacity:0.8">Grab a time that suits you. Come ready to tell me what you sell, who you sell it to and where it's getting stuck.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://cal.com/patweischede/strategy-call" target="_blank" rel="noopener">Book a strategy call <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/patweischede" rel="noopener">Connect on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Pat Weischede · Auckland, New Zealand</span>
+    <span class="foot-links">
+      <a href="mailto:pat@patweischede.com">pat@patweischede.com</a>
+      <a href="https://www.linkedin.com/in/patweischede" rel="noopener">LinkedIn</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = document.querySelectorAll('.reveal');
+    if (reduce || !('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('in'); });
+    } else {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    }
+
+    if (reduce) return;
+    document.querySelectorAll('[data-count]').forEach(function (el) {
+      var target = parseFloat(el.dataset.count);
+      var dec = parseInt(el.dataset.decimals || '0', 10);
+      var pre = el.dataset.prefix || '';
+      var suf = el.dataset.suffix || '';
+      var start = null, dur = 1400;
+      function fmt(v) {
+        return pre + (dec ? v.toFixed(dec) : Math.round(v).toLocaleString('en-NZ')) + suf;
+      }
+      function step(t) {
+        if (!start) start = t;
+        var p = Math.min((t - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = fmt(target * eased);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  })();
+</script>
 </body>
 </html>
