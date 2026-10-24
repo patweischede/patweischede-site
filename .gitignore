@@ -11,3 +11,8 @@
 # plain text, extracted and scrubbed separately; these source images are
 # not referenced by index.html.
 images/
+
+# Local-only: old versions, unpublished draft, local tooling
+_Archived/
+patweischede-portfolio-draft.html
+.claude/
