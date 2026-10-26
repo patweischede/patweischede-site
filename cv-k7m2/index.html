@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pat Weischede — CV</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="description" content="CV and cover letter for Pat Weischede.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111311'/><text x='50' y='68' font-family='Arial' font-weight='700' font-size='52' text-anchor='middle' fill='%23D4FF3A'>P</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .cv-head { display: grid; gap: 24px; align-items: center; }
+  @media (min-width: 760px) { .cv-head { grid-template-columns: 160px minmax(0, 1fr); gap: 36px; } }
+  .cv-head .portrait { width: 160px; transform: none; border-radius: 50%; }
+  .cv-head h1 { font-weight: 800; font-size: clamp(2.4rem, 1.4rem + 4vw, 4.2rem); line-height: 0.98; letter-spacing: -0.04em; }
+  .cv-contact { display: flex; flex-wrap: wrap; gap: 6px 20px; font-family: var(--mono); font-size: 0.8rem; color: var(--muted); }
+  .cv-contact a { color: var(--ink-soft); }
+  .letter { display: grid; gap: 16px; max-width: 70ch; }
+  .letter p { max-width: none; font-size: 1.02rem; }
+  .cv-skills { display: grid; gap: 12px; }
+  @media (min-width: 760px) { .cv-skills { grid-template-columns: 1fr 1fr; } }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  @media print {
+    .nav-bar, .progress, .actions, .final, footer { display: none !important; }
+    body { background: #fff; color: #000; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .sec { padding-block: 24px; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+
+<div class="nav-bar">
+  <nav class="wrap nav" aria-label="Primary">
+    <a class="brand" href="../index.html">Pat Weischede</a>
+    <a class="btn btn-primary" href="mailto:pat@patweischede.com?subject=Role%20enquiry">Get in touch</a>
+  </nav>
+</div>
+
+<main id="top">
+
+  <header class="wrap sec first">
+    <div class="cv-head">
+      <figure class="portrait"><img src="../assets/pat.jpg" width="900" height="900" alt="Pat Weischede smiling"></figure>
+      <div style="display:grid; gap:16px">
+        <span class="kicker">Curriculum vitae · Auckland, New Zealand</span>
+        <h1>Pat Weischede</h1>
+        <p class="lede">Growth, operations and AI automation. Five years leading marketing and operations at a regulated immigration advisory practice, building the acquisition engine, CRM and AI tooling it runs on.</p>
+        <div class="cv-contact">
+          <a href="mailto:pat@patweischede.com">pat@patweischede.com</a>
+          <a href="https://www.linkedin.com/in/patweischede" rel="noopener">linkedin.com/in/patweischede</a>
+          <a href="../index.html">patweischede.com</a>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary shine" href="mailto:pat@patweischede.com?subject=Role%20enquiry">Email me <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="../work.html#documents">Case study PDFs</a>
+          <a class="btn btn-ghost" href="#" onclick="window.print(); return false;">Save as PDF</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="sec" id="letter">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Cover letter</span>
+        <h2>Why I'm a <span class="mark">good hire.</span></h2>
+      </div>
+      <div class="letter reveal">
+        <p>Hello,</p>
+        <p>I'm Pat. For the last five years I've worked inside a 20-year family immigration practice that has helped 18,000+ clients, moving from marketing coordinator to Operations Manager and Licensed Immigration Adviser. Immigration is a high-trust, heavily regulated purchase, so I learned to grow a business without hype and with every claim able to stand up to scrutiny.</p>
+        <p>I built the acquisition engine, the CRM, the automation layer and the AI tooling the practice runs on today, across two countries and a team of four. Over 10 months that work produced 13.4M+ organic views and 111k+ followers, and three seminar campaigns with 5,600+ registrations at $0 in ad spend. The views were the visible part. The part that made money was everything underneath that caught them.</p>
+        <p>I'm looking for an in-house role in growth marketing, marketing operations or RevOps, business operations, or AI and automation. I'm comfortable owning a budget and a tech stack, managing people, and shipping automation that runs in production with a human checkpoint where judgement matters.</p>
+        <p>I'd welcome a conversation about where I can help your team.</p>
+        <p>Ngā mihi,<br><b style="color:var(--ink)">Pat Weischede</b></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="experience">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Experience</span>
+        <h2>Admin to operator, <span class="mark">by building things.</span></h2>
+      </div>
+      <ol class="timeline reveal">
+        <li><span class="when">2021 – now</span><span><b>Operations Manager &amp; Licensed Immigration Adviser</b><span class="d">Immigration advisory practice, Auckland. Joined as marketing coordinator. Built the acquisition engine, CRM, automation layer and AI tooling. Ran three $0-ad seminar campaigns in the Philippines. Manage four direct reports across Auckland, Manila and Isabela and own the tech stack budget.</span></span></li>
+        <li><span class="when">Alongside</span><span><b>Freelance growth builds</b><span class="d">Funnels, websites and content engines for a podcast, a law firm and a fitness creator. Business plans for employer accreditation.</span></span></li>
+        <li><span class="when">Earlier</span><span><b>Founder, clothing label</b><span class="d">Built and exited an apparel label stocked in Wellington retail, alongside years of retail and hospitality management.</span></span></li>
+        <li><span class="when">Education</span><span><b>BCom in Marketing</b><span class="d">Victoria University of Wellington. Licensed Immigration Adviser (NZ), No. 202300030.</span></span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="highlights">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Highlights</span>
+        <h2>The numbers behind the work.</h2>
+      </div>
+      <div class="big-stats reveal" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))">
+        <div class="big-stat"><div class="fig" data-count="13.4" data-suffix="M+" data-decimals="1">13.4M+</div><div class="cap">Organic views in 10 months</div></div>
+        <div class="big-stat"><div class="fig" data-count="5600" data-suffix="+">5,600+</div><div class="cap">Seminar registrations, $0 in ads</div></div>
+        <div class="big-stat"><div class="fig" data-count="15000" data-suffix="+">15,000+</div><div class="cap">Records on one CRM</div></div>
+        <div class="big-stat"><div class="fig">3h → 30m</div><div class="cap">Per client deliverable with AI, 200+ produced</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="skills">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Skills</span>
+        <h2>What I bring to a team.</h2>
+      </div>
+      <div class="cv-skills">
+        <article class="path reveal"><span class="who-tag">Growth</span><ul><li>Organic acquisition and content-to-lead systems</li><li>Funnels: landing page, registration, nurture, confirmation</li><li>Offer design for trust-heavy services</li></ul></article>
+        <article class="path reveal"><span class="who-tag">Operations</span><ul><li>Team leadership across two countries</li><li>CRM architecture, 100+ automated executions a day</li><li>10+ platforms owned end to end, tech stack budget</li></ul></article>
+        <article class="path reveal"><span class="who-tag">AI and automation</span><ul><li>AI lead grading (A / B / C) in production</li><li>Claude API and agents with a human review gate</li><li>Call summaries and document drafting into the CRM</li></ul></article>
+        <article class="path reveal"><span class="who-tag">Tools</span><div class="tools"><span>Claude API</span><span>Make.com</span><span>n8n</span><span>Notion CRM</span><span>Brevo</span><span>Tally</span><span>Stripe</span><span>cal.com</span><span>Vercel</span><span>GitHub</span><span>Xero</span><span>Excel</span><span>DaVinci Resolve</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap final">
+    <div class="final-card reveal">
+      <span class="bigfig" aria-hidden="true">Hi</span>
+      <span class="kicker" style="color:color-mix(in srgb, var(--ground) 65%, transparent)">Next step</span>
+      <h2>Let's see if there's a fit.</h2>
+      <p class="lede" style="color:inherit; opacity:0.8">References, the full portfolio and reporting workbooks are available on request.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary shine" href="mailto:pat@patweischede.com?subject=Role%20enquiry">Email Pat <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/patweischede" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Pat Weischede · Auckland, New Zealand</span>
+  </div>
+</footer>
+
+<script src="../site.js"></script>
+</body>
+</html>

@@ -13,6 +13,18 @@
   }
 
   if (reduce) return;
+  var bar = document.querySelector('.progress');
+  if (bar) {
+    var tick = false;
+    window.addEventListener('scroll', function () {
+      if (tick) return; tick = true;
+      requestAnimationFrame(function () {
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.transform = 'scaleX(' + (h > 0 ? window.scrollY / h : 0) + ')';
+        tick = false;
+      });
+    }, { passive: true });
+  }
   document.querySelectorAll('[data-count]').forEach(function (el) {
     var target = parseFloat(el.dataset.count);
     var dec = parseInt(el.dataset.decimals || '0', 10);

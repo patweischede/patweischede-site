@@ -517,3 +517,51 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; }
 .doc.feature h3, .doc.feature .go { color: var(--hi); }
 .doc.feature .n, .doc.feature p { color: rgba(244, 243, 238, 0.72); }
 .doc.feature:hover { border-color: var(--hi); }
+
+/* ---------- availability chip + portrait ---------- */
+.avail { display: flex; align-items: center; gap: 14px; }
+.avatar { position: relative; width: 56px; height: 56px; border-radius: 50%; flex: none; }
+.avatar::before { content: ""; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid var(--hi); animation: ring 2.6s ease-out infinite; }
+.avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: 50% 40%; border: 2px solid var(--ground); position: relative; }
+.avail-text { display: grid; gap: 2px; font-size: 0.9rem; line-height: 1.3; }
+.avail-text b { font-family: var(--display); font-weight: 700; color: var(--ink); }
+.avail-status { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); display: inline-flex; align-items: center; gap: 8px; }
+.avail-status i { width: 8px; height: 8px; border-radius: 50%; background: #3BD16F; animation: pulse 2s ease-in-out infinite; }
+@keyframes ring { 0% { transform: scale(0.95); opacity: 0.9; } 100% { transform: scale(1.35); opacity: 0; } }
+@keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, #3BD16F 55%, transparent); } 50% { box-shadow: 0 0 0 6px transparent; } }
+.portrait { margin: 0; width: min(220px, 60%); aspect-ratio: 1; border-radius: 28px; overflow: hidden; border: 1px solid var(--line); transform: rotate(-2deg); transition: transform 0.4s ease; box-shadow: 0 24px 50px -28px rgba(0,0,0,0.4); }
+.portrait:hover { transform: rotate(0) scale(1.02); }
+.portrait img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- motion ---------- */
+.progress { position: fixed; top: 0; left: 0; height: 3px; width: 100%; background: var(--hi); transform-origin: 0 50%; transform: scaleX(0); z-index: 40; }
+.hero h1 .line { opacity: 0; transform: translateY(24px); animation: rise 0.8s cubic-bezier(.2,.7,.2,1) forwards; }
+.hero h1 .line:nth-child(1) { animation-delay: 0.1s; }
+.hero h1 .line:nth-child(2) { animation-delay: 0.28s; }
+.hero h1 .line:nth-child(3) { animation-delay: 0.46s; }
+.hero .avail, .hero .kicker, .hero .lede, .hero .cta-row, .hero .fine, .receipt { opacity: 0; animation: rise 0.8s cubic-bezier(.2,.7,.2,1) forwards; }
+.hero .avail { animation-delay: 0s; }
+.hero .kicker { animation-delay: 0.05s; }
+.hero .lede { animation-delay: 0.65s; }
+.hero .cta-row { animation-delay: 0.8s; }
+.hero .fine { animation-delay: 0.95s; }
+.receipt { animation-delay: 0.4s; }
+@keyframes rise { to { opacity: 1; transform: none; } }
+.reveal:nth-child(2) { transition-delay: 0.08s; }
+.reveal:nth-child(3) { transition-delay: 0.16s; }
+.reveal:nth-child(4) { transition-delay: 0.24s; }
+.mark { background-image: linear-gradient(var(--hi), var(--hi)); background-color: transparent; background-repeat: no-repeat; background-size: 0% 100%; transition: background-size 0.8s ease 0.3s; }
+.reveal.in .mark, .hero .mark { background-size: 100% 100%; }
+.path, .case-card, .pillar, .who-card, .review { transition: transform 0.2s ease, border-color 0.2s ease, opacity 0.6s ease; }
+.path:hover, .case-card:hover, .pillar:hover, .who-card:hover, .review:hover { transform: translateY(-4px); border-color: var(--ink); }
+.btn.shine { position: relative; overflow: hidden; }
+.btn.shine::after { content: ""; position: absolute; inset: 0; background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.65) 50%, transparent 65%); transform: translateX(-120%); animation: shine 4s ease-in-out 1.5s infinite; }
+@keyframes shine { 0%, 60% { transform: translateX(-120%); } 100% { transform: translateX(120%); } }
+.final-card .bigfig { animation: drift 9s ease-in-out infinite alternate; }
+@keyframes drift { to { transform: translate(-2%, -6%); } }
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 .line, .hero .avail, .hero .kicker, .hero .lede, .hero .cta-row, .hero .fine, .receipt { opacity: 1; animation: none; }
+  .avatar::before, .avail-status i, .btn.shine::after, .final-card .bigfig { animation: none; }
+  .mark { background-size: 100% 100%; transition: none; }
+  .progress { display: none; }
+}
